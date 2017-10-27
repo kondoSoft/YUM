@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Button =styled.Text`
+const Button = styled.Text`
   color: #fff;
   text-align: center;
   height: 35px;

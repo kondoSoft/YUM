@@ -10,9 +10,7 @@ export default class App extends React.Component {
     console.log(Button)
     return (
       <Wrapper>
-        <Text>Ponte pilas</Text>
-        <Text>PONTE PILAS.</Text>
-        <Text>tranquilo</Text>
+        <Button>COMIENZA AHORA</Button>
       </Wrapper>
     )
   }

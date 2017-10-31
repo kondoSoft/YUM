@@ -20,7 +20,8 @@ export default class App extends React.Component {
     console.log(this.state.colorB);
     return (
       <Wrapper>
-        <Button>COMIENZA AHORA</Button>
+        <Button text='COMIENZA AHORA'/>
+        <Button text='AÑADIR A LA BOLSA' Icon='shopping-bag'/>
         <SecondaryButton text='MÀS CERCANOS' acolor='rgb(255,87,34)'/>
         <SecondaryButton text='INICIAR SESION' acolor='#fff'/>
         <SecondaryButton text='FACEBOOK' Icon='facebook' acolor='#fff'/>

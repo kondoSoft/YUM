@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Button = styled.Text`
   color: #fff;

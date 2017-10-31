@@ -12,26 +12,26 @@ export default class App extends React.Component {
     super()
     this.state = {
       text:'',
-      color:'rgb(131,131,131)'
+      colorB:'rgb(131,131,131)'
     }
     this.ChangeText = this.ChangeText.bind(this)
   }
   render () {
-    console.log(this.state.color);
+    console.log(this.state.colorB);
     return (
       <Wrapper>
         <Button>COMIENZA AHORA</Button>
         <SecondaryButton text='INICIAR SESION'/>
         <SecondaryButton text='FACEBOOK' Icon='facebook'/>
-        <StyledInput label='contraseña' secure={true} type='email-address'/>
-        <StyledInput label='correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText}/>
+        <StyledInput label='Contraseña' secure={true} type='password' />
+        <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/>
       </Wrapper>
     )
   }
   ChangeText(e){
     let state = this.state
     state.text = e
-    state.color = 'rgb(255,87,34)'
+    state.colorB = 'rgb(255,87,34)'
     this.setState(state)
 
 

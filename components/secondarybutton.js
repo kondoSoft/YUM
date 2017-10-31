@@ -9,13 +9,14 @@ const Button = styled.Text`
   padding-top: 5px;
   flex: 2;
   font-size: 20px;
+  color: ${props => props.acolor};
 `
 const Container = styled.TouchableOpacity`
   width: 100%;
   height: 45px;
-  background-color:  rgba(0,0,0,.01);
+  background-color:  transparent;
   border-radius: 15px;
-  border-color: #fff;
+  border-color: ${props => props.acolor};
   border-width: 2px;
   display: flex;
   align-items: center;
@@ -32,11 +33,11 @@ const Iconcontainer = styled.View`
 `
 
 const SecondaryButton = (props) => (
-  <Container flex={props.flex} accessibilityComponentType='button'>
+  <Container flex={props.flex}  acolor={props.acolor}>
     <Iconcontainer Icon={props.Icon}>
-      <Icon name={props.Icon} color='#fff' size={28}/>
+      <Icon name={props.Icon} color={props.acolor} size={28}/>
     </Iconcontainer>
-    <Button>{props.text}</Button>
+    <Button acolor={props.acolor}>{props.text}</Button>
   </Container>
 )
 export default SecondaryButton

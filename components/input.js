@@ -8,9 +8,7 @@ const TextBox = styled.TextInput`
   padding-left: 5px;
   margin: 10px;
 `
-
 const StyledInput = (props) => (
-
     <TextBox
       colorB = {props.colorB}
       value = {props.value}
@@ -18,7 +16,6 @@ const StyledInput = (props) => (
       secureTextEntry = {props.secure}
       placeholder = {props.label}
       onChangeText={(text) => props.change ? props.change(text): ''}
-
     />
 )
 export default StyledInput

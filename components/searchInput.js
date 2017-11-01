@@ -35,7 +35,6 @@ const SearchInput = (props) =>(
     <Iconcontainer>
       <Icon name='search' color={'rgb(255,87,34)'} size={28}/>
     </Iconcontainer>
-
   </Container>
 
 )

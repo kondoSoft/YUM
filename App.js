@@ -11,6 +11,7 @@ import {
 import{
   Home,
   Login,
+  Register,
 }from './containers'
 
 export default class App extends React.Component {
@@ -26,7 +27,8 @@ export default class App extends React.Component {
     return (
       <Wrapper>
         {/* <Home/> */}
-        <Login/>
+        {/* <Login/> */}
+        <Register/>
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>

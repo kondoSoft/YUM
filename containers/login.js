@@ -6,6 +6,8 @@ import {
 } from '../components'
 
 const UpContainer = styled.View`
+  justify-content: center;
+  align-items: center;
   flex: 1;
 `
 const CenterContainer = styled.View`
@@ -27,6 +29,8 @@ const MainContainer = styled.View`
 const Img = styled.Image`
   width: 100%;
   height: 100%;
+  z-index: -1;
+  position: absolute;
 `
 const UpText = styled.Text`
   font-size: 13px;
@@ -44,28 +48,33 @@ const InputContainer = styled.View`
   max-height: 60px;
   margin: 5px 0 5px 0;
 `
+const Logo = styled.Image`
+  width: 90px;
+  height: 90px;
+`
 
 const Login = () => (
   <MainContainer>
     <UpContainer>
-      <Img source={require('../assets/img/exampleBG.jpg')} />
+      <Img source = {require('../assets/img/exampleBG.jpg')} />
+      <Logo source = {require('../assets/img/status_button.png')} />
     </UpContainer>
     <CenterContainer>
       <InputContainer>
         <TextContainer>
-          <UpText color='rgb(131,131,131)' >Correo electronico</UpText>
+          <UpText color = 'rgb(131,131,131)' > Correo electronico </UpText>
         </TextContainer>
-        <StyledInput label='Correo'  secure={false} type='default' /*value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}*/ />
+        <StyledInput label = 'Correo'  secure = {false} type = 'default' /*value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}*/ />
       </InputContainer>
       <InputContainer>
-        <StyledInput label='Contraseña' secure={true} type='password' />
+        <StyledInput label = 'Contraseña' secure = {true} type = 'password' />
         <TextContainer>
-          <UpText color='rgb(255,87,34)'>Olvidaste tu contraseña?</UpText>
+          <UpText color = 'rgb(255,87,34)'> Olvidaste tu contraseña? </UpText>
         </TextContainer>
       </InputContainer>
     </CenterContainer>
     <DownContainer>
-      <Button text='ACEPTAR'/>
+      <Button text = 'ACEPTAR'/>
     </DownContainer>
   </MainContainer>
 )

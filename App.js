@@ -10,6 +10,7 @@ import {
 } from './components'
 import{
   Home,
+  Login,
 }from './containers'
 
 export default class App extends React.Component {
@@ -24,7 +25,8 @@ export default class App extends React.Component {
   render () {
     return (
       <Wrapper>
-        <Home/>
+        {/* <Home/> */}
+        <Login/>
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>

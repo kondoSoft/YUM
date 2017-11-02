@@ -21,8 +21,9 @@ export default class App extends React.Component {
     return (
       <Wrapper>
         <Button>COMIENZA AHORA</Button>
-        <SecondaryButton text='INICIAR SESION'/>
-        <SecondaryButton text='FACEBOOK' Icon='facebook'/>
+        <SecondaryButton text='MÀS CERCANOS' acolor='rgb(255,87,34)'/>
+        <SecondaryButton text='INICIAR SESION' acolor='#fff'/>
+        <SecondaryButton text='FACEBOOK' Icon='facebook' acolor='#fff'/>
         <StyledInput label='Contraseña' secure={true} type='password' />
         <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/>
       </Wrapper>

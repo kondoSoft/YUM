@@ -6,6 +6,7 @@ import {
   SecondaryButton,
   StyledInput,
   Status,
+  SearchInput,
 } from './components'
 
 export default class App extends React.Component {
@@ -13,13 +14,14 @@ export default class App extends React.Component {
     super()
     this.state = {
       text:'',
-      colorB:'rgb(131,131,131)'
+      colorB:'rgb(131,131,131)',
     }
     this.ChangeText = this.ChangeText.bind(this)
   }
   render () {
     return (
       <Wrapper>
+        <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button text='COMIENZA AHORA'/>
         <Button IconSide='check'/>
@@ -38,7 +40,5 @@ export default class App extends React.Component {
     state.text = e
     state.colorB = 'rgb(255,87,34)'
     this.setState(state)
-
-
   }
 }

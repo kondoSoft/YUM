@@ -17,7 +17,6 @@ export default class App extends React.Component {
     this.ChangeText = this.ChangeText.bind(this)
   }
   render () {
-    console.log(this.state.colorB);
     return (
       <Wrapper>
         <Button text='COMIENZA AHORA'/>

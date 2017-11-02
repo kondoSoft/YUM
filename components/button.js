@@ -32,7 +32,6 @@ const IconSidecontainer = styled.View`
   display: ${props => props.IconSide ? 'flex':'none'};
   justify-content: center;
   flex: ${(props) => props.text ? '' :4}
-
 `
 const Button = (props) => (
   <Container Icon={props.Icon} >

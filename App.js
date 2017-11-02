@@ -5,6 +5,7 @@ import {
   Wrapper,
   SecondaryButton,
   StyledInput,
+  Status,
 } from './components'
 
 export default class App extends React.Component {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
   render () {
     return (
       <Wrapper>
+        <Status />
         <Button text='COMIENZA AHORA'/>
         <Button IconSide='check'/>
         <Button text='AÑADIR A LA BOLSA' Icon='shopping-bag'/>

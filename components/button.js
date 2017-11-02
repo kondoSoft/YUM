@@ -5,7 +5,8 @@ import React from 'react'
 const Text = styled.Text`
   color: #fff;
   font-size: 20px;
-  flex: 3;
+  flex: ${(props) => props.IconSide ? 2 : 3};
+  padding-left: ${(props) => props.IconSide ? '90px' : 0};
   text-align: center;
 `
 const Container = styled.TouchableOpacity`
@@ -26,12 +27,22 @@ const Iconcontainer = styled.View`
   display: ${props => props.Icon ? 'flex':'none'};
   align-items: center;
 `
+const IconSidecontainer = styled.View`
+  padding-right: 75px;
+  display: ${props => props.IconSide ? 'flex':'none'};
+  justify-content: center;
+  flex: ${(props) => props.text ? '' :4}
+
+`
 const Button = (props) => (
   <Container Icon={props.Icon} >
     <Iconcontainer Icon={props.Icon}>
       <Icon name={props.Icon}  color={'#fff'} size={28}/>
     </Iconcontainer>
-    <Text>{props.text}</Text>
+    <Text IconSide={props.IconSide} >{props.text}</Text>
+    <IconSidecontainer text={props.text} IconSide={props.IconSide}>
+      <Icon name={props.IconSide}  color={'#fff'} size={28}/>
+    </IconSidecontainer>
   </Container>
 )
 export default Button

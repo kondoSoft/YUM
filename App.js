@@ -8,6 +8,9 @@ import {
   Status,
   SearchInput,
 } from './components'
+import{
+  Home,
+}from './containers'
 
 export default class App extends React.Component {
   constructor(){
@@ -21,17 +24,15 @@ export default class App extends React.Component {
   render () {
     return (
       <Wrapper>
-        <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
+        <Home/>
+        {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
-        <Button text='COMIENZA AHORA'/>
         <Button IconSide='check'/>
         <Button text='AÑADIR A LA BOLSA' Icon='shopping-bag'/>
         <Button text='PAGAR ' IconSide='check'/>
         <SecondaryButton text='MÀS CERCANOS' acolor='rgb(255,87,34)'/>
-        <SecondaryButton text='INICIAR SESION' acolor='#fff'/>
-        <SecondaryButton text='FACEBOOK' Icon='facebook' acolor='#fff'/>
         <StyledInput label='Contraseña' secure={true} type='password' />
-        <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/>
+        <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/> */}
       </Wrapper>
     )
   }

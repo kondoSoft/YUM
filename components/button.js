@@ -19,8 +19,7 @@ const Container = styled.TouchableOpacity`
   color: #fff;
   text-align: center;
   width: 95%;
-  height: 40px;
-  margin-top: 10px;
+  height: 50px;
 `
 const Iconcontainer = styled.View`
   flex: 1;

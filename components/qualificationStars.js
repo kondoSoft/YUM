@@ -8,9 +8,11 @@ const Iconcontainer = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: baseline;
 `
 const SideText =  styled.Text`
   font-size: 20px;
+  padding: 0 1px 0 5px;
 `
 const stars =(q) =>{
   let NumberStars = parseFloat(q)

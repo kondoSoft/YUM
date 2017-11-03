@@ -4,7 +4,8 @@ import React from 'react'
 const Container = styled.View`
   width: ${(props) => props.width ? props.width : '100%'};
   height: ${(props) => props.height && props.height};
-  flex: ${(props) => props.flex && props.flex}
+  flex: ${(props) => props.flex && props.flex};
+  margin-bottom: 15px;
 `
 const TitleText = styled.Text`
   font-size: 15px;
@@ -15,7 +16,7 @@ const DescriptionText = styled.Text`
   color: rgb(131,131,131);
 `
 const Description = (props) => (
-  <Container width = {props.width} height = {props.height} flex ={props.flex}>
+  <Container width = {props.width} height = {props.height} flex = {props.flex} >
     <TitleText color = {props.titleColor} > {props.titleText} </TitleText>
     <DescriptionText> {props.descriptionText} </DescriptionText>
   </Container>

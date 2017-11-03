@@ -33,7 +33,10 @@ const SearchInput = (props) =>(
       placeholder = {props.label}
     />
     <Iconcontainer>
-      <Icon name='search' color={'rgb(255,87,34)'} size={28}/>
+      <Icon
+        name='search'
+        color={'rgb(255,87,34)'}
+        size={28}/>
     </Iconcontainer>
   </Container>
 

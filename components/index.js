@@ -8,6 +8,9 @@ import CircleImage from './circleImage'
 import PreviewRestaurant from './previewViewRestaurant'
 import Description from './descriptionText'
 import StarIcon from './qualificationStars'
+import DeliverTime from './deliverTimeStick'
+import MinimunPrice from './minimunPriceStick'
+import IconEdit from './iconEditable'
 export {
   Button,
   Wrapper,
@@ -19,4 +22,7 @@ export {
   PreviewRestaurant,
   Description,
   StarIcon,
+  DeliverTime,
+  MinimunPrice,
+  IconEdit,
 }

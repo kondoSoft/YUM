@@ -13,6 +13,7 @@ import{
   Login,
   Register,
   Prueba,
+  RestaurantList
 }from './containers'
 
 export default class App extends React.Component {
@@ -29,13 +30,13 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        <Prueba/>
+        {/* <Prueba/> */}
+        <RestaurantList/>
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>
         <Button text='AÑADIR A LA BOLSA' Icon='shopping-bag'/>
         <Button text='PAGAR ' IconSide='check'/>
-        <SecondaryButton text='MÀS CERCANOS' acolor='rgb(255,87,34)'/>
         <StyledInput label='Contraseña' secure={true} type='password' />
         <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/> */}
       </Wrapper>

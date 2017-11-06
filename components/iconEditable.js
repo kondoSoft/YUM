@@ -16,7 +16,7 @@ const IconEdit = (props) =>(
     <Icon
       name = {props.name}
       color = {'rgb(255,87,34)'}
-      size = {18}
+      size = {props.size}
     />
   </IconContainer>
 )

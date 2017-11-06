@@ -18,6 +18,8 @@ const MainContainer = styled.TouchableOpacity`
   border-bottom-color: rgb(131,131,131);
   border-bottom-width: 1px;
   padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
   `
 const LeftContainer = styled.View`
   flex: 1;
@@ -70,6 +72,7 @@ const PreviewRestaurant = () => (
           name = 'heart'
           justify = 'flex-end'
           align = 'flex-start'
+          size = {20}
         />
       </RightUpContainer>
       <RightDownContainer>

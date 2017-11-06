@@ -12,7 +12,7 @@ const Button = styled.Text`
   color: ${props => props.acolor};
 `
 const Container = styled.TouchableOpacity`
-  width: 80%;
+  width: ${(props) => props.width ? props.width : '80%'};
   height: 40px;
   background-color:  transparent;
   border-radius: 15px;
@@ -33,7 +33,7 @@ const Iconcontainer = styled.View`
 `
 
 const SecondaryButton = (props) => (
-  <Container flex={props.flex}  acolor={props.acolor}>
+  <Container width={props.width} flex={props.flex}  acolor={props.acolor}>
     <Iconcontainer Icon={props.Icon}>
       <Icon name={props.Icon} color={props.acolor} size={20}/>
     </Iconcontainer>

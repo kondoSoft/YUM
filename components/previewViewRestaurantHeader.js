@@ -12,7 +12,7 @@ from './index'
 
 const MainContainer =  styled.View`
 width: 95%;
-height: 120px;
+height: 100%;
 display: flex;
 flex-direction: row;
 border-style: solid;
@@ -39,13 +39,14 @@ const ContainerRightDownTop = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: space-around;
-
+  padding-left: 5px;
 `
 const ContainerRightDownBottom =  styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-left: 5px;
 `
 const ViewHeader = () => (
   <MainContainer>
@@ -63,7 +64,8 @@ const ViewHeader = () => (
           descriptionText = 'Comida Mexicana,bar.'
           width = '100%'
           height = '30px'
-          margin = '10px'
+          margin = '0px'
+          size = '20px'
         />
       </ContainerRightUp>
       <ContainerRightDown>

@@ -13,7 +13,8 @@ import{
   Login,
   Register,
   Prueba,
-  RestaurantList
+  RestaurantList,
+  Menu,
 }from './containers'
 
 export default class App extends React.Component {
@@ -30,8 +31,9 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        <Prueba/>
+        {/* <Prueba/> */}
         {/* <RestaurantList/> */}
+        <Menu/>
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>

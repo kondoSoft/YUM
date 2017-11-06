@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import {
-  ViewHeader,
+  PreviewFood,
 } from '../components'
 
  const Container = styled.View`
@@ -14,7 +14,7 @@ import {
  `
  const Prueba = () =>(
    <Container>
-     <ViewHeader/>
+     <PreviewFood />
    </Container>
  )
 export default Prueba

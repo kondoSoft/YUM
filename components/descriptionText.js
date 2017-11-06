@@ -10,6 +10,7 @@ const Container = styled.View`
 const TitleText = styled.Text`
   font-size: 15px;
   color: ${(props) => props.color};
+  text-align: justify;
 `
 const DescriptionText = styled.Text`
   font-size: 12px;

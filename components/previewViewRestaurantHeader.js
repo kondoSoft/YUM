@@ -79,7 +79,7 @@ const ViewHeader = () => (
         </ContainerRightDownTop>
         <ContainerRightDownBottom>
           <StarIcon
-            qualification = '0'
+            qualification = '4.5'
             justify='space-between'
             width='40%'
           />

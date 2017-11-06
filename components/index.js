@@ -12,6 +12,8 @@ import DeliverTime from './deliverTimeStick'
 import MinimunPrice from './minimunPriceStick'
 import IconEdit from './iconEditable'
 import ViewHeader from './previewViewRestaurantHeader'
+import PreviewFood from './previewViewFood'
+
 export {
   Button,
   Wrapper,
@@ -27,4 +29,5 @@ export {
   MinimunPrice,
   IconEdit,
   ViewHeader,
+  PreviewFood,
 }

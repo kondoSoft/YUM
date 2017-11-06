@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const Iconcontainer = styled.View`
+const IconContainer = styled.View`
   width: 100%;
   height: 25px;
   display: flex;
@@ -14,8 +14,8 @@ const SideText =  styled.Text`
   font-size: 20px;
   padding: 0 1px 0 5px;
 `
-const stars =(q) =>{
-  let NumberStars = parseFloat(q)
+const Stars =(quantity) =>{
+  let numberStars = parseFloat(quantity)
   var starsDefault =  (
     <Icon
       name = 'star-o'
@@ -41,11 +41,11 @@ const stars =(q) =>{
   var half = 0;
   let array = []
   for (let i = 1; i < limit; i++) {
-    if (NumberStars > i) {
+    if (numberStars > i) {
       array.push(stars)
     }
     else {
-      if (NumberStars % 1 != 0 && half== 0) {
+      if (numberStars % 1 != 0 && half== 0) {
         array.push(halfStars)
         half++
       }
@@ -59,29 +59,29 @@ const stars =(q) =>{
 
 const OneStar = (props) => {
   var array2 = []
-  var Uniquestar =
+  var uniqueStar =
   (<Icon
       name = 'star-o'
       color = {'rgb(255,155,37)'}
       size = {25}
     />
   )
-  var TextStar = (
+  var textStar = (
     <SideText>{props.qualification}</SideText>
   )
-  array2.push(Uniquestar)
-  array2.push(TextStar)
+  array2.push(uniqueStar)
+  array2.push(textStar)
   return array2
 }
 
 const StarIcon = (props) => (
-  <Iconcontainer>
+  <IconContainer>
     {props.single ?
       OneStar(props)
       :
-      stars(props.qualification)
+      Stars(props.qualification)
     }
-  </Iconcontainer>
+  </IconContainer>
 )
 
  export default StarIcon

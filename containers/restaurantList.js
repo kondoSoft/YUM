@@ -67,7 +67,8 @@ const RestaurantList = () => (
         <SecondaryButton
           width = '50%'
           text = 'MÀS CERCANOS'
-          acolor = 'rgb(255,87,34)'/>
+          acolor = 'rgb(255,87,34)'
+        />
       </TopContainerDown>
     </TopContainer>
     <BottomContainer>

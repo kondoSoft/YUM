@@ -15,7 +15,7 @@ const DeliverTime = (props) => (
   <MainContainer>
       <Icon
         name = 'clock-o'
-        color={'rgb(255,155,37)'}
+        color={props.color}
         size={20}
       />
     <Time> {props.text} </Time>

@@ -3,11 +3,11 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const IconContainer = styled.View`
-  width: 100%;
   height: 25px;
+  width: ${(props) => props.width ? props.width : '100%'};
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: ${(props)=> props.justify ? props.justify : 'flex-end'};
   align-items: baseline;
 `
 const SideText =  styled.Text`
@@ -75,7 +75,7 @@ const OneStar = (props) => {
 }
 
 const StarIcon = (props) => (
-  <IconContainer>
+  <IconContainer width = {props.width} justify = {props.justify}>
     {props.single ?
       OneStar(props)
       :

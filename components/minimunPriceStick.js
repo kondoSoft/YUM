@@ -15,7 +15,7 @@ const MinimunPrice = (props) => (
   <MainContainer>
     <Icon
       name = 'tag'
-      color={'rgb(255,155,37)'}
+      color={props.color}
       size={20}
     />
     <Price> {props.text} </Price>

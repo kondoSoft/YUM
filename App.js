@@ -30,8 +30,8 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        {/* <Prueba/> */}
-        <RestaurantList/>
+        <Prueba/>
+        {/* <RestaurantList/> */}
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>

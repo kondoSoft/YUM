@@ -13,6 +13,7 @@ import MinimunPrice from './minimunPriceStick'
 import IconEdit from './iconEditable'
 import ViewHeader from './previewViewRestaurantHeader'
 import PreviewFood from './previewViewFood'
+import Selector from './rangeSelector'
 
 export {
   Button,
@@ -30,4 +31,5 @@ export {
   IconEdit,
   ViewHeader,
   PreviewFood,
+  Selector,
 }

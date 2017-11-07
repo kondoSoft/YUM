@@ -24,6 +24,7 @@ export default class App extends React.Component {
       text:'',
       colorB:'rgb(131,131,131)',
       order: '01',
+      View: false,
     }
     this.ChangeText = this.ChangeText.bind(this)
     this.DecrementNumber = this.DecrementNumber.bind(this)
@@ -34,7 +35,12 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        <Prueba decrement = {this.DecrementNumber} state = {this.state} increment = {this.IncrementNumber}/>
+        <Prueba
+           decrement = {this.DecrementNumber}
+           state = {this.state}
+           increment = {this.IncrementNumber}
+
+         />
         {/* <RestaurantList/> */}
         {/* <Menu/> */}
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>

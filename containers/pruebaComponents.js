@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import {
   Selector,
+  Options,
 } from '../components'
 
  const Container = styled.View`
@@ -14,7 +15,8 @@ import {
  `
  const Prueba = (props) =>(
    <Container>
-     <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/>
+     <Options state = {props.state.View}/>
+     {/* <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/> */}
    </Container>
  )
 export default Prueba

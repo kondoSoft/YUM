@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 const IconContainer = styled.View`
   flex: 1;
+  display: ${(props) => props.display ? props.display : 'flex'}
   flex-direction: row;
   justify-content: ${(props) => props.justify ? props.justify : 'center'};
   align-items: ${(props) => props.align ? props.align : 'center'};
@@ -12,7 +13,7 @@ const IconContainer = styled.View`
 `
 
 const IconEdit = (props) =>(
-  <IconContainer align = {props.align} justify = {props.justify} >
+  <IconContainer display = {props.display} align = {props.align} justify = {props.justify} >
     <Icon
       name = {props.name}
       color = {'rgb(255,87,34)'}

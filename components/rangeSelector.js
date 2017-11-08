@@ -3,11 +3,12 @@ import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const MainContainer = styled.View`
-  display: flex;
+  flex: 1;
   flex-direction: row;
   height: 60px;
   justify-content: space-around;
   align-items: center;
+  margin-top: 15px;
 `
 
 const LeftContainer = styled.TouchableOpacity`

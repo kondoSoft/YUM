@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 const IconContainer = styled.View`
   flex: 1;
-  display: ${(props) => props.display ? props.display : 'flex'}
+  display: ${(props) => props.display === true ? 'none': 'flex'}
   flex-direction: row;
   justify-content: ${(props) => props.justify ? props.justify : 'center'};
   align-items: ${(props) => props.align ? props.align : 'center'};

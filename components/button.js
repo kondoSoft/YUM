@@ -36,7 +36,8 @@ const IconSidecontainer = styled.View`
 const Button = (props) => (
   <Container Icon={props.Icon} >
     <Iconcontainer Icon={props.Icon}>
-      <Icon name={props.Icon}  color={'#fff'} size={28}/>
+      <Icon
+        name={props.Icon}  color={'#fff'} size={28}/>
     </Iconcontainer>
     <Text IconSide={props.IconSide} >{props.text}</Text>
     <IconSidecontainer text={props.text} IconSide={props.IconSide}>

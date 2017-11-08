@@ -6,7 +6,7 @@ const TextBox = styled.TextInput`
   background-color: #fff;
   border-Color: ${props => props.colorB ? props.colorB :'rgb(131,131,131)'};
   padding-left: 5px;
-  margin: 10px;
+  margin: ${(props) => props.withOutMargin ? '0' : '10px' };
   flex: 1;
 `
 const StyledInput = (props) => (
@@ -16,7 +16,8 @@ const StyledInput = (props) => (
       keyboardType = {props.type}
       secureTextEntry = {props.secure}
       placeholder = {props.label}
-      onChangeText={(text) => props.change ? props.change(text): ''}
+      onChangeText = {(text) => props.change ? props.change(text): ''}
+      withOutMargin = {props.withOutMargin}
     />
 )
 export default StyledInput

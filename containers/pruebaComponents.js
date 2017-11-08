@@ -15,7 +15,7 @@ import {
  `
  const Prueba = (props) =>(
    <Container>
-     <Options state = {props.state.View}/>
+     <Options view = {props.view} hide = {props.hide}/>
      {/* <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/> */}
    </Container>
  )

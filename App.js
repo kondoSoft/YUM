@@ -16,6 +16,7 @@ import{
   RestaurantList,
   Menu,
   DetailFood,
+  Bag
 }from './containers'
 
 export default class App extends React.Component {
@@ -39,14 +40,16 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        <DetailFood
+        {/* <Prueba/> */}
+        {/* <DetailFood
            decrement = {this.DecrementNumber}
            state = {this.state}
            increment = {this.IncrementNumber}
            hide = {this.HideExtras}
-         />
+         /> */}
         {/* <RestaurantList/> */}
         {/* <Menu/> */}
+        <Bag/>
         {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
         <Status />
         <Button IconSide='check'/>

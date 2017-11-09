@@ -5,7 +5,7 @@ import Prueba from './pruebaComponents'
 import RestaurantList from './restaurantList'
 import Menu from './restaurantMenu'
 import DetailFood from './detailViewofFood'
-
+import Bag from './bag'
 export{
   Home,
   Login,
@@ -14,4 +14,5 @@ export{
   RestaurantList,
   Menu,
   DetailFood,
+  Bag,
 }

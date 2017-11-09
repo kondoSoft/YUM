@@ -15,7 +15,8 @@ import ViewHeader from './previewViewRestaurantHeader'
 import PreviewFood from './previewViewFood'
 import Selector from './rangeSelector'
 import Options from './deployOptions'
-
+import PreviewOrder from './orderPreview'
+import Add from './addButton'
 export {
   Button,
   Wrapper,
@@ -34,4 +35,6 @@ export {
   PreviewFood,
   Selector,
   Options,
+  PreviewOrder,
+  Add,
 }

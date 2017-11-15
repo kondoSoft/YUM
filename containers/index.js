@@ -6,6 +6,7 @@ import RestaurantList from './restaurantList'
 import Menu from './restaurantMenu'
 import DetailFood from './detailViewofFood'
 import Bag from './bag'
+import QualificationService from './qualificationContainer'
 export{
   Home,
   Login,
@@ -15,4 +16,5 @@ export{
   Menu,
   DetailFood,
   Bag,
+  QualificationService,
 }

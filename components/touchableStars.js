@@ -9,7 +9,7 @@ const Star = styled.TouchableOpacity`
 `
 const MainContainer = styled.View`
   height: 45px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
   flex-direction: row;

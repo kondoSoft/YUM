@@ -16,7 +16,8 @@ import{
   RestaurantList,
   Menu,
   DetailFood,
-  Bag
+  Bag,
+  QualificationService,
 }from './containers'
 
 export default class App extends React.Component {
@@ -42,7 +43,8 @@ export default class App extends React.Component {
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        <Prueba state = {this.state} action = {this.ChangeStars}/>
+        {/* <Prueba /> */}
+        <QualificationService state = {this.state} action = {this.ChangeStars} />
         {/* <DetailFood
            decrement = {this.DecrementNumber}
            state = {this.state}

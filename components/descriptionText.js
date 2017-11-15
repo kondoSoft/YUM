@@ -12,12 +12,12 @@ const Container = styled.View`
 const TitleText = styled.Text`
   font-size: ${(props) => props.size ? props.size : '15px'};
   color: ${(props) => props.color};
-  text-align: justify;
+  text-align: left;
+  margin-left: -3px;
 `
 const DescriptionText = styled.Text`
   font-size: 12px;
   color: rgb(131,131,131);
-  padding-left: 5px;
 `
 const Description = (props) => (
   <Container  description = {props.descriptionText} width = {props.width} height = {props.height} flex = {props.flex} >

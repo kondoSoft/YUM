@@ -41,6 +41,7 @@ const RightDownContainer = styled.View`
   flex-direction: row;
 `
 const RightDownContainerLeft = styled.View`
+  margin-top: 10px;
   flex: 1;
 `
 const RightDownContainerRight = styled.View`
@@ -67,6 +68,7 @@ const PreviewRestaurant = () => (
           width = '100%'
           height = '30px'
           margin = '10px'
+          flex = {2}
         />
         <IconEdit
           name = 'heart'
@@ -79,9 +81,11 @@ const PreviewRestaurant = () => (
         <RightDownContainerLeft>
           <DeliverTime
             text = '30 min. aprox'
+            color = '#FF5722'
           />
           <MinimunPrice
             text = '$120.00 mín.'
+            color = '#FF5722'
           />
         </RightDownContainerLeft>
         <RightDownContainerRight>

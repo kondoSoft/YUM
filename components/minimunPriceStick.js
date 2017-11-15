@@ -12,7 +12,7 @@ const Price = styled.Text`
   font-size: 12px;
 `
 const MinimunPrice = (props) => (
-  <MainContainer>
+  <MainContainer center = {props.center}>
     <Icon
       name = 'tag'
       color={props.color}

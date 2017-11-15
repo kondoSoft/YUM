@@ -29,18 +29,20 @@ export default class App extends React.Component {
       View: false,
       Price: '50.00',
       Total: '$50.00',
+      currentQualification: 0,
     }
     this.ChangeText = this.ChangeText.bind(this)
     this.DecrementNumber = this.DecrementNumber.bind(this)
     this.IncrementNumber = this.IncrementNumber.bind(this)
     this.HideExtras = this.HideExtras.bind(this)
+    this.ChangeStars = this.ChangeStars.bind(this)
   }
   render () {
     return (
       <Wrapper>
         {/* <Home/> */}
         {/* <Login/> */}
-        {/* <Prueba/> */}
+        <Prueba state = {this.state} action = {this.ChangeStars}/>
         {/* <DetailFood
            decrement = {this.DecrementNumber}
            state = {this.state}
@@ -120,6 +122,12 @@ export default class App extends React.Component {
     else {
       state.View = false
     }
+    this.setState(state)
+  }
+
+  ChangeStars(indice){
+    let state = this.state
+    state.currentQualification = indice
     this.setState(state)
   }
 

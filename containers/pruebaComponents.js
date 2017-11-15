@@ -5,6 +5,7 @@ import {
   Options,
   PreviewOrder,
   Add,
+  TouchableStars,
 } from '../components'
 
  const Container = styled.View`
@@ -17,7 +18,8 @@ import {
  `
  const Prueba = (props) =>(
    <Container>
-     <Add/>
+     <TouchableStars  action = {props.action} qualification = {props.state.currentQualification}/>
+     {/* <Add/> */}
      {/* <Options view = {props.view} hide = {props.hide}/> */}
      {/* <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/> */}
    </Container>

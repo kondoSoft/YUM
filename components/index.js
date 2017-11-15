@@ -14,6 +14,7 @@ import IconEdit from './iconEditable'
 import ViewHeader from './previewViewRestaurantHeader'
 import PreviewFood from './previewViewFood'
 import Selector from './rangeSelector'
+import Options from './deployOptions'
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   ViewHeader,
   PreviewFood,
   Selector,
+  Options,
 }

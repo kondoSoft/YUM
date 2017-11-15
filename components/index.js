@@ -17,6 +17,7 @@ import Selector from './rangeSelector'
 import Options from './deployOptions'
 import PreviewOrder from './orderPreview'
 import Add from './addButton'
+import TouchableStars from './touchableStars'
 export {
   Button,
   Wrapper,
@@ -37,4 +38,5 @@ export {
   Options,
   PreviewOrder,
   Add,
+  TouchableStars,
 }

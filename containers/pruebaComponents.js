@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import {
-  PreviewFood,
+  Selector,
 } from '../components'
 
  const Container = styled.View`
@@ -12,9 +12,9 @@ import {
    align-items: center;
    ${'' /* border: 2px solid black; */}
  `
- const Prueba = () =>(
+ const Prueba = (props) =>(
    <Container>
-     <PreviewFood />
+     <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/>
    </Container>
  )
 export default Prueba

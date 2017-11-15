@@ -47,7 +47,7 @@ const Options = (props) => (
         (Opcional)
       </ExtraText>
     </Label>
-    <StyledInput withOutMargin/>
+    <StyledInput />
   </MainContainer>
 )
 export default Options

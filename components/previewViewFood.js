@@ -21,7 +21,7 @@ const LeftContainer =  styled.View`
 `
 const RightContainer = styled.View`
   flex: 3;
-  justify-content: flex-start;
+  padding-left: 10px;
 `
 const PriceContainer = styled.View`
   flex: 1;
@@ -41,10 +41,9 @@ const Price = styled.Text`
         <Description
          titleColor = 'rgb(255,87,34)'
          titleText = 'Tostadas de pollo'
-         descriptionText = 'Orden de 3 con lecuga, aguacate, cebolla morada y tomate.'
+         descriptionText = 'Orden de 3 con lechuga, aguacate, cebolla morada y tomate.'
          width = '100%'
          height = '30px'
-         margin = '10px'
        />
        <PriceContainer>
           <Price>$50.00</Price>

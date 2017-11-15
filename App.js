@@ -49,10 +49,10 @@ export default class App extends React.Component {
          /> */}
         {/* <RestaurantList/> */}
         {/* <Menu/> */}
-        <Bag/>
-        {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/>
-        <Status />
-        <Button IconSide='check'/>
+        {/* <Bag/> */}
+        {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/> */}
+        {/* <Status /> */}
+        {/* <Button IconSide='check'/>
         <Button text='PAGAR ' IconSide='check'/>
         <StyledInput label='Contraseña' secure={true} type='password' />
         <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/> */}

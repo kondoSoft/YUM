@@ -31,6 +31,7 @@ const ContainerRight =  styled.View`
 `
 const ContainerRightUp =  styled.View`
   flex: 1;
+  justify-content: flex-start;
 `
 const ContainerRightDown =  styled.View`
   flex: 2;
@@ -38,8 +39,8 @@ const ContainerRightDown =  styled.View`
 const ContainerRightDownTop = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-content: space-around;
-  padding-left: 5px;
+  justify-content: space-between;
+  padding-left: 4px;
 `
 const ContainerRightDownBottom =  styled.View`
   flex: 1;

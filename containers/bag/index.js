@@ -5,8 +5,7 @@ import {
   PreviewOrder,
   Button,
   StyledInput,
-}
-from '../components'
+} from '../../components'
 const MainContainer = styled.View`
   display: flex;
   height: 100%;

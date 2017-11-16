@@ -8,7 +8,7 @@ import {
   MinimunPrice,
   DeliverTime,
 }
-from './index'
+from '../index'
 
 const MainContainer =  styled.View`
 width: 95%;
@@ -53,7 +53,7 @@ const ViewHeader = () => (
   <MainContainer>
     <ContainerLeft>
       <CircleImage
-        source = {require('../assets/img/restaurant.jpg')}
+        source = {require('../../assets/img/restaurant.jpg')}
         size = '109px'
       />
     </ContainerLeft>

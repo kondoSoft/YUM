@@ -4,7 +4,7 @@ import {
   IconEdit,
   StyledInput,
 }
-from './index'
+from '../index'
 
 const MainContainer =  styled.View`
   display: flex;

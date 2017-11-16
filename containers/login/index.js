@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import {
   StyledInput,
   Button,
-} from '../components'
+} from '../../components'
 
 const UpContainer = styled.View`
   justify-content: center;
@@ -56,8 +56,8 @@ const Logo = styled.Image`
 const Login = () => (
   <MainContainer>
     <UpContainer>
-      <Img source = {require('../assets/img/exampleBG.jpg')} />
-      <Logo source = {require('../assets/img/status_button.png')} />
+      <Img source = {require('../../assets/img/exampleBG.jpg')} />
+      <Logo source = {require('../../assets/img/status_button.png')} />
     </UpContainer>
     <CenterContainer>
       <InputContainer>

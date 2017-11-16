@@ -3,7 +3,7 @@ import React from 'react'
 import {
   Button,
   SecondaryButton,
-} from '../components'
+} from '../../components'
 const HomeContainer = styled.View`
   flex: 1;
   display: flex;
@@ -56,9 +56,9 @@ const Logo = styled.Image`
 `
 const Home = () => (
   <HomeContainer>
-    <BackgroundImage source={require('../assets/img/exampleBG.jpg')}/>
+    <BackgroundImage source={require('../../assets/img/exampleBG.jpg')}/>
     <UpContainer>
-      <Logo source={require('../assets/img/status_button.png')}/>
+      <Logo source={require('../../assets/img/status_button.png')}/>
     </UpContainer>
     <DownContainer>
       <DownSubContainerUp>

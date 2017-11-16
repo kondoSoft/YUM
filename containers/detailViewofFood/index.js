@@ -5,7 +5,7 @@ import {
   Button,
   Selector,
   Options,
-} from '../components'
+} from '../../components'
 
 const MainContainer = styled.View`
   display: flex;
@@ -81,7 +81,7 @@ const DetailFood = (props) => (
       </TopContainerUp>
       <TopContainerDown>
         <FoodImage
-          source = {require('../assets/img/restaurant.jpg')}
+          source = {require('../../assets/img/restaurant.jpg')}
         />
       </TopContainerDown>
     </TopContainer>

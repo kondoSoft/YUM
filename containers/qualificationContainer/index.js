@@ -4,12 +4,13 @@ import {
   Button,
   TouchableStars,
   StyledInput
-} from '../components'
+} from '../../components'
 import {
   Dimensions
 } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 import {counterIncrement} from '../actions'
 
 const height = Dimensions.get('window').height
@@ -78,7 +79,7 @@ class QualificationService extends Component {
   render () {
     return (
       <MainContainer height={height}>
-        <BackgroundImage source={require('../assets/img/exampleBG.jpg')} />
+        <BackgroundImage source={require('../../assets/img/exampleBG.jpg')} />
         <CenterContainer>
           <TopContainer>
             <Logo source={require('../assets/img/status_button.png')} />

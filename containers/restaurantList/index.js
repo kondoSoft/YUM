@@ -4,8 +4,7 @@ import {
   SecondaryButton,
   IconEdit,
   PreviewRestaurant,
-}
-from '../components'
+} from '../../components'
 const MainContainer =  styled.View`
   flex: 1;
 `

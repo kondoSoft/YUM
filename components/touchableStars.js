@@ -15,7 +15,7 @@ const MainContainer = styled.View`
   flex-direction: row;
   align-items: center;
 `
-const Stars = (action,qualification) => {
+const Stars = (action, qualification) => {
   var funcion = action
   var numberStars = qualification
 
@@ -24,23 +24,22 @@ const Stars = (action,qualification) => {
     let index = i
     if (numberStars < i) {
       var starsDefault = (
-      <Star onPress = {()=>funcion(index)} >
-        <Icon
-          name = 'star-o'
-          color = {'rgb(255,155,37)'}
-          size = {35}
+        <Star onPress={() => funcion(index)} >
+          <Icon
+            name='star-o'
+            color={'rgb(255,155,37)'}
+            size={35}
         />
-      </Star>
+        </Star>
       )
       array.push(starsDefault)
-    }
-    else {
-      var stars =  (
-        <Star onPress = {()=>funcion(index)} >
+    } else {
+      var stars = (
+        <Star onPress={() => funcion(index)} >
           <Icon
-            name = 'star'
-            color = {'rgb(255,155,37)'}
-            size = {35}
+            name='star'
+            color={'rgb(255,155,37)'}
+            size={35}
           />
         </Star>
       )
@@ -51,11 +50,12 @@ const Stars = (action,qualification) => {
   return (array)
 }
 
-const TouchableStars = (props) =>(
-  <MainContainer>
-    {Stars(props.action, props.qualification)}
-  </MainContainer>
-
-)
+const TouchableStars = (props) => {
+  return (
+    <MainContainer>
+      {Stars(props.action, props.qualification)}
+    </MainContainer>
+  )
+}
 
 export default TouchableStars

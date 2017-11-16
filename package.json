@@ -24,6 +24,10 @@
     "react-native": "^0.48.4",
     "react-native-fontawesome": "^5.7.0",
     "react-native-vector-icons": "^4.4.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "styled-components": "^2.2.2"
   }
 }

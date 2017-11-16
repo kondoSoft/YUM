@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
   Button,
   TouchableStars,
-  StyledInput,
+  StyledInput
 } from '../components'
+import {
+  Dimensions
+} from 'react-native'
+import { connect } from 'react-redux'
+import {addArray} from '../actions'
+
+const height = Dimensions.get('window').height
 
 const ScrollView = styled.ScrollView`
   display: flex;
@@ -15,16 +22,21 @@ const MainContainer = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  ${props => {
+    if (props.height) {
+      return `height: ${props.height}px;`
+    }
+  }}
 `
 const BackgroundImage = styled.Image`
   z-index: -1;
   width: 100%;
   height: 100%;
   position: absolute;
+  display: flex;
+  align-items: center;
 `
 const CenterContainer = styled.View`
-  margin-top: 15%;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -42,7 +54,7 @@ const BottomContainer = styled.View`
   align-items: center;
   justify-content: space-around;
 `
-const Logo = styled.Image `
+const Logo = styled.Image`
   height: 80px;
   width: 80px;
 `
@@ -61,26 +73,40 @@ const TextGray = styled.Text`
   font-size: 12px;
   margin-left: 10px;
 `
-const QualificationService = (props) =>(
-    <MainContainer>
-      <BackgroundImage source={require('../assets/img/exampleBG.jpg')}/>
-      <CenterContainer>
-        <TopContainer>
-          <Logo source = {require('../assets/img/status_button.png')} />
-          <Text> ENTREGA EXITOSA!</Text>
-          <TouchableStars  action = {props.action} qualification = {props.state.currentQualification}/>
-        </TopContainer>
-        <BottomContainer>
-          <InputContainer>
-            <TextGray>
-              Comentarios o sugerencias(Opcional)
-            </TextGray>
-            <StyledInput/>
-          </InputContainer>
-          <Button IconSide='check'/>
-        </BottomContainer>
-      </CenterContainer>
-    </MainContainer>
-)
+class QualificationService extends Component {
+  render () {
+    return (
+      <MainContainer height={height}>
+        <BackgroundImage source={require('../assets/img/exampleBG.jpg')} />
+        <CenterContainer>
+          <TopContainer>
+            <Logo source={require('../assets/img/status_button.png')} />
+            <Text> ENTREGA EXITOSA!</Text>
+            <TouchableStars action={this.props.action} qualification={this.props.state.currentQualification} />
+          </TopContainer>
+          <BottomContainer>
+            <InputContainer>
+              <TextGray>
+                  Comentarios o sugerencias(Opcional)
+                </TextGray>
+              <StyledInput />
+            </InputContainer>
+            <Button onPress={() => this.props.actionRedux} IconSide='check' />
+          </BottomContainer>
+        </CenterContainer>
+      </MainContainer>
+    )
+  }
+}
 
-export default QualificationService
+const mapStateToProps = state => ({
+  blankReducer: state
+})
+
+function bindAction (dispatch) {
+  return {
+    actionRedux: addArray
+  }
+}
+
+export default connect(mapStateToProps, bindAction)(QualificationService)

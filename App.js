@@ -6,9 +6,9 @@ import {
   SecondaryButton,
   StyledInput,
   Status,
-  SearchInput,
+  SearchInput
 } from './components'
-import{
+import {
   Home,
   Login,
   Register,
@@ -17,20 +17,35 @@ import{
   Menu,
   DetailFood,
   Bag,
-  QualificationService,
-}from './containers'
+  QualificationService
+} from './containers'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunkMiddleware from 'redux-thunk'
+import logger from 'redux-logger'
+
+import rootReducer from './reducers'
+
+const store = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(
+        thunkMiddleware,
+        logger
+    )
+)
 
 export default class App extends React.Component {
-  constructor(){
+  constructor () {
     super()
     this.state = {
-      text:'',
-      colorB:'rgb(131,131,131)',
+      text: '',
+      colorB: 'rgb(131,131,131)',
       order: '01',
       View: false,
       Price: '50.00',
       Total: '$50.00',
-      currentQualification: 0,
+      currentQualification: 0
     }
     this.ChangeText = this.ChangeText.bind(this)
     this.DecrementNumber = this.DecrementNumber.bind(this)
@@ -40,97 +55,74 @@ export default class App extends React.Component {
   }
   render () {
     return (
-      <Wrapper>
-        {/* <Home/> */}
-        {/* <Login/> */}
-        {/* <Prueba /> */}
-        <QualificationService state = {this.state} action = {this.ChangeStars} />
-        {/* <DetailFood
-           decrement = {this.DecrementNumber}
-           state = {this.state}
-           increment = {this.IncrementNumber}
-           hide = {this.HideExtras}
-         /> */}
-        {/* <RestaurantList/> */}
-        {/* <Menu/> */}
-        {/* <Bag/> */}
-        {/* <SearchInput label='Busca tu direccion' type='default' value={this.state.textSearch} change={this.ChangeText}/> */}
-        {/* <Status /> */}
-        {/* <Button IconSide='check'/>
-        <Button text='PAGAR ' IconSide='check'/>
-        <StyledInput label='Contraseña' secure={true} type='password' />
-        <StyledInput label='Correo'  secure={false} type='default' value={this.state.text} change={this.ChangeText} colorB={this.state.colorB}/> */}
-      </Wrapper>
+      <Provider store={store}>
+        <QualificationService state={this.state} action={this.ChangeStars} />
+      </Provider>
     )
   }
-  ChangeText(e){
+  ChangeText (e) {
     let state = this.state
     state.text = e
     state.colorB = 'rgb(255,87,34)'
     this.setState(state)
   }
 
-  DecrementNumber(){
+  DecrementNumber () {
     let state = this.state
     let q = state.order
-    let quantity = parseInt('10',q)
-    if (quantity <= 10  && quantity > 0) {
-        let newNumber = quantity - 1
-        let stringNumber = '0' + newNumber
-        state.order = stringNumber
-        let price = state.Price
-        let total = price *  newNumber
-        state.Total = '$' + total + '.00'
-        this.setState(state)
-    }
-    else if (quantity > 0 && quantity > 10 ){
+    let quantity = parseInt('10', q)
+    if (quantity <= 10 && quantity > 0) {
+      let newNumber = quantity - 1
+      let stringNumber = '0' + newNumber
+      state.order = stringNumber
+      let price = state.Price
+      let total = price * newNumber
+      state.Total = '$' + total + '.00'
+      this.setState(state)
+    } else if (quantity > 0 && quantity > 10) {
       let newNumber = quantity - 1
       state.order = newNumber
       let price = state.Price
-      let total = price *  newNumber
+      let total = price * newNumber
       state.Total = '$' + total + '.00'
       this.setState(state)
     }
-
   }
-  IncrementNumber(){
+  IncrementNumber () {
     let state = this.state
     let q = state.order
     let quantity = parseInt(q)
 
-    if (quantity <= 8 ) {
+    if (quantity <= 8) {
       let newNumber = quantity + 1
       let stringNumber = '0' + newNumber
       state.order = stringNumber
       let price = state.Price
-      let total = price *  newNumber
+      let total = price * newNumber
       state.Total = '$' + total + '.00'
       this.setState(state)
-    }
-    else if (quantity >= 9){
+    } else if (quantity >= 9) {
       let newNumber = quantity + 1
       state.order = newNumber
       let price = state.Price
-      let total = price *  newNumber
+      let total = price * newNumber
       state.Total = '$' + total + '.00'
       this.setState(state)
     }
   }
-  HideExtras(){
+  HideExtras () {
     let state = this.state
     if (state.View === false) {
       state.View = true
-    }
-    else {
+    } else {
       state.View = false
     }
     this.setState(state)
   }
 
-  ChangeStars(indice){
+  ChangeStars (indice) {
     let state = this.state
     state.currentQualification = indice
     this.setState(state)
   }
-
 }

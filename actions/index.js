@@ -1,6 +1,8 @@
-export const addArray = () => {
+// CONSTS
+const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
+
+export const counterIncrement = () => {
   return {
-    type: 'EXAMPLE_ACTION',
-    payload: [1, 2, 3, 4, 5]
+    type: INCREMENT_COUNTER
   }
 }

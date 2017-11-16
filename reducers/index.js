@@ -1,9 +1,9 @@
 
 import { combineReducers } from 'redux'
-import blankReducer from './example'
+import increment from './example'
 
 const rootReducer = combineReducers({
-  blankReducer
+  increment
 })
 
 export default rootReducer

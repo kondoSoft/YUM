@@ -1,16 +1,16 @@
+// CONSTS
+import {INCREMENT_COUNTER} from '../actions'
+
 const initialState = {
-  saludo: 'hello world'
+  counter: 0
 }
 
-const blankReducer = (state = initialState, action) => {
-  if (action.type === 'EXAMPLE_ACTION') {
-    return {
-      ...state,
-      newValue: action.payload
-    }
+const increment = (state = initialState, action) => {
+  if (action.type === 'INCREMENT_COUNTER') {
+    return Object.assign({}, {counter: state.counter + 1})
   } else {
     return state
   }
 }
 
-export default blankReducer
+export default increment

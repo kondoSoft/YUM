@@ -27,7 +27,7 @@ const Teext = styled.Text`
 `
 const Status = () => (
   <Container>
-    <Img source={require('../assets/img/status_button.png')} />
+    <Img source={require('../../assets/img/status_button.png')} />
     <Teext>Pedido en camino </Teext>
   </Container>
 )

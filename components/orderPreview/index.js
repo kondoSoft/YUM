@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import {
   IconEdit,
   Description,
-} from './index'
+} from '../index'
 
 const MainContainer = styled.View`
   display: flex;

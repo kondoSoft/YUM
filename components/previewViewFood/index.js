@@ -4,7 +4,7 @@ import {
   CircleImage,
   Description,
 }
-from './index'
+from '../index'
 const MainContainer = styled.TouchableOpacity`
   width: 95%;
   height: 90px;
@@ -34,7 +34,7 @@ const Price = styled.Text`
    <MainContainer>
      <LeftContainer>
        <CircleImage
-         source = {require('../assets/img/restaurant.jpg')}
+         source = {require('../../assets/img/restaurant.jpg')}
        />
      </LeftContainer>
      <RightContainer>

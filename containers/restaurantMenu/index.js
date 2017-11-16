@@ -4,8 +4,7 @@ import {
   ViewHeader,
   PreviewFood,
   IconEdit
-}
-from '../components'
+} from '../../components'
 
 const MainContainer = styled.View`
   flex: 1;

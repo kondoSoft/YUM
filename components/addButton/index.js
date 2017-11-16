@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import {IconEdit} from './index'
+import {IconEdit} from '../index'
 
 const MainContainer = styled.TouchableOpacity`
   width: 100%;

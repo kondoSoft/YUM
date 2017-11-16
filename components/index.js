@@ -1,6 +1,6 @@
 import Button from './button'
 import Wrapper from './wrapper'
-import SecondaryButton from './secondarybutton'
+import SecondaryButton from './secondaryButton'
 import StyledInput from './input'
 import Status from './statusIndicator'
 import SearchInput from './searchInput'

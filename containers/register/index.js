@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import {
   StyledInput,
   Button,
-} from '../components'
+} from '../../components'
 
 const MainContainer = styled.View`
   flex: 1;
@@ -36,8 +36,8 @@ const Logo = styled.Image `
 const Register = () => (
   <MainContainer>
     <UpContainer>
-      <Img source = {require('../assets/img/exampleBG.jpg')} />
-      <Logo source = {require('../assets/img/status_button.png')} />
+      <Img source = {require('../../assets/img/exampleBG.jpg')} />
+      <Logo source = {require('../../assets/img/status_button.png')} />
     </UpContainer>
     <CenterContainer>
       <StyledInput label = 'Nombre de usuario'/>

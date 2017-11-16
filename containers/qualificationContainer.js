@@ -8,8 +8,9 @@ import {
 import {
   Dimensions
 } from 'react-native'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {addArray} from '../actions'
+import {counterIncrement} from '../actions'
 
 const height = Dimensions.get('window').height
 
@@ -81,17 +82,17 @@ class QualificationService extends Component {
         <CenterContainer>
           <TopContainer>
             <Logo source={require('../assets/img/status_button.png')} />
-            <Text> ENTREGA EXITOSA!</Text>
+            <Text> ENTREGA EXITOSA!{this.props.counter}</Text>
             <TouchableStars action={this.props.action} qualification={this.props.state.currentQualification} />
           </TopContainer>
           <BottomContainer>
             <InputContainer>
               <TextGray>
-                  Comentarios o sugerencias(Opcional)
-                </TextGray>
+                Comentarios o sugerencias(Opcional)
+              </TextGray>
               <StyledInput />
             </InputContainer>
-            <Button onPress={() => this.props.actionRedux} IconSide='check' />
+            <Button onPress={this.props.counterIncrement} IconSide='check' />
           </BottomContainer>
         </CenterContainer>
       </MainContainer>
@@ -100,13 +101,13 @@ class QualificationService extends Component {
 }
 
 const mapStateToProps = state => ({
-  blankReducer: state
+  counter: state.increment.counter
 })
 
-function bindAction (dispatch) {
-  return {
-    actionRedux: addArray
-  }
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    counterIncrement: () => dispatch(counterIncrement())
+  })
 }
 
-export default connect(mapStateToProps, bindAction)(QualificationService)
+export default connect(mapStateToProps, mapDispatchToProps)(QualificationService)

@@ -23,12 +23,12 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
-
+import devToolsEnhancer from 'remote-redux-devtools'
 import rootReducer from './reducers'
 
 const store = createStore(
     rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    devToolsEnhancer(),
     applyMiddleware(
         thunkMiddleware,
         logger

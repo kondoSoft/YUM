@@ -18,6 +18,7 @@ import Options from './deployOptions'
 import PreviewOrder from './orderPreview'
 import Add from './addButton'
 import TouchableStars from './touchableStars'
+import MainContainer from './mainContainer'
 export {
   Button,
   Wrapper,
@@ -39,4 +40,5 @@ export {
   PreviewOrder,
   Add,
   TouchableStars,
+  MainContainer,
 }

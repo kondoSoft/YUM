@@ -25,6 +25,7 @@ import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 import devToolsEnhancer from 'remote-redux-devtools'
 import rootReducer from './reducers'
+import {StackApp} from './routes'
 
 const store = createStore(
     rootReducer,
@@ -56,7 +57,7 @@ export default class App extends React.Component {
   render () {
     return (
       <Provider store={store}>
-        <QualificationService state={this.state} action={this.ChangeStars} />
+        <StackApp />
       </Provider>
     )
   }

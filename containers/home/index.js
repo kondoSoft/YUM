@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import React from 'react'
 import {
   Button,
-  SecondaryButton,
+  SecondaryButton
 } from '../../components'
 const HomeContainer = styled.View`
   flex: 1;
@@ -56,22 +56,22 @@ const Logo = styled.Image`
 `
 const Home = () => (
   <HomeContainer>
-    <BackgroundImage source={require('../../assets/img/exampleBG.jpg')}/>
+    <BackgroundImage source={require('../../assets/img/exampleBG.jpg')} />
     <UpContainer>
-      <Logo source={require('../../assets/img/status_button.png')}/>
+      <Logo source={require('../../assets/img/status_button.png')} />
     </UpContainer>
     <DownContainer>
       <DownSubContainerUp>
-        <Button text='COMIENZA AHORA'/>
+        <Button text='COMIENZA AHORA' />
       </DownSubContainerUp>
       <DownSubContainerDown>
         <LeftContainer>
           <WhiteText>Ya tienes cuenta?</WhiteText>
-          <SecondaryButton text='INICIA SESIÓN' acolor='#fff'/>
+          <SecondaryButton text='INICIA SESIÓN' acolor='#fff' />
         </LeftContainer>
         <RightContainer>
           <WhiteText>Inicia con</WhiteText>
-          <SecondaryButton text='FACEBOOK' Icon='facebook' acolor='#fff'/>
+          <SecondaryButton text='FACEBOOK' Icon='facebook' acolor='#fff' />
         </RightContainer>
       </DownSubContainerDown>
     </DownContainer>

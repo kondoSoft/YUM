@@ -48,15 +48,11 @@ export default class App extends React.Component {
       currentQualification: 0
     }
     this.ChangeText = this.ChangeText.bind(this)
-    this.DecrementNumber = this.DecrementNumber.bind(this)
-    this.IncrementNumber = this.IncrementNumber.bind(this)
-    this.HideExtras = this.HideExtras.bind(this)
-    this.ChangeStars = this.ChangeStars.bind(this)
   }
   render () {
     return (
       <Provider store={store}>
-        <QualificationService state={this.state} action={this.ChangeStars} />
+        <QualificationService/>
       </Provider>
     )
   }
@@ -67,62 +63,4 @@ export default class App extends React.Component {
     this.setState(state)
   }
 
-  DecrementNumber () {
-    let state = this.state
-    let q = state.order
-    let quantity = parseInt('10', q)
-    if (quantity <= 10 && quantity > 0) {
-      let newNumber = quantity - 1
-      let stringNumber = '0' + newNumber
-      state.order = stringNumber
-      let price = state.Price
-      let total = price * newNumber
-      state.Total = '$' + total + '.00'
-      this.setState(state)
-    } else if (quantity > 0 && quantity > 10) {
-      let newNumber = quantity - 1
-      state.order = newNumber
-      let price = state.Price
-      let total = price * newNumber
-      state.Total = '$' + total + '.00'
-      this.setState(state)
-    }
-  }
-  IncrementNumber () {
-    let state = this.state
-    let q = state.order
-    let quantity = parseInt(q)
-
-    if (quantity <= 8) {
-      let newNumber = quantity + 1
-      let stringNumber = '0' + newNumber
-      state.order = stringNumber
-      let price = state.Price
-      let total = price * newNumber
-      state.Total = '$' + total + '.00'
-      this.setState(state)
-    } else if (quantity >= 9) {
-      let newNumber = quantity + 1
-      state.order = newNumber
-      let price = state.Price
-      let total = price * newNumber
-      state.Total = '$' + total + '.00'
-      this.setState(state)
-    }
-  }
-  HideExtras () {
-    let state = this.state
-    if (state.View === false) {
-      state.View = true
-    } else {
-      state.View = false
-    }
-    this.setState(state)
-  }
-
-  ChangeStars (indice) {
-    let state = this.state
-    state.currentQualification = indice
-    this.setState(state)
-  }
 }

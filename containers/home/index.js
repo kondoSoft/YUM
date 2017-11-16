@@ -1,7 +1,7 @@
 import React , {Component} from 'react'
 import {
   Button,
-  SecondaryButton,
+  SecondaryButton
 } from '../../components'
 import {
   HomeContainer,
@@ -15,6 +15,7 @@ import {
   WhiteText,
   Logo,
 } from '../../components/homeComponents'
+
 class Home extends Component{
   render() {
     return(
@@ -42,5 +43,4 @@ class Home extends Component{
     )
   }
 }
-
 export default Home

@@ -11,7 +11,7 @@ import {
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import {counterIncrement} from '../actions'
+import {counterIncrement} from '../../actions'
 
 const height = Dimensions.get('window').height
 
@@ -82,7 +82,7 @@ class QualificationService extends Component {
         <BackgroundImage source={require('../../assets/img/exampleBG.jpg')} />
         <CenterContainer>
           <TopContainer>
-            <Logo source={require('../assets/img/status_button.png')} />
+            <Logo source={require('../../assets/img/status_button.png')} />
             <Text> ENTREGA EXITOSA!{this.props.counter}</Text>
             <TouchableStars action={this.props.action} qualification={this.props.state.currentQualification} />
           </TopContainer>

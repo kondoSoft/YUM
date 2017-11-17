@@ -7,14 +7,25 @@ import {
   Menu,
   DetailFood,
   Bag,
-  QualificationService
+  QualificationService,
+  Pay
 } from '../containers'
-
+import {
+  Animated,
+  Easing
+} from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: {screen: Home},
+  Home: { screen: Pay },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}
-})
+},
+  {
+    mode: 'modal',
+    navigationOptions: {
+      gesturesEnabled: false
+    }
+  }
+)

@@ -50,7 +50,7 @@ const Logo = styled.Image`
   width: 120px;
   height: 120px;
 `
-export{
+export {
   HomeContainer,
   BackgroundImage,
   UpContainer,
@@ -60,5 +60,5 @@ export{
   LeftContainer,
   RightContainer,
   WhiteText,
-  Logo,
+  Logo
 }

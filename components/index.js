@@ -19,6 +19,7 @@ import PreviewOrder from './orderPreview'
 import Add from './addButton'
 import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
+import {ScreenContainer} from './pay'
 export {
   Button,
   Wrapper,
@@ -41,4 +42,5 @@ export {
   Add,
   TouchableStars,
   MainContainer,
+  ScreenContainer
 }

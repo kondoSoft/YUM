@@ -10,6 +10,8 @@ import QualificationService from './qualificationContainer'
 import Pay from './pay'
 import UserDetails from './userDetails'
 import EditUser from './editUser'
+import RestaurantView from './restaurantView'
+import Historial from './historialContainer'
 export {
   Home,
   Login,
@@ -22,5 +24,9 @@ export {
   QualificationService,
   Pay,
   UserDetails,
-  EditUser
+  EditUser,
+  RestaurantView,
+  Historial,
+  UserDetails,
+  RestaurantView
 }

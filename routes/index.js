@@ -9,8 +9,11 @@ import {
   Bag,
   QualificationService,
   Pay,
+  EditUser,
+  RestaurantView,
+  Historial,
   UserDetails,
-  EditUser
+  RestaurantView
 } from '../containers'
 import { StackNavigator } from 'react-navigation'
 

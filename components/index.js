@@ -19,6 +19,8 @@ import PreviewOrder from './orderPreview'
 import Add from './addButton'
 import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
+import ViewHistorial from './historialView'
+import Scroll from './scroll'
 import {
   EditUserInfo,
   EditForm,
@@ -73,6 +75,8 @@ export {
   TouchableStars,
   MainContainer,
   ScreenContainer,
+  ViewHistorial,
+  Scroll,
   Total,
   TotalText,
   Label,

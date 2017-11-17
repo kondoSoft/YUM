@@ -6,5 +6,6 @@ const MainContainer = styled.View`
   height: 100%;
   width: 100%;
   padding: ${(props) => props.padding ? props.padding + 'px' : '0'};
+  background-color: #fff;
 `
 export default MainContainer

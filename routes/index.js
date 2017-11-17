@@ -9,6 +9,8 @@ import {
   Bag,
   QualificationService,
   Pay,
+  RestaurantView,
+  Historial,
   UserDetails,
   RestaurantView
 } from '../containers'
@@ -19,7 +21,7 @@ import {
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: RestaurantView },
+  Home: { screen: Historial },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

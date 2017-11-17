@@ -9,6 +9,7 @@ import Bag from './bag'
 import QualificationService from './qualificationContainer'
 import Pay from './pay'
 import UserDetails from './userDetails'
+import EditUser from './editUser'
 export {
   Home,
   Login,
@@ -20,5 +21,6 @@ export {
   Bag,
   QualificationService,
   Pay,
-  UserDetails
+  UserDetails,
+  EditUser
 }

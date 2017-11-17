@@ -20,6 +20,13 @@ import Add from './addButton'
 import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
 import {
+  EditUserInfo,
+  EditForm,
+  EditLabel,
+  EditInput,
+  SaveButton
+} from './editUser'
+import {
   ScreenContainer,
   Total,
   TotalText,
@@ -84,5 +91,10 @@ export {
   Method,
   MethodTitle,
   MethodInfo,
-  MethodText
+  MethodText,
+  EditUserInfo,
+  EditForm,
+  EditLabel,
+  EditInput,
+  SaveButton
 }

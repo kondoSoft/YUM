@@ -9,16 +9,13 @@ import {
   Bag,
   QualificationService,
   Pay,
-  UserDetails
+  UserDetails,
+  EditUser
 } from '../containers'
-import {
-  Animated,
-  Easing
-} from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: UserDetails },
+  Home: { screen: EditUser },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

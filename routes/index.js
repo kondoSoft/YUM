@@ -8,7 +8,8 @@ import {
   DetailFood,
   Bag,
   QualificationService,
-  Pay
+  Pay,
+  RestaurantView,
 } from '../containers'
 import {
   Animated,
@@ -17,7 +18,7 @@ import {
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: Pay },
+  Home: { screen: RestaurantView },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

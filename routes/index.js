@@ -9,7 +9,8 @@ import {
   Bag,
   QualificationService,
   Pay,
-  RestaurantView,
+  UserDetails,
+  RestaurantView
 } from '../containers'
 import {
   Animated,

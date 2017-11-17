@@ -8,6 +8,7 @@ import DetailFood from './detailViewofFood'
 import Bag from './bag'
 import QualificationService from './qualificationContainer'
 import Pay from './pay'
+import UserDetails from './userDetails'
 import RestaurantView from './restaurantView'
 export {
   Home,
@@ -20,5 +21,6 @@ export {
   Bag,
   QualificationService,
   Pay,
-  RestaurantView,
+  UserDetails,
+  RestaurantView
 }

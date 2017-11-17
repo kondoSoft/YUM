@@ -19,7 +19,30 @@ import PreviewOrder from './orderPreview'
 import Add from './addButton'
 import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
-import {ScreenContainer} from './pay'
+import {
+  ScreenContainer,
+  Total,
+  TotalText,
+  OptionPayment,
+  Label,
+  Input,
+  CardDetails,
+  CardNumberContainer,
+  Detail,
+  PayButton,
+  PaymentButton
+} from './pay'
+import {
+  AvatarName,
+  UserInfo,
+  Info,
+  InfoText,
+  PayMethod,
+  Method,
+  MethodTitle,
+  MethodInfo,
+  MethodText
+} from './userDetails'
 export {
   Button,
   Wrapper,
@@ -42,5 +65,24 @@ export {
   Add,
   TouchableStars,
   MainContainer,
-  ScreenContainer
+  ScreenContainer,
+  Total,
+  TotalText,
+  Label,
+  Input,
+  CardDetails,
+  CardNumberContainer,
+  Detail,
+  OptionPayment,
+  PayButton,
+  PaymentButton,
+  AvatarName,
+  UserInfo,
+  Info,
+  InfoText,
+  PayMethod,
+  Method,
+  MethodTitle,
+  MethodInfo,
+  MethodText
 }

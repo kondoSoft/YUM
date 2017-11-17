@@ -9,19 +9,16 @@ import {
   Bag,
   QualificationService,
   Pay,
+  EditUser,
   RestaurantView,
   Historial,
   UserDetails,
   RestaurantView
 } from '../containers'
-import {
-  Animated,
-  Easing
-} from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: Historial },
+  Home: { screen: EditUser },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

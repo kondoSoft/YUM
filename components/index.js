@@ -22,6 +22,13 @@ import MainContainer from './mainContainer'
 import ViewHistorial from './historialView'
 import Scroll from './scroll'
 import {
+  EditUserInfo,
+  EditForm,
+  EditLabel,
+  EditInput,
+  SaveButton
+} from './editUser'
+import {
   ScreenContainer,
   Total,
   TotalText,
@@ -88,5 +95,10 @@ export {
   Method,
   MethodTitle,
   MethodInfo,
-  MethodText
+  MethodText,
+  EditUserInfo,
+  EditForm,
+  EditLabel,
+  EditInput,
+  SaveButton
 }

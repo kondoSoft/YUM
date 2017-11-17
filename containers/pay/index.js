@@ -4,10 +4,12 @@ import {
     Animated,
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Picker
 } from 'react-native'
 import {
-  ScreenContainer
+  ScreenContainer,
+  Button
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
@@ -35,7 +37,7 @@ const OptionPayment = styled.View`
   padding: 15px 0px;
 `
 const Label = styled.Text`
-  font-size: 14px;
+  font-size: ${props => props.size ? props.size : '14px'};
 `
 const PaymentButton = styled.TouchableOpacity`
   width: 100%;
@@ -47,6 +49,32 @@ const PaymentButton = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`
+const CardNumberContainer = styled.View`
+  width: 90%;
+`
+const CardDetails = styled.View`
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 20px;
+`
+const Detail = styled.View`
+  width: 45%;
+`
+const Input = styled.TextInput`
+  margin-top: 10px;
+  width: 100%;
+  border-bottom-width: 2px;
+  border-color: #CACBCA;
+  padding: 10px 15px 5px 15px;
+`
+const PayButton = styled.View`
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
 `
 
 const height = Dimensions.get('window').height
@@ -60,10 +88,17 @@ class ModalPayment extends Component {
       height: 0
     }
     this.showPickerModal = this.showPickerModal.bind(this)
+    this.closePicker = this.closePicker.bind(this)
   }
   showPickerModal () {
     Animated.spring(this.state.animated, {
       toValue: 0,
+      duration: 500
+    }).start()
+  }
+  closePicker () {
+    Animated.spring(this.state.animated, {
+      toValue: -300,
       duration: 500
     }).start()
   }
@@ -72,15 +107,20 @@ class ModalPayment extends Component {
       <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: 'red', height: 300, width: '100%', zIndex: 3}}>
         <View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.closePicker}>
               <Text>buttons</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.closePicker}>
               <Text>buttons</Text>
             </TouchableOpacity>
           </View>
           <View>
-            <Text>Hello picker</Text>
+            <Picker
+              selectedValue={this.state.language}
+              onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+              <Picker.Item label='Java' value='java' />
+              <Picker.Item label='JavaScript' value='js' />
+            </Picker>
           </View>
         </View>
       </Animated.View>
@@ -99,7 +139,6 @@ export default class Pay extends Component {
   render () {
     return (
       <ScreenContainer height={height} width={width}>
-        <ModalPayment ref={ref => this._modalPicker = ref} />
         <Total>
           <TotalText>TOTAL</TotalText>
           <TotalText>$255.00</TotalText>
@@ -111,6 +150,24 @@ export default class Pay extends Component {
             <Icon name='caret-down' color={'rgb(255,155,37)'} size={20} />
           </PaymentButton>
         </OptionPayment>
+        <CardNumberContainer>
+          <Label size={12}>Número de tarjeta</Label>
+          <Input secureTextEntry placeholder='**** **** **** ****' />
+        </CardNumberContainer>
+        <CardDetails>
+          <Detail>
+            <Label size={12}>Fecha de vencimiento</Label>
+            <Input />
+          </Detail>
+          <Detail>
+            <Label size={12}>Código de seguridad <Icon name='credit-card' color={'#CACBCA'} size={20} /></Label>
+            <Input />
+          </Detail>
+        </CardDetails>
+        <PayButton>
+          <Button text='PAGAR' IconSide='check' />
+        </PayButton>
+        { <ModalPayment ref={ref => this._modalPicker = ref} /> }
       </ScreenContainer>
     )
   }

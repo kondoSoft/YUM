@@ -10,4 +10,5 @@ export const ScreenContainer = styled.View`
       }
     }}
     align-items: center;
+    background-color: #FEFFFE;
 `

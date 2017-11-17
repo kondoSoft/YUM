@@ -3,7 +3,7 @@ import React from 'react'
 import IconEdit from '../iconEditable'
 
 const MainContainer = styled.View`
-  width: 100%;
+  width: 95%;
   height: 90px;
   display: flex;
   flex-direction: row;
@@ -12,6 +12,8 @@ const MainContainer = styled.View`
   border-bottom-color: #757575;
   border-bottom-width: 1px;
   padding-bottom: 10px;
+  margin: 20px 10px 0 10px;
+  justify-content: center;
 
 `
 const LeftContainer = styled.View`
@@ -56,7 +58,7 @@ const IconContainer = styled.View`
   flex: 1;
   border: 1px solid #ff5722;
   border-radius: 1000px;
-  margin: 2px 1px;
+  margin: 3px 1px;
 `
 const ViewHistorial = () => (
   <MainContainer>

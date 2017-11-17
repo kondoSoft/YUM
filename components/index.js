@@ -21,6 +21,7 @@ import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
 import {ScreenContainer} from './pay'
 import ViewHistorial from './historialView'
+import Scroll from './scroll'
 export {
   Button,
   Wrapper,
@@ -45,4 +46,5 @@ export {
   MainContainer,
   ScreenContainer,
   ViewHistorial,
+  Scroll,
 }

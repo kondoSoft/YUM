@@ -9,6 +9,7 @@ import Bag from './bag'
 import QualificationService from './qualificationContainer'
 import Pay from './pay'
 import RestaurantView from './restaurantView'
+import Historial from './historialContainer'
 export {
   Home,
   Login,
@@ -21,4 +22,5 @@ export {
   QualificationService,
   Pay,
   RestaurantView,
+  Historial,
 }

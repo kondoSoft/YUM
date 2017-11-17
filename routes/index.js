@@ -11,6 +11,8 @@ import {
   Pay,
   RestaurantView,
   Historial,
+  UserDetails,
+  RestaurantView
 } from '../containers'
 import {
   Animated,

@@ -20,6 +20,7 @@ import Add from './addButton'
 import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
 import {ScreenContainer} from './pay'
+import ViewHistorial from './historialView'
 export {
   Button,
   Wrapper,
@@ -42,5 +43,6 @@ export {
   Add,
   TouchableStars,
   MainContainer,
-  ScreenContainer
+  ScreenContainer,
+  ViewHistorial,
 }

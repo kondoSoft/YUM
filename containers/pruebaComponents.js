@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import {
-  Selector,
-  Options,
-  PreviewOrder,
-  Add,
-  TouchableStars,
+  ViewHistorial,
 } from '../components'
 
  const Container = styled.View`
@@ -14,14 +10,11 @@ import {
    display: flex;
    justify-content: center;
    align-items: center;
-   ${'' /* border: 2px solid black; */}
+   background-color: #fff;
  `
  const Prueba = (props) =>(
    <Container>
-     <TouchableStars  action = {props.action} qualification = {props.state.currentQualification}/>
-     {/* <Add/> */}
-     {/* <Options view = {props.view} hide = {props.hide}/> */}
-     {/* <Selector decrement = {props.decrement} order = {props.state.order}  increment = {props.increment}/> */}
+     <ViewHistorial/>
    </Container>
  )
 export default Prueba

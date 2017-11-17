@@ -12,8 +12,7 @@ import {
   EditUser,
   RestaurantView,
   Historial,
-  UserDetails,
-  RestaurantView
+  UserDetails
 } from '../containers'
 import { StackNavigator } from 'react-navigation'
 

@@ -25,8 +25,6 @@ export {
   Pay,
   UserDetails,
   EditUser,
-  RestaurantView,
   Historial,
-  UserDetails,
   RestaurantView
 }

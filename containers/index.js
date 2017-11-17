@@ -7,7 +7,7 @@ import Menu from './restaurantMenu'
 import DetailFood from './detailViewofFood'
 import Bag from './bag'
 import QualificationService from './qualificationContainer'
-
+import Pay from './pay'
 export {
   Home,
   Login,
@@ -17,5 +17,6 @@ export {
   Menu,
   DetailFood,
   Bag,
-  QualificationService
+  QualificationService,
+  Pay
 }

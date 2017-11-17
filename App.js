@@ -52,7 +52,7 @@ export default class App extends React.Component {
   }
   render () {
     return (
-      <Provider store={store}>
+      <Provider style={{backgroundColor: 'steeblue'}} store={store}>
         <StackApp />
       </Provider>
     )
@@ -63,5 +63,4 @@ export default class App extends React.Component {
     state.colorB = 'rgb(255,87,34)'
     this.setState(state)
   }
-
 }

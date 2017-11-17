@@ -9,73 +9,20 @@ import {
 } from 'react-native'
 import {
   ScreenContainer,
-  Button
+  Button,
+  Total,
+  TotalText,
+  OptionPayment,
+  Label,
+  CardNumberContainer,
+  Input,
+  CardDetails,
+  Detail,
+  PayButton,
+  PaymentButton
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
-
-const Total = styled.View`
-  width: 90%;
-  padding: 15px 0px;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom-width: 2px;
-  border-color: #FA5900;
-`
-const TotalText = styled.Text`
-  font-size: ${props => props.size ? props.size : '18px'};
-  ${props => {
-    if (props.fontWeight) {
-      return `font-weight: 800;`
-    }
-  }}
-`
-
-const OptionPayment = styled.View`
-  margin-top: 20px;
-  width: 90%;
-  padding: 15px 0px;
-`
-const Label = styled.Text`
-  font-size: ${props => props.size ? props.size : '14px'};
-`
-const PaymentButton = styled.TouchableOpacity`
-  width: 100%;
-  border-radius: 10;
-  border-width: 2px;
-  border-color: #FA5900;
-  padding: 10px 15px;
-  margin-top: 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`
-const CardNumberContainer = styled.View`
-  width: 90%;
-`
-const CardDetails = styled.View`
-  width: 90%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 20px;
-`
-const Detail = styled.View`
-  width: 45%;
-`
-const Input = styled.TextInput`
-  margin-top: 10px;
-  width: 100%;
-  border-bottom-width: 2px;
-  border-color: #CACBCA;
-  padding: 10px 15px 5px 15px;
-`
-const PayButton = styled.View`
-  width: 100%;
-  flex: 1;
-  align-items: center;
-  justify-content: space-around;
-`
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width

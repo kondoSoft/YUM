@@ -5,7 +5,7 @@ export const ScreenContainer = styled.View`
       if (props.height && props.width) {
         return `
               width: ${props.width}px;
-              height: ${props.height}px;
+              height: ${props.height};
             `
       }
     }}

@@ -23,9 +23,9 @@ class Login extends Component {
     return (
       <MainContainer>
         <StatusBar
-          backgroundColor='blue'
-          barStyle='light-content'
-          animated
+          backgroundColor="#ff5722"
+          barStyle="light-content"
+          setTranslucent = {true}
         />
         <UpContainer>
           <Img source = {require('../../assets/img/login_backg.png')} />
@@ -45,7 +45,7 @@ class Login extends Component {
           </InputContainer>
         </CenterContainer>
         <DownContainer>
-          <Button text = 'ACEPTAR' onPress={() => navigate('Restaurants')}/>
+          <Button text = 'ACEPTAR' onPress={() => navigate('Map')}/>
         </DownContainer>
       </MainContainer>
     )

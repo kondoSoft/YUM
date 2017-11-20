@@ -10,7 +10,7 @@ import {
 }
 from '../index'
 
-const MainContainer =  styled.View`
+const MainContainer =  styled.TouchableOpacity`
 width: 95%;
 height: 100%;
 display: flex;

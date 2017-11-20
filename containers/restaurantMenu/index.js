@@ -21,7 +21,7 @@ class Menu extends Component {
     return (
       <MainContainer>
         <ContainerTop>
-          <ContainerTopUp>
+          {/* <ContainerTopUp>
             <ContainerTopleft></ContainerTopleft>
             <ContainerTopRight>
               <IconEdit
@@ -33,7 +33,7 @@ class Menu extends Component {
                 size = {25}
               />
             </ContainerTopRight>
-          </ContainerTopUp>
+          </ContainerTopUp> */}
           <ContainerTopDown>
             <ViewHeader/>
           </ContainerTopDown>

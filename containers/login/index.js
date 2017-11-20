@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import {
+  StatusBar
+} from 'react-native'
+import {
   StyledInput,
   Button,
   MainContainer,
@@ -16,8 +19,14 @@ import {
 } from '../../components/loginComponents'
 class Login extends Component {
   render(){
+    const {navigate} = this.props.navigation
     return (
       <MainContainer>
+        <StatusBar
+          backgroundColor='blue'
+          barStyle='light-content'
+          animated
+        />
         <UpContainer>
           <Img source = {require('../../assets/img/login_backg.png')} />
         </UpContainer>
@@ -36,7 +45,7 @@ class Login extends Component {
           </InputContainer>
         </CenterContainer>
         <DownContainer>
-          <Button text = 'ACEPTAR'/>
+          <Button text = 'ACEPTAR' onPress={() => navigate('Restaurants')}/>
         </DownContainer>
       </MainContainer>
     )

@@ -17,7 +17,7 @@ const ContainerTopUp = styled.View`
 const ContainerTopDown = styled.View`
   display: flex;
   justify-content: flex-end;
-  height: 70%;
+  height: 100%;
 `
 const ContainerTopleft = styled.View`
   flex: 1;
@@ -28,7 +28,7 @@ const ContainerTopRight = styled.View`
   align-items: flex-end;
 `
 const ContainerBottom = styled.ScrollView`
-  flex: 4;
+  flex: 6;
 `
 const ScrollContent = styled.View`
   flex: 1;

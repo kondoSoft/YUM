@@ -9,9 +9,18 @@ import {
   IconEdit,
 } from '../index'
 
-const MainContainer = styled.TouchableOpacity`
+const Content = styled.View`
   width: 95%;
   height: 120px;
+`
+
+const Action = styled.TouchableWithoutFeedback`
+  height: 100%;
+  width: 100%;
+`
+const MainContainer = styled.View`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   border-style: solid;
@@ -53,49 +62,53 @@ const RightDownContainerLeftDown = styled.View`
   flex: 1;
 `
 const PreviewRestaurant = () => (
-  <MainContainer>
-    <LeftContainer>
-      <CircleImage
-        source = {require('../../assets/img/restaurant.jpg')}
-      />
-    </LeftContainer>
-    <RightContainer>
-      <RightUpContainer>
-        <Description
-          titleColor = 'rgb(255,138,2)'
-          titleText = 'Los Danzantes'
-          descriptionText = 'Comida Mexicana,bar.'
-          width = '100%'
-          height = '30px'
-          margin = '10px'
-          flex = {2}
-        />
-        <IconEdit
-          name = 'heart'
-          justify = 'flex-end'
-          align = 'flex-start'
-          size = {20}
-        />
-      </RightUpContainer>
-      <RightDownContainer>
-        <RightDownContainerLeft>
-          <DeliverTime
-            text = '30 min. aprox'
-            color = '#FF5722'
+  <Content>
+    <Action>
+      <MainContainer>
+        <LeftContainer>
+          <CircleImage
+            source = {require('../../assets/img/restaurant.jpg')}
           />
-          <MinimunPrice
-            text = '$120.00 mín.'
-            color = '#FF5722'
-          />
-        </RightDownContainerLeft>
-        <RightDownContainerRight>
-          <StarIcon
-            single
-            qualification = '3.5'
-          />
-        </RightDownContainerRight>
-      </RightDownContainer>
-    </RightContainer>
-  </MainContainer>
+        </LeftContainer>
+        <RightContainer>
+          <RightUpContainer>
+            <Description
+              titleColor = 'rgb(255,138,2)'
+              titleText = 'Los Danzantes'
+              descriptionText = 'Comida Mexicana,bar.'
+              width = '100%'
+              height = '30px'
+              margin = '10px'
+              flex = {2}
+            />
+            <IconEdit
+              name = 'heart'
+              justify = 'flex-end'
+              align = 'flex-start'
+              size = {20}
+            />
+          </RightUpContainer>
+          <RightDownContainer>
+            <RightDownContainerLeft>
+              <DeliverTime
+                text = '30 min. aprox'
+                color = '#FF5722'
+              />
+              <MinimunPrice
+                text = '$120.00 mín.'
+                color = '#FF5722'
+              />
+            </RightDownContainerLeft>
+            <RightDownContainerRight>
+              <StarIcon
+                single
+                qualification = '3.5'
+              />
+            </RightDownContainerRight>
+          </RightDownContainer>
+        </RightContainer>
+      </MainContainer>
+    </Action>
+  </Content>
 )
 export default PreviewRestaurant

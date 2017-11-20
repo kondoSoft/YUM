@@ -18,7 +18,7 @@ import {
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: Favorites },
+  Home: { screen: RestaurantList },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

@@ -18,6 +18,7 @@ import {
 
 class Menu extends Component {
   render(){
+    const {navigate} = this.props.navigation
     return (
       <MainContainer>
         <ContainerTop>
@@ -35,7 +36,7 @@ class Menu extends Component {
             </ContainerTopRight>
           </ContainerTopUp> */}
           <ContainerTopDown>
-            <ViewHeader/>
+            <ViewHeader onPress={() => navigate('Restaurant')}/>
           </ContainerTopDown>
           </ContainerTop>
         <ContainerBottom>

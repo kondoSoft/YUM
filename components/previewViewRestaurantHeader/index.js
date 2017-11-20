@@ -49,8 +49,8 @@ const ContainerRightDownBottom =  styled.View`
   justify-content: space-between;
   padding-left: 5px;
 `
-const ViewHeader = () => (
-  <MainContainer>
+const ViewHeader = (props) => (
+  <MainContainer onPress={props.onPress} >
     <ContainerLeft>
       <CircleImage
         source = {require('../../assets/img/restaurant.jpg')}

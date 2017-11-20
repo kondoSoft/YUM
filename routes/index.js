@@ -14,6 +14,7 @@ import {
   Historial,
   UserDetails,
   Favorites,
+  StatusScreen
 } from '../containers'
 import { StackNavigator } from 'react-navigation'
 

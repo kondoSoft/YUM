@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import React from 'react'
 
-const Container =  styled.View`
+const Container = styled.View`
   width: 95%;
   padding: 5px;
   background-color: transparent;
@@ -15,10 +15,10 @@ const Container =  styled.View`
   flex-direction: row;
 `
 const Img = styled.Image`
-  border-radius: 100;
+  border-radius: 60;
   border-color: rgb(255,87,34);
-  width: 50;
-  height: 50;
+  width: 30;
+  height: 30;
 `
 const Teext = styled.Text`
   color: rgb(255,87,34);;

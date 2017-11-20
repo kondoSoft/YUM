@@ -52,6 +52,21 @@ import {
   MethodInfo,
   MethodText
 } from './userDetails'
+import {
+  ArrowDown,
+  RestaurantInfo,
+  MotorcycleInfo,
+  Image,
+  RestaurantData,
+  MotorcycleData,
+  PhoneMessage,
+  Motorcycle,
+  Hr,
+  StatusContainer,
+  StatusCheck,
+  Check,
+  TextStatus
+} from './status'
 export {
   Button,
   Wrapper,
@@ -100,5 +115,18 @@ export {
   EditForm,
   EditLabel,
   EditInput,
-  SaveButton
+  SaveButton,
+  ArrowDown,
+  RestaurantInfo,
+  MotorcycleInfo,
+  Image,
+  RestaurantData,
+  MotorcycleData,
+  PhoneMessage,
+  Motorcycle,
+  Hr,
+  StatusContainer,
+  StatusCheck,
+  Check,
+  TextStatus
 }

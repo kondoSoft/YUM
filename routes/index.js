@@ -13,6 +13,8 @@ import {
   RestaurantView,
   Historial,
   UserDetails,
+  StatusScreen,
+  SearchMap,
   Favorites,
   StatusScreen
 } from '../containers'

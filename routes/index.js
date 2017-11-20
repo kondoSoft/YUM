@@ -14,12 +14,14 @@ import {
   Historial,
   UserDetails,
   StatusScreen,
-  SearchMap
+  SearchMap,
+  Favorites,
+  StatusScreen
 } from '../containers'
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: SearchMap },
+  Home: { screen: RestaurantList },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

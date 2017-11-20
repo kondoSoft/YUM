@@ -30,7 +30,6 @@ export {
   EditUser,
   Historial,
   RestaurantView,
-  StatusScreen,
   SearchMap,
   Favorites,
   StatusScreen

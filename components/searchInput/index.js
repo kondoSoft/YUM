@@ -25,18 +25,18 @@ const SearchText = styled.TextInput`
   flex: 5;
   padding-left: 4px;
 `
-const SearchInput = (props) =>(
-  <Container>
+const SearchInput = (props) => (
+  <Container style={props.style}>
     <SearchText
-      value = {props.text}
-      onChangeText = {(text) => props.change(text)}
-      placeholder = {props.label}
+      value={props.text}
+      onChangeText={(text) => props.change(text)}
+      placeholder={props.placeholder}
     />
     <Iconcontainer>
       <Icon
         name='search'
         color={'rgb(255,87,34)'}
-        size={28}/>
+        size={28} />
     </Iconcontainer>
   </Container>
 

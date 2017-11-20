@@ -13,6 +13,7 @@ import EditUser from './editUser'
 import RestaurantView from './restaurantView'
 import Historial from './historialContainer'
 import StatusScreen from './Status'
+import SearchMap from './searchMap'
 export {
   Home,
   Login,
@@ -28,5 +29,6 @@ export {
   EditUser,
   Historial,
   RestaurantView,
-  StatusScreen
+  StatusScreen,
+  SearchMap
 }

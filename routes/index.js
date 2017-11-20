@@ -13,12 +13,13 @@ import {
   RestaurantView,
   Historial,
   UserDetails,
-  StatusScreen
+  StatusScreen,
+  SearchMap
 } from '../containers'
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: StatusScreen },
+  Home: { screen: SearchMap },
   Login: {screen: Login},
   Register: {screen: Register},
   Restaurant: {screen: RestaurantList}

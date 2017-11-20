@@ -34,7 +34,7 @@ const IconSidecontainer = styled.View`
   flex: ${(props) => props.text ? '' : 4}
 `
 const Button = (props) => (
-  <Container onPress={props.onPress} Icon={props.Icon} >
+  <Container style={props.style} onPress={props.onPress} Icon={props.Icon} >
     <Iconcontainer Icon={props.Icon}>
       <Icon
         name={props.Icon} color={'#fff'} size={28} />

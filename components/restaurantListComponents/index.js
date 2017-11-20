@@ -1,11 +1,10 @@
 import styled from 'styled-components/native'
 
 const TopContainer =  styled.View`
-  margin-top: 10px;
   flex: 1;
 `
 const BottomContainer =  styled.ScrollView`
-  flex:  4;
+  flex:  8;
 `
 const ScrollContent =  styled.View`
   flex: 1;

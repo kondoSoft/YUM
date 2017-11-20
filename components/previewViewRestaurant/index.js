@@ -61,9 +61,9 @@ const RightDownContainerRight = styled.View`
 const RightDownContainerLeftDown = styled.View`
   flex: 1;
 `
-const PreviewRestaurant = () => (
+const PreviewRestaurant = (props) => (
   <Content>
-    <Action>
+    <Action onPress={props.onPress}  >
       <MainContainer>
         <LeftContainer>
           <CircleImage

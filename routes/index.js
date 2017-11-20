@@ -20,10 +20,11 @@ import {
 import { StackNavigator } from 'react-navigation'
 
 export const StackApp = StackNavigator({
-  Home: { screen: RestaurantList },
+  Home: { screen: Home },
   Login: {screen: Login},
   Register: {screen: Register},
-  Restaurant: {screen: RestaurantList}
+  Restaurants: {screen: RestaurantList},
+  Menu: {screen: Menu},
 },
   {
     mode: 'modal',

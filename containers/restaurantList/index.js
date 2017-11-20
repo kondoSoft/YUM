@@ -1,6 +1,9 @@
 import React , {Component}from 'react'
 import styled from 'styled-components/native'
 import {
+  StatusBar
+} from 'react-native'
+import {
   SecondaryButton,
   IconEdit,
   PreviewRestaurant,
@@ -18,10 +21,11 @@ import {
 
 class RestaurantList extends Component {
   render () {
+    const {navigate} = this.props.navigation
     return (
       <MainContainer>
         <TopContainer>
-          <TopContainerUp>
+          {/* <TopContainerUp>
             <TopContainerUpLeft>
             </TopContainerUpLeft>
             <TopContainerUpRight>
@@ -34,7 +38,7 @@ class RestaurantList extends Component {
                 size = {25}
               />
             </TopContainerUpRight>
-          </TopContainerUp>
+          </TopContainerUp> */}
           <TopContainerDown>
             <SecondaryButton
               width = '50%'
@@ -45,7 +49,7 @@ class RestaurantList extends Component {
         </TopContainer>
         <BottomContainer>
           <ScrollContent>
-            <PreviewRestaurant/>
+            <PreviewRestaurant onPress={() => navigate('Menu')}/>
             <PreviewRestaurant/>
             <PreviewRestaurant/>
             <PreviewRestaurant/>

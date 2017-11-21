@@ -32,10 +32,13 @@ class ModalPayment extends Component {
     super(props)
     this.state = {
       animated: new Animated.Value(-300),
-      height: 0
+      height: 0,
+      value: ''
     }
     this.showPickerModal = this.showPickerModal.bind(this)
     this.closePicker = this.closePicker.bind(this)
+    this.getValue = this.getValue.bind(this)
+    this.returnValue = this.returnValue.bind(this)
   }
   showPickerModal () {
     Animated.spring(this.state.animated, {
@@ -44,27 +47,36 @@ class ModalPayment extends Component {
     }).start()
   }
   closePicker () {
+    this.returnValue()
     Animated.spring(this.state.animated, {
       toValue: -300,
       duration: 500
     }).start()
   }
+  returnValue () {
+    return this.state.value
+  }
+  getValue (value) {
+    this.setState({
+      language: value
+    })
+  }
   render () {
     return (
-      <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: 'red', height: 300, width: '100%', zIndex: 3}}>
+      <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: '#D3D3D3', height: 300, width: '100%', zIndex: 3}}>
         <View>
-          <View>
-            <TouchableOpacity onPress={this.closePicker}>
-              <Text>buttons</Text>
+          <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TouchableOpacity style={{backgroundColor: 'red', padding: 10}} onPress={this.closePicker}>
+              <Text style={{fontSize: 16, color: '#FFF'}}>Cancelar</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.closePicker}>
-              <Text>buttons</Text>
+            <TouchableOpacity style={{backgroundColor: '#FF5722', padding: 10}} onPress={this.closePicker}>
+              <Text style={{fontSize: 16, color: '#FFF'}}>Confirmar</Text>
             </TouchableOpacity>
           </View>
           <View>
             <Picker
               selectedValue={this.state.language}
-              onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+              onValueChange={(itemValue, itemIndex) => this.getValue(itemValue)}>
               <Picker.Item label='Java' value='java' />
               <Picker.Item label='JavaScript' value='js' />
             </Picker>

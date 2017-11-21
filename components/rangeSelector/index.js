@@ -14,7 +14,7 @@ const MainContainer = styled.View`
 const LeftContainer = styled.TouchableOpacity`
   height: 50px;
   width: 50px;
-  border: 1px solid rgb(255,87,34);
+  border: 1px solid ${props => props.borderC && props.borderC};
   border-radius: 500px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ const RightContainer = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `
-const Quantity =  styled.Text`
+const Quantity = styled.Text`
   font-size: 30px;
 `
 const ChangeNumber = (props) => {
@@ -44,11 +44,11 @@ const ChangeNumber = (props) => {
 
 const Selector = (props) => (
   <MainContainer>
-    <LeftContainer onPress={props.decrement}>
+    <LeftContainer borderC={(props.order === 0) ? '#C7C7CC' : props.borderC} onPress={props.decrement}>
       <Icon
-        name = 'minus'
-        color = {'rgb(255,87,34)'}
-        size = {20}
+        name='minus'
+        color={(props.order === 0) ? '#C7C7CC' : props.borderC}
+        size={20}
       />
     </LeftContainer>
     <CenterContainer>
@@ -56,9 +56,9 @@ const Selector = (props) => (
     </CenterContainer>
     <RightContainer onPress={props.increment}>
       <Icon
-        name = 'plus'
-        color = {'rgb(255,87,34)'}
-        size = {20}
+        name='plus'
+        color={'rgb(255,87,34)'}
+        size={20}
       />
     </RightContainer>
   </MainContainer>

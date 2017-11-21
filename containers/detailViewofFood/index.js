@@ -1,11 +1,11 @@
-import React , {Component}from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
   IconEdit,
   Button,
   Selector,
   Options,
-  MainContainer,
+  MainContainer
 } from '../../components'
 
 import {
@@ -19,36 +19,32 @@ import {
   FoodImage,
   StyledText,
   Price,
-  FoodDetail,
-}from '../../components/detailViewofFoodComponents'
+  FoodDetail
+} from '../../components/detailViewofFoodComponents'
 
 class DetailFood extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
-      order: '01',
+      nOrders: 0,
       View: false,
-      Price: '50.00',
+      price: 0.00,
       Total: '$50.00',
+      borderC: '#C7C7CC'
     }
     this.HideExtras = this.HideExtras.bind(this)
     this.DecrementNumber = this.DecrementNumber.bind(this)
     this.IncrementNumber = this.IncrementNumber.bind(this)
+    this.addOrder = this.addOrder.bind(this)
+    this.removeOrder = this.removeOrder.bind(this)
   }
-  render() {
-    return(
+  render () {
+    return (
       <MainContainer>
         <TopContainer>
-          <TopContainerUp>
-            <IconEdit
-              name = 'shopping-bag'
-              justify = 'flex-end'
-              size = {25}
-            />
-          </TopContainerUp>
           <TopContainerDown>
             <FoodImage
-              source = {require('../../assets/img/restaurant.jpg')}
+              source={require('../../assets/img/restaurant.jpg')}
             />
           </TopContainerDown>
         </TopContainer>
@@ -59,16 +55,17 @@ class DetailFood extends Component {
           </BottomContainerUp>
           <BottomContainerCenter>
             <Selector
-            decrement = {this.DecrementNumber}
-            order = {this.state.order}
-            increment = {this.IncrementNumber}
+              borderC={this.state.borderC}
+              decrement={this.removeOrder}
+              order={this.state.nOrders.toString()}
+              increment={this.addOrder}
           />
-            <Price>{this.state.Total}</Price>
+            <Price>{this.state.price.toLocaleString('es-MX', {style: 'currency', 'currency': 'MXN'})}</Price>
           </BottomContainerCenter>
           <BottomContainerDown>
             <Options
-              view = {this.state.view}
-              hide = {this.HideExtras}
+              view={this.state.view}
+              hide={this.HideExtras}
             />
             <Button
               text='AÑADIR A LA BOLSA'
@@ -80,62 +77,73 @@ class DetailFood extends Component {
     )
   }
 
-
-    DecrementNumber () {
-      let state = this.state
-      let q = state.order
-      let quantity = parseInt('10', q)
-      if (quantity <= 10 && quantity > 0) {
-        let newNumber = quantity - 1
-        let stringNumber = '0' + newNumber
-        state.order = stringNumber
-        let price = state.Price
-        let total = price * newNumber
-        state.Total = '$' + total + '.00'
-        this.setState(state)
-      } else if (quantity > 0 && quantity > 10) {
-        let newNumber = quantity - 1
-        state.order = newNumber
-        let price = state.Price
-        let total = price * newNumber
-        state.Total = '$' + total + '.00'
-        this.setState(state)
-      }
-    }
-
-    IncrementNumber () {
-      let state = this.state
-      let q = state.order
-      let quantity = parseInt(q)
-
-      if (quantity <= 8) {
-        let newNumber = quantity + 1
-        let stringNumber = '0' + newNumber
-        state.order = stringNumber
-        let price = state.Price
-        let total = price * newNumber
-        state.Total = '$' + total + '.00'
-        this.setState(state)
-      } else if (quantity >= 9) {
-        let newNumber = quantity + 1
-        state.order = newNumber
-        let price = state.Price
-        let total = price * newNumber
-        state.Total = '$' + total + '.00'
-        this.setState(state)
-      }
-    }
-
-    HideExtras () {
-      let state = this.state
-      if (state.View === false) {
-        state.View = true
-      } else {
-        state.View = false
-      }
+  DecrementNumber () {
+    let state = this.state
+    let q = state.order
+    let quantity = parseInt('10', q)
+    if (quantity <= 10 && quantity > 0) {
+      let newNumber = quantity - 1
+      let stringNumber = '0' + newNumber
+      state.order = stringNumber
+      let price = state.Price
+      let total = price * newNumber
+      state.Total = '$' + total + '.00'
+      this.setState(state)
+    } else if (quantity > 0 && quantity > 10) {
+      let newNumber = quantity - 1
+      state.order = newNumber
+      let price = state.Price
+      let total = price * newNumber
+      state.Total = '$' + total + '.00'
       this.setState(state)
     }
+  }
+  IncrementNumber () {
+    let state = this.state
+    let q = state.order
+    let quantity = parseInt(q)
 
+    if (quantity <= 8) {
+      let newNumber = quantity + 1
+      let stringNumber = '0' + newNumber
+      state.order = stringNumber
+      let price = state.Price
+      let total = price * newNumber
+      state.Total = '$' + total + '.00'
+      this.setState(state)
+    } else if (quantity >= 9) {
+      let newNumber = quantity + 1
+      state.order = newNumber
+      let price = state.Price
+      let total = price * newNumber
+      state.Total = '$' + total + '.00'
+      this.setState(state)
+    }
+  }
+  addOrder () {
+    this.setState({
+      nOrders: this.state.nOrders + 1,
+      price: this.state.price + 50,
+      borderC: '#FF5722'
+    })
+  }
+  removeOrder () {
+    if (this.state.nOrders > 0) {
+      this.setState({
+        nOrders: this.state.nOrders - 1,
+        price: this.state.price - 50
+      })
+    }
+  }
+  HideExtras () {
+    let state = this.state
+    if (state.View === false) {
+      state.View = true
+    } else {
+      state.View = false
+    }
+    this.setState(state)
+  }
 }
 
 export default DetailFood

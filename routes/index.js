@@ -5,6 +5,11 @@ import {
   Text
 } from 'react-native'
 import {
+  HeaderRightButtons,
+  HeaderRigthBag,
+  HeaderRightRestaurant
+} from '../components'
+import {
   Home,
   Login,
   Register,
@@ -47,8 +52,24 @@ export const StackApp = StackNavigator({
       </TouchableOpacity>)
     })
   },
-  Restaurants: { screen: RestaurantList },
-  Menu: {screen: Menu},
+  Restaurants: {
+    screen: RestaurantList,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity style={{width: 50}}>
+        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 10}} />
+      </TouchableOpacity>),
+      headerRight: (<HeaderRightButtons />)
+    })
+  },
+  Menu: {
+    screen: Menu,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
+        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 10}} />
+      </TouchableOpacity>),
+      headerRight: (<HeaderRigthBag />)
+    })
+  },
   Map: {
     screen: SearchMap,
     navigationOptions: ({navigation}) => ({
@@ -64,7 +85,22 @@ export const StackApp = StackNavigator({
     })
   },
   Restaurant: {
-    screen: RestaurantView
+    screen: RestaurantView,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+      </TouchableOpacity>),
+      headerRight: (<HeaderRightRestaurant />)
+    })
+  },
+  DetailFood: {
+    screen: DetailFood,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+      </TouchableOpacity>),
+      headerRight: (<HeaderRightRestaurant />)
+    })
   }
 },
   {

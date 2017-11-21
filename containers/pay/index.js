@@ -19,7 +19,9 @@ import {
   CardDetails,
   Detail,
   PayButton,
-  PaymentButton
+  PaymentButton,
+  Pick,
+  PickContainer
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
@@ -101,7 +103,8 @@ export default class Pay extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      typePayment: 'Tarjeta de Crédito/Débito'
+      typePayment: 'Tarjeta de Crédito/Débito',
+      value: ''
     }
     this.changeTypePayment = this.changeTypePayment.bind(this)
   }
@@ -115,10 +118,21 @@ export default class Pay extends Component {
         </Total>
         <OptionPayment>
           <Label>Opciones de pago</Label>
+          {Platform === 'ios' ?
           <PaymentButton onPress={this.changeTypePayment}>
             <TotalText size={14} fontWeight>{this.state.typePayment}</TotalText>
             <Icon name='caret-down' color={'rgb(255,155,37)'} size={20} />
           </PaymentButton>
+          :
+          <PickContainer>
+            <Pick
+              selectedValue={this.state.language}
+              onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+              <Picker.Item label="Tarjeta de credito/Debito" value="java" />
+              <Picker.Item label="Paypal" value="js" />
+            </Pick>
+          </PickContainer>
+        }
         </OptionPayment>
         <CardNumberContainer>
           <Label size={12}>Número de tarjeta</Label>

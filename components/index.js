@@ -40,7 +40,9 @@ import {
   CardNumberContainer,
   Detail,
   PayButton,
-  PaymentButton
+  PaymentButton,
+  Pick,
+  PickContainer
 } from './pay'
 import {
   AvatarName,
@@ -135,5 +137,7 @@ export {
   HeaderRightRestaurant,
   HeaderLeftStatus,
   HeaderMiddleStatus,
-  HeaderRightStatus
+  HeaderRightStatus,
+  Pick,
+  PickContainer
 }

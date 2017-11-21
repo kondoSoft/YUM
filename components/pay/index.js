@@ -48,6 +48,21 @@ export const PaymentButton = styled.TouchableOpacity`
   justify-content: space-between;
   align-items: center;
 `
+export const Pick = styled.Picker`
+  width: 100%;
+  height: 50px;
+`
+export const PickContainer = styled.View`
+  width: 100%;
+  ${'' /* border-radius: 10; */}
+  border-width: 2px;
+  border-color: #FA5900;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  padding-bottom: 3px;
+`
 export const CardNumberContainer = styled.View`
   width: 90%;
 `

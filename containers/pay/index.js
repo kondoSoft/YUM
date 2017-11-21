@@ -23,6 +23,10 @@ import {
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -65,6 +69,12 @@ class ModalPayment extends Component {
     return (
       <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: '#D3D3D3', height: 300, width: '100%', zIndex: 3}}>
         <View>
+          <StatusBar
+            hidden = {Platform === 'ios' ? false : true }
+            backgroundColor='#ff5722'
+            barStyle='light-content'
+            setTranslucent
+          />
           <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
             <TouchableOpacity style={{backgroundColor: 'red', padding: 10}} onPress={this.closePicker}>
               <Text style={{fontSize: 16, color: '#FFF'}}>Cancelar</Text>

@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
+  StatusBar,
+  Platform
+} from 'react-native'
+import {
   Add,
   PreviewOrder,
   Button,
@@ -11,6 +15,7 @@ import {
   TopContainer,
   BottomContainer,
   TopContainerUp,
+  TopContainerCenter,
   TopContainerDown,
   ScrollContainer,
   Title,
@@ -28,16 +33,32 @@ class Bag extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      <ScrollContainer>
+      // <ScrollContainer height='100%'>
+
         <MainContainer padding={10}>
+          <StatusBar
+            hidden = {Platform === 'ios' ? false : true }
+            backgroundColor='#ff5722'
+            barStyle='light-content'
+            setTranslucent
+          />
           <TopContainer>
-            <TopContainerDown>
+            <TopContainerUp>
               <Title>Pedido</Title>
-              <PreviewOrder />
-              <PreviewOrder />
-              <PreviewOrder />
-              <Add />
-            </TopContainerDown>
+            </TopContainerUp>
+            <ScrollContainer height = '100%'>
+              <TopContainerCenter>
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+              </TopContainerCenter>
+            </ScrollContainer>
+          <TopContainerDown>
+            <Add />
+          </TopContainerDown>
           </TopContainer>
           <BottomContainer>
             <Operations>
@@ -65,7 +86,7 @@ class Bag extends Component {
             </ButtonContainer>
           </BottomContainer>
         </MainContainer>
-      </ScrollContainer>
+      // </ScrollContainer>
     )
   }
 }

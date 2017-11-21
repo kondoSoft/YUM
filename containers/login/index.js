@@ -26,10 +26,10 @@ class Login extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent
-        />
+          setTranslucent/>
         <UpContainer>
           <Img source={require('../../assets/img/login_backg.png')} />
         </UpContainer>

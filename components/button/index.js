@@ -8,6 +8,7 @@ const Text = styled.Text`
   flex: ${(props) => props.IconSide ? 2 : 3};
   padding-left: ${(props) => props.IconSide ? '90px' : 0};
   text-align: center;
+  align-items: center;
 `
 const Container = styled.TouchableOpacity`
   display: flex;

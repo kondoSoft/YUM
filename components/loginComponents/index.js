@@ -1,10 +1,9 @@
 import styled from 'styled-components/native'
 
-
 const UpContainer = styled.View`
   justify-content: center;
   align-items: center;
-  flex: 1;
+  flex: 1.4;
 `
 const CenterContainer = styled.View`
   flex: 1;
@@ -20,8 +19,6 @@ const DownContainer = styled.View`
 const Img = styled.Image`
   width: 100%;
   height: 100%;
-  z-index: -1;
-  position: absolute;
 `
 const UpText = styled.Text`
   font-size: 13px;
@@ -51,5 +48,5 @@ export {
   UpText,
   TextContainer,
   InputContainer,
-  Logo,
+  Logo
 }

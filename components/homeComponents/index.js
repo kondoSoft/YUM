@@ -45,6 +45,7 @@ const RightContainer = styled.View`
 const WhiteText = styled.Text`
   color: #fff;
   text-align: center;
+  background-color: transparent;
 `
 const Logo = styled.Image`
   width: 120px;

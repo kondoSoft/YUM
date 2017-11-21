@@ -20,14 +20,23 @@ import {
 } from '../../components/homeComponents'
 
 class Home extends Component {
+  constructor () {
+    super()
+    this.state = {
+      preventRegister: 0,
+      preventLogin: 0,
+      preventLoginFb: 0
+    }
+    this.goToRegister = this.goToRegister.bind(this)
+  }
   render () {
     const {navigate} = this.props.navigation
     return (
       <HomeContainer>
         <StatusBar
-          backgroundColor='blue'
+          backgroundColor='#ff5722'
           barStyle='light-content'
-          animated
+          setTranslucent
         />
         <BackgroundImage source={require('../../assets/img/inicio_backg.png')} />
         <UpContainer>
@@ -35,12 +44,12 @@ class Home extends Component {
         </UpContainer>
         <DownContainer>
           <DownSubContainerUp>
-            <Button text='COMIENZA AHORA' onPress={() => navigate('Login')} />
+            <Button text='COMIENZA AHORA' onPress={this.goToRegister} />
           </DownSubContainerUp>
           <DownSubContainerDown>
             <LeftContainer>
               <WhiteText>Ya tienes cuenta?</WhiteText>
-              <SecondaryButton text='INICIA SESIÓN' acolor='#fff' />
+              <SecondaryButton text='INICIA SESIÓN' acolor='#fff' onPress={() => navigate('Login')} />
             </LeftContainer>
             <RightContainer>
               <WhiteText>Inicia con</WhiteText>
@@ -50,6 +59,24 @@ class Home extends Component {
         </DownContainer>
       </HomeContainer>
     )
+  }
+  // Function to prevent more than one press on register button and prevent mounted n numbers of register container
+  goToRegister () {
+    const {navigate} = this.props.navigation
+    if (this.state.preventRegister === 0) {
+      this.setState({
+        preventRegister: 1
+      }, () => {
+        navigate('Register')
+      })
+      setTimeout(() => {
+        this.setState({
+          preventRegister: 0
+        })
+      }, 1000)
+    } else {
+      console.log('prevent onPress when one time has pressed')
+    }
   }
 }
 export default Home

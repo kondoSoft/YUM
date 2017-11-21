@@ -10,6 +10,12 @@ const HeaderRight = styled.View`
 const IconButton = styled.TouchableOpacity`
   
 `
+const HeaderLeft = styled.View`
+`
+const HeaderLeftOrder = styled.Text`
+  margin-left: 20;
+  color: #FFF;
+`
 
 export const HeaderRightButtons = (props) => {
   return (
@@ -25,12 +31,13 @@ export const HeaderRightButtons = (props) => {
 }
 
 export const HeaderRigthBag = (props) => {
+  const {navigate} = props
   return (
     <HeaderRight>
       <IconButton>
         <Icon name='ios-search' size={25} color={'#FFF'} />
       </IconButton>
-      <IconButton>
+      <IconButton onPress={() => navigate('Bag')}>
         <Icon name='ios-cart' size={25} color={'#FFF'} />
       </IconButton>
     </HeaderRight>
@@ -59,5 +66,46 @@ export const HeaderRightRestaurant = (props) => {
         <Icon name='ios-cart' size={25} color={'#FFF'} />
       </IconButton>
     </HeaderRight>
+  )
+}
+export const HeaderLeftStatus = (props) => {
+  return (
+    <HeaderLeft>
+      <HeaderLeftOrder>Orden #6281</HeaderLeftOrder>
+    </HeaderLeft>
+  )
+}
+
+const HeaderMiddle = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
+const HeaderTime = styled.Text`
+  color: #FFF;
+  font-size: 14px;
+`
+export const HeaderMiddleStatus = (props) => {
+  return (
+    <HeaderMiddle>
+      <HeaderTime>
+        <Icon name='md-alarm' size={20} color={'#FFF'} /> 25 min. aprox.
+      </HeaderTime>
+    </HeaderMiddle>
+  )
+}
+const CancelButton = styled.TouchableOpacity`
+
+`
+const CancelText = styled.Text`
+  color: #FFF;
+`
+export const HeaderRightStatus = (props) => {
+  return (
+    <HeaderLeft style={{marginRight: 20}}>
+      <CancelButton>
+        <CancelText>CANCELAR</CancelText>
+      </CancelButton>
+    </HeaderLeft>
   )
 }

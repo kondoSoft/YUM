@@ -7,7 +7,10 @@ import {
 import {
   HeaderRightButtons,
   HeaderRigthBag,
-  HeaderRightRestaurant
+  HeaderRightRestaurant,
+  HeaderLeftStatus,
+  HeaderMiddleStatus,
+  HeaderRightStatus
 } from '../components'
 import {
   Home,
@@ -40,7 +43,7 @@ export const StackApp = StackNavigator({
     screen: Login,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
-        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>)
     })
   },
@@ -48,7 +51,7 @@ export const StackApp = StackNavigator({
     screen: Register,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
-        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>)
     })
   },
@@ -56,7 +59,7 @@ export const StackApp = StackNavigator({
     screen: RestaurantList,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity style={{width: 50}}>
-        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
       headerRight: (<HeaderRightButtons />)
     })
@@ -65,16 +68,16 @@ export const StackApp = StackNavigator({
     screen: Menu,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
-        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
-      headerRight: (<HeaderRigthBag />)
+      headerRight: (<HeaderRigthBag {...navigation} />)
     })
   },
   Map: {
     screen: SearchMap,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity style={{width: 50}}>
-        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
       headerTitle: navigation.state.params.username,
       headerTitleStyle: {
@@ -88,7 +91,7 @@ export const StackApp = StackNavigator({
     screen: RestaurantView,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
-        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
       headerRight: (<HeaderRightRestaurant />)
     })
@@ -97,14 +100,57 @@ export const StackApp = StackNavigator({
     screen: DetailFood,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
-        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 10}} />
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
       headerRight: (<HeaderRightRestaurant />)
+    })
+  },
+  Bag: {
+    screen: Bag,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
+      </TouchableOpacity>),
+      headerTitle: 'Bolsa',
+      headerTitleStyle: {
+        width: '100%',
+        color: '#FFF',
+        textAlign: 'left',
+        fontSize: 20
+      }
+    })
+  },
+  Pay: {
+    screen: Pay,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
+        <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
+      </TouchableOpacity>),
+      headerTitle: 'Pago',
+      headerTitleStyle: {
+        width: '100%',
+        color: '#FFF',
+        textAlign: 'left',
+        fontSize: 20
+      }
+    })
+  },
+  Status: {
+    screen: StatusScreen,
+    navigationOptions: ({navigation}) => ({
+      headerLeft: (<HeaderLeftStatus />),
+      headerTitle: (<HeaderMiddleStatus />),
+      headerTitleStyle: {
+        color: '#FFF',
+        textAlign: 'center'
+      },
+      headerRight: (<HeaderRightStatus />)
     })
   }
 },
   {
-    mode: 'modal',
+    headerMode: (Platform.OS === 'ios') ? 'float' : 'screen',
+    mode: (Platform.OS === 'ios') ? 'modal' : 'card',
     navigationOptions: {
       gesturesEnabled: false,
       headerStyle: {

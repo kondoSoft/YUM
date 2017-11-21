@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   SecondaryButton,
@@ -24,6 +25,12 @@ class RestaurantList extends Component {
     const {navigate} = this.props.navigation
     return (
       <MainContainer>
+        <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <TopContainer>
           <TopContainerDown>
             <SecondaryButton

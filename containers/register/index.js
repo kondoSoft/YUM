@@ -12,11 +12,20 @@ import {
     Img,
     Logo,
 } from '../../components/registerComponents'
-
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
 class Register extends Component {
   render () {
     return (
       <MainContainer>
+        <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <UpContainer>
           <Img source = {require('../../assets/img/signin_backg.png')} />
         </UpContainer>

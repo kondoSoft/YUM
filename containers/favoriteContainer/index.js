@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
+  StatusBar,
+  Platform
+} from 'react-native'
+import {
   MainContainer,
   Scroll,
   PreviewRestaurant,
@@ -27,6 +31,11 @@ class Favorites extends Component {
     return(
     <Scroll>
       <MainContainer>
+        <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent/>
         {this.state.Empty == true ?
           <CenterContainer justify='center'>
             <Img source = {require ('../../assets/img/status_button.png')}/>

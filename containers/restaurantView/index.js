@@ -23,10 +23,21 @@ import{
   StickContainer,
 } from '../../components/restaurantViewComponents'
 
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
+
 class RestaurantView extends Component{
   render(){
     return (
       <MainContainer>
+        <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <TopContainer>
           <Img source = {require('../../assets/img/restaurant.jpg')}/>
         </TopContainer>

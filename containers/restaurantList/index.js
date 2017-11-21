@@ -1,4 +1,4 @@
-import React , {Component}from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
   StatusBar
@@ -7,7 +7,7 @@ import {
   SecondaryButton,
   IconEdit,
   PreviewRestaurant,
-  MainContainer,
+  MainContainer
 } from '../../components'
 import {
   TopContainer,
@@ -16,7 +16,7 @@ import {
   TopContainerUp,
   TopContainerUpLeft,
   TopContainerUpRight,
-  TopContainerDown,
+  TopContainerDown
 } from '../../components/restaurantListComponents'
 
 class RestaurantList extends Component {
@@ -25,42 +25,27 @@ class RestaurantList extends Component {
     return (
       <MainContainer>
         <TopContainer>
-          {/* <TopContainerUp>
-            <TopContainerUpLeft>
-            </TopContainerUpLeft>
-            <TopContainerUpRight>
-              <IconEdit
-                name  =  'map-marker'
-                size = {25}
-              />
-              <IconEdit
-                name  =  'search'
-                size = {25}
-              />
-            </TopContainerUpRight>
-          </TopContainerUp> */}
           <TopContainerDown>
             <SecondaryButton
-              width = '50%'
-              text = 'MÀS CERCANOS'
-              acolor = 'rgb(255,87,34)'
+              width='50%'
+              text='MÁS CERCANOS'
+              acolor='rgb(255,87,34)'
             />
           </TopContainerDown>
         </TopContainer>
         <BottomContainer>
           <ScrollContent>
-            <PreviewRestaurant onPress={() => navigate('Menu')}/>
-            <PreviewRestaurant/>
-            <PreviewRestaurant/>
-            <PreviewRestaurant/>
-            <PreviewRestaurant/>
-            <PreviewRestaurant/>
+            <PreviewRestaurant onPress={() => navigate('Menu')} />
+            <PreviewRestaurant />
+            <PreviewRestaurant />
+            <PreviewRestaurant />
+            <PreviewRestaurant />
+            <PreviewRestaurant />
           </ScrollContent>
         </BottomContainer>
       </MainContainer>
     )
   }
-
 }
 
- export default RestaurantList
+export default RestaurantList

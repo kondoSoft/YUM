@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import {
   CircleImage,
-  Description,
+  Description
 }
 from '../index'
 
@@ -25,7 +25,7 @@ const MainContainer = styled.View`
   justify-content: center;
   align-items: center;
 `
-const LeftContainer =  styled.View`
+const LeftContainer = styled.View`
   flex: 1;
 `
 const RightContainer = styled.View`
@@ -39,29 +39,29 @@ const PriceContainer = styled.View`
 const Price = styled.Text`
   font-size: 15px;
 `
- const PreviewFood = () => (
-   <Content>
-     <Action>
-       <MainContainer>
-         <LeftContainer>
-           <CircleImage
-             source = {require('../../assets/img/restaurant.jpg')}
+const PreviewFood = (props) => (
+  <Content>
+    <Action onPress={props.onPress}>
+      <MainContainer>
+        <LeftContainer>
+          <CircleImage
+            source={require('../../assets/img/restaurant.jpg')}
            />
-         </LeftContainer>
-         <RightContainer>
-            <Description
-             titleColor = 'rgb(255,87,34)'
-             titleText = 'Tostadas de pollo'
-             descriptionText = 'Orden de 3 con lechuga, aguacate, cebolla morada y tomate.'
-             width = '100%'
-             height = '30px'
+        </LeftContainer>
+        <RightContainer>
+          <Description
+            titleColor='rgb(255,87,34)'
+            titleText='Tostadas de pollo'
+            descriptionText='Orden de 3 con lechuga, aguacate, cebolla morada y tomate.'
+            width='100%'
+            height='30px'
            />
-           <PriceContainer>
-              <Price>$50.00</Price>
-           </PriceContainer>
-         </RightContainer>
-       </MainContainer>
-      </Action>
-    </Content>
+          <PriceContainer>
+            <Price>$50.00</Price>
+          </PriceContainer>
+        </RightContainer>
+      </MainContainer>
+    </Action>
+  </Content>
  )
-  export default PreviewFood
+export default PreviewFood

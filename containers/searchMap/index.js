@@ -21,9 +21,9 @@ export default class SearchMap extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between',}}>
+      <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
         <MapView
-          style={{width: '100%', height:'100%',zIndex:0,position:'absolute'}}
+          style={{width: '100%', height: '100%', zIndex: 0, position: 'absolute'}}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -31,8 +31,8 @@ export default class SearchMap extends Component {
             longitudeDelta: 0.0421
           }}
         />
-          <SearchInput style={{marginTop: 30,zIndex:4}} placeholder='Elige tu dirección' />
-          <Button style={{marginBottom: 30,zIndex:4}} text='Continuar' onPress={() => navigate('Restaurants')} />
+        <SearchInput style={{marginTop: 30, zIndex: 4}} placeholder='Elige tu dirección' />
+        <Button style={{marginBottom: 30, zIndex: 4}} text='Continuar' onPress={() => navigate('Restaurants')} />
       </ScreenContainer>
     )
   }

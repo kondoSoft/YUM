@@ -1,10 +1,10 @@
-import React , {Component} from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
   ViewHeader,
   PreviewFood,
   IconEdit,
-  MainContainer,
+  MainContainer
 } from '../../components'
 import {
   ContainerTop,
@@ -13,39 +13,26 @@ import {
   ContainerTopleft,
   ContainerTopRight,
   ContainerBottom,
-  ScrollContent,
+  ScrollContent
 } from '../../components/restaurantMenuComponents'
 
 class Menu extends Component {
-  render(){
+  render () {
     const {navigate} = this.props.navigation
     return (
       <MainContainer>
         <ContainerTop>
-          {/* <ContainerTopUp>
-            <ContainerTopleft></ContainerTopleft>
-            <ContainerTopRight>
-              <IconEdit
-                name  =  'search'
-                size = {25}
-              />
-              <IconEdit
-                name  =  'shopping-bag'
-                size = {25}
-              />
-            </ContainerTopRight>
-          </ContainerTopUp> */}
           <ContainerTopDown>
-            <ViewHeader onPress={() => navigate('Restaurant')}/>
+            <ViewHeader onPress={() => navigate('Restaurant')} />
           </ContainerTopDown>
-          </ContainerTop>
+        </ContainerTop>
         <ContainerBottom>
           <ScrollContent>
-            <PreviewFood/>
-            <PreviewFood/>
-            <PreviewFood/>
-            <PreviewFood/>
-            <PreviewFood/>
+            <PreviewFood onPress={() => navigate('DetailFood')} />
+            <PreviewFood />
+            <PreviewFood />
+            <PreviewFood />
+            <PreviewFood />
           </ScrollContent>
         </ContainerBottom>
       </MainContainer>
@@ -53,4 +40,4 @@ class Menu extends Component {
   }
 }
 
- export default Menu
+export default Menu

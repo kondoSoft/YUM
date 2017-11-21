@@ -5,7 +5,7 @@ import {
   PreviewOrder,
   Button,
   StyledInput,
-  MainContainer,
+  MainContainer
 } from '../../components'
 import {
   TopContainer,
@@ -21,24 +21,22 @@ import {
   TextGray,
   TextBlack,
   TotalContainer,
-  ButtonContainer,
+  ButtonContainer
 } from '../../components/bagComponents'
 
-class Bag extends Component  {
-  render() {
+class Bag extends Component {
+  render () {
+    const {navigate} = this.props.navigation
     return (
       <ScrollContainer>
-        <MainContainer padding = {10}>
+        <MainContainer padding={10}>
           <TopContainer>
-            <TopContainerUp>
-              <Title>Bolsa</Title>
-            </TopContainerUp>
             <TopContainerDown>
               <Title>Pedido</Title>
-              <PreviewOrder/>
-              <PreviewOrder/>
-              <PreviewOrder/>
-              <Add/>
+              <PreviewOrder />
+              <PreviewOrder />
+              <PreviewOrder />
+              <Add />
             </TopContainerDown>
           </TopContainer>
           <BottomContainer>
@@ -63,7 +61,7 @@ class Bag extends Component  {
               <Title>$255.00</Title>
             </TotalContainer>
             <ButtonContainer>
-              <Button text= 'CONTINUAR'/>
+              <Button onPress={() => navigate('Pay')} text='CONTINUAR' />
             </ButtonContainer>
           </BottomContainer>
         </MainContainer>

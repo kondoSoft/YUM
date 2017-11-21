@@ -96,6 +96,7 @@ export default class Pay extends Component {
     this.changeTypePayment = this.changeTypePayment.bind(this)
   }
   render () {
+    const {navigate} = this.props.navigation
     return (
       <ScreenContainer height={height} width={width}>
         <Total>
@@ -124,7 +125,7 @@ export default class Pay extends Component {
           </Detail>
         </CardDetails>
         <PayButton>
-          <Button text='PAGAR' IconSide='check' />
+          <Button onPress={() => navigate('Status')} text='PAGAR' IconSide='check' />
         </PayButton>
         { <ModalPayment ref={ref => this._modalPicker = ref} /> }
       </ScreenContainer>

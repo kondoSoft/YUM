@@ -21,7 +21,7 @@ import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
 import ViewHistorial from './historialView'
 import Scroll from './scroll'
-import {HeaderRightButtons, HeaderRigthBag, HeaderRightRestaurant} from './headerBar'
+import {HeaderRightButtons, HeaderRigthBag, HeaderRightRestaurant, HeaderLeftStatus, HeaderMiddleStatus, HeaderRightStatus} from './headerBar'
 import {
   EditUserInfo,
   EditForm,
@@ -132,5 +132,8 @@ export {
   TextStatus,
   HeaderRightButtons,
   HeaderRigthBag,
-  HeaderRightRestaurant
+  HeaderRightRestaurant,
+  HeaderLeftStatus,
+  HeaderMiddleStatus,
+  HeaderRightStatus
 }

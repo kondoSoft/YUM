@@ -21,6 +21,9 @@ import {
   Price,
   FoodDetail
 } from '../../components/detailViewofFoodComponents'
+import {
+  StatusBar
+} from 'react-native'
 
 class DetailFood extends Component {
   constructor () {
@@ -41,6 +44,11 @@ class DetailFood extends Component {
   render () {
     return (
       <MainContainer>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <TopContainer>
           <TopContainerDown>
             <FoodImage

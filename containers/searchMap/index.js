@@ -8,7 +8,8 @@ import {
 import {
   Dimensions,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native'
 import {
   MapView
@@ -22,6 +23,11 @@ export default class SearchMap extends Component {
     const {navigate} = this.props.navigation
     return (
       <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <MapView
           style={{width: '100%', height: '100%', zIndex: 0, position: 'absolute'}}
           initialRegion={{

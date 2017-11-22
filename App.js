@@ -25,7 +25,7 @@ import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 import devToolsEnhancer from 'remote-redux-devtools'
 import rootReducer from './reducers'
-import {StackApp} from './routes'
+import {StackApp} from './routes/testRouter'
 
 const store = createStore(
     rootReducer,

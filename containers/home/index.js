@@ -44,7 +44,7 @@ class Home extends Component {
         </UpContainer>
         <DownContainer>
           <DownSubContainerUp>
-            <Button text='COMIENZA AHORA' onPress={this.goToRegister} />
+            <Button text='COMIENZA AHORA' onPress={() => this.goToRegister()} />
           </DownSubContainerUp>
           <DownSubContainerDown>
             <LeftContainer>

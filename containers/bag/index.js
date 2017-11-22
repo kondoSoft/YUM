@@ -23,12 +23,20 @@ import {
   TotalContainer,
   ButtonContainer
 } from '../../components/bagComponents'
+import {
+  StatusBar
+} from 'react-native'
 
 class Bag extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
       <ScrollContainer>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <MainContainer padding={10}>
           <TopContainer>
             <TopContainerDown>

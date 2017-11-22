@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {
   Text,
-  Dimensions
+  Dimensions,
+  StatusBar
 } from 'react-native'
 import {
     ScreenContainer,
@@ -39,6 +40,11 @@ export default class EditUser extends Component {
   render () {
     return (
       <ScreenContainer height={height} width={width}>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <EditUserInfo>
           <EditForm>
             <EditLabel>Nombre</EditLabel>

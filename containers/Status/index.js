@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {
     Dimenions,
     Text,
-    View
+    View,
+    StatusBar
 } from 'react-native'
 import {
     ScreenContainer,
@@ -31,6 +32,11 @@ export default class StatusScreen extends Component {
   render () {
     return (
       <ScreenContainer>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <MapView
           style={{width: '100%', height: 200 }}
           initialRegion={{

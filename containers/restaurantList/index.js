@@ -24,6 +24,11 @@ class RestaurantList extends Component {
     const {navigate} = this.props.navigation
     return (
       <MainContainer>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <TopContainer>
           <TopContainerDown>
             <SecondaryButton

@@ -15,12 +15,20 @@ import {
   ContainerBottom,
   ScrollContent
 } from '../../components/restaurantMenuComponents'
+import {
+  StatusBar
+} from 'react-native'
 
 class Menu extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
       <MainContainer>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <ContainerTop>
           <ContainerTopDown>
             <ViewHeader onPress={() => navigate('Restaurant')} />

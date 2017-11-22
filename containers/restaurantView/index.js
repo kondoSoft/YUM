@@ -1,10 +1,10 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 import {
   MainContainer,
   StarIcon,
-  IconEdit,
-}from '../../components'
-import{
+  IconEdit
+} from '../../components'
+import {
   TopContainer,
   BottomContainer,
   BottomContainerUp,
@@ -20,9 +20,8 @@ import{
   LineContainer,
   SocialsContainer,
   TextContainer,
-  StickContainer,
+  StickContainer
 } from '../../components/restaurantViewComponents'
-
 import {
   StatusBar,
   Platform
@@ -33,13 +32,13 @@ class RestaurantView extends Component{
     return (
       <MainContainer>
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent
         />
         <TopContainer>
-          <Img source = {require('../../assets/img/restaurant.jpg')}/>
+          <Img source={require('../../assets/img/restaurant.jpg')} />
         </TopContainer>
         <BottomContainer>
           <BottomContainerUp>
@@ -56,13 +55,13 @@ class RestaurantView extends Component{
             <StarIcon
               qualification='4.5'
               justify='center'
-              single/>
+              single />
           </BottomContainerCenter>
           <BottomContainerDown>
             <LocationContainer>
               <IconEdit
-                name = 'map-marker'
-                size = {25}
+                name='map-marker'
+                size={25}
               />
               <TextContainer>
                 <TextGray>Calle Pino Suarez .Esq. Constitucion #153 Col. Tabasco 2000, Villahermosa, Tabasco</TextGray>
@@ -71,8 +70,8 @@ class RestaurantView extends Component{
             <LineContainer>
               <StickContainer>
                 <IconEdit
-                name = 'motorcycle'
-                size = {19}
+                  name='motorcycle'
+                  size={19}
                 />
                 <TextContainer>
                   <TextGray>30 min. aprox.</TextGray>
@@ -80,8 +79,8 @@ class RestaurantView extends Component{
               </StickContainer>
               <StickContainer>
                 <IconEdit
-                name = 'tag'
-                size = {20}
+                  name='tag'
+                  size={20}
                 />
                 <TextContainer>
                   <TextGray>$120.00</TextGray>
@@ -91,8 +90,8 @@ class RestaurantView extends Component{
             <LineContainer>
               <StickContainer>
                 <IconEdit
-                name = 'clock-o'
-                size = {20}
+                  name='clock-o'
+                  size={20}
                 />
                 <TextContainer>
                   <TextGray>09:00 - 20:00</TextGray>
@@ -100,8 +99,8 @@ class RestaurantView extends Component{
               </StickContainer>
               <StickContainer>
                 <IconEdit
-                name = 'phone'
-                size = {20}
+                  name='phone'
+                  size={20}
                 />
                 <TextContainer>
                   <TextGray>(993)263-74-17</TextGray>
@@ -110,20 +109,20 @@ class RestaurantView extends Component{
             </LineContainer>
             <SocialsContainer>
               <IconEdit
-                name = 'whatsapp'
-                size = {25}
+                name='whatsapp'
+                size={25}
               />
               <IconEdit
-                name = 'facebook'
-                size = {25}
+                name='facebook'
+                size={25}
               />
               <IconEdit
-                name = 'twitter'
-                size = {25}
+                name='twitter'
+                size={25}
               />
               <IconEdit
-                name = 'instagram'
-                size = {25}
+                name='instagram'
+                size={25}
               />
             </SocialsContainer>
           </BottomContainerDown>
@@ -131,6 +130,5 @@ class RestaurantView extends Component{
       </MainContainer>
     )
   }
-
 }
 export default RestaurantView

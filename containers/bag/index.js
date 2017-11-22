@@ -33,11 +33,10 @@ class Bag extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      // <ScrollContainer height='100%'>
-
+      <ScrollContainer height='100%'>
         <MainContainer padding={10}>
           <StatusBar
-            hidden = {Platform === 'ios' ? false : true }
+            hidden={Platform.OS !== 'ios'}
             backgroundColor='#ff5722'
             barStyle='light-content'
             setTranslucent
@@ -46,7 +45,7 @@ class Bag extends Component {
             <TopContainerUp>
               <Title>Pedido</Title>
             </TopContainerUp>
-            <ScrollContainer height = '100%'>
+            <ScrollContainer height='100%'>
               <TopContainerCenter>
                 <PreviewOrder />
                 <PreviewOrder />
@@ -56,9 +55,9 @@ class Bag extends Component {
                 <PreviewOrder />
               </TopContainerCenter>
             </ScrollContainer>
-          <TopContainerDown>
-            <Add />
-          </TopContainerDown>
+            <TopContainerDown>
+              <Add />
+            </TopContainerDown>
           </TopContainer>
           <BottomContainer>
             <Operations>
@@ -86,7 +85,7 @@ class Bag extends Component {
             </ButtonContainer>
           </BottomContainer>
         </MainContainer>
-      // </ScrollContainer>
+      </ScrollContainer>
     )
   }
 }

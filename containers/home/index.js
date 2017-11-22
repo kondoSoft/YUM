@@ -34,6 +34,7 @@ class Home extends Component {
     return (
       <HomeContainer>
         <StatusBar
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent
@@ -44,7 +45,7 @@ class Home extends Component {
         </UpContainer>
         <DownContainer>
           <DownSubContainerUp>
-            <Button text='COMIENZA AHORA' onPress={this.goToRegister} />
+            <Button text='COMIENZA AHORA' onPress={() => this.goToRegister()} />
           </DownSubContainerUp>
           <DownSubContainerDown>
             <LeftContainer>

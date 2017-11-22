@@ -5,7 +5,9 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Picker
+    Picker,
+    StatusBar,
+    Platform
 } from 'react-native'
 import {
   ScreenContainer,
@@ -25,10 +27,6 @@ import {
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
-import {
-  StatusBar,
-  Platform
-} from 'react-native'
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -72,7 +70,7 @@ class ModalPayment extends Component {
       <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: '#D3D3D3', height: 300, width: '100%', zIndex: 3}}>
         <View>
           <StatusBar
-            hidden = {Platform === 'ios' ? false : true }
+            hidden={Platform.OS !== 'ios'}
             backgroundColor='#ff5722'
             barStyle='light-content'
             setTranslucent
@@ -112,24 +110,28 @@ export default class Pay extends Component {
     const {navigate} = this.props.navigation
     return (
       <ScreenContainer height={height} width={width}>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <Total>
           <TotalText>TOTAL</TotalText>
           <TotalText>$255.00</TotalText>
         </Total>
         <OptionPayment>
           <Label>Opciones de pago</Label>
-          {Platform === 'ios' ?
-          <PaymentButton onPress={this.changeTypePayment}>
+          {Platform === 'ios'
+          ? <PaymentButton onPress={this.changeTypePayment}>
             <TotalText size={14} fontWeight>{this.state.typePayment}</TotalText>
             <Icon name='caret-down' color={'rgb(255,155,37)'} size={20} />
           </PaymentButton>
-          :
-          <PickContainer>
+          : <PickContainer>
             <Pick
               selectedValue={this.state.language}
               onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-              <Picker.Item label="Tarjeta de credito/Debito" value="java" />
-              <Picker.Item label="Paypal" value="js" />
+              <Picker.Item label='Tarjeta de credito/Debito' value='java' />
+              <Picker.Item label='Paypal' value='js' />
             </Pick>
           </PickContainer>
         }

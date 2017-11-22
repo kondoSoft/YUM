@@ -1,41 +1,40 @@
-import React ,{Component}  from 'react'
+import React, {Component} from 'react'
 import {
   MainContainer,
   ViewHistorial,
-  Scroll,
+  Scroll
 } from '../../components'
 import {
   TextContainer,
-  RawText,
+  RawText
 } from '../../components/headerTitle'
 import {
   StatusBar,
   Platform
 } from 'react-native'
 class Historial extends Component {
-  render(){
+  render () {
     return (
       <MainContainer>
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent/>
+          setTranslucent />
         <TextContainer>
           <RawText>Recientes</RawText>
         </TextContainer>
         <Scroll>
-          <ViewHistorial/>
-          <ViewHistorial/>
-          <ViewHistorial/>
-          <ViewHistorial/>
-          <ViewHistorial/>
-          <ViewHistorial/>
-          <ViewHistorial/>
+          <ViewHistorial />
+          <ViewHistorial />
+          <ViewHistorial />
+          <ViewHistorial />
+          <ViewHistorial />
+          <ViewHistorial />
+          <ViewHistorial />
         </Scroll>
       </MainContainer>
     )
   }
-
 }
 export default Historial

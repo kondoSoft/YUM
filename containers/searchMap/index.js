@@ -8,15 +8,13 @@ import {
 import {
   Dimensions,
   Text,
-  View
+  View,
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   MapView
 } from 'expo'
-import {
-  StatusBar,
-  Platform
-} from 'react-native'
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -26,6 +24,12 @@ export default class SearchMap extends Component {
     const {navigate} = this.props.navigation
     return (
       <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
+        <StatusBar
+          hidden={Platform.OS !== 'ios'}
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <MapView
           style={{width: '100%', height: '100%', zIndex: 0, position: 'absolute'}}
           initialRegion={{
@@ -36,7 +40,7 @@ export default class SearchMap extends Component {
           }}
         />
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

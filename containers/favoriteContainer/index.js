@@ -14,9 +14,6 @@ import {
   CenterContainer,
   Img
 } from '../../components/favoriteComponents'
-import {
-  StatusBar
-} from 'react-native'
 
 class Favorites extends Component {
   constructor () {
@@ -30,18 +27,18 @@ class Favorites extends Component {
     this.CheckEmpty = this.CheckEmpty.bind(this)
     this.CheckEmpty()
   }
-  render(){
-    return(
-    <Scroll>
-      <MainContainer>
-        <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
-          backgroundColor='#ff5722'
-          barStyle='light-content'
-          setTranslucent/>
-        {this.state.Empty == true ?
-          <CenterContainer justify='center'>
-            <Img source = {require ('../../assets/img/status_button.png')}/>
+  render () {
+    return (
+      <Scroll>
+        <MainContainer>
+          <StatusBar
+            hidden={Platform !== 'ios'}
+            backgroundColor='#ff5722'
+            barStyle='light-content'
+            setTranslucent />
+          {this.state.Empty == true
+          ? <CenterContainer justify='center'>
+            <Img source={require('../../assets/img/status_button.png')} />
             <TextGray>Aun no tienes restaurantes favoritos</TextGray>
           </CenterContainer>
           : <CenterContainer>

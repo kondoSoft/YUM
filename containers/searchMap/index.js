@@ -9,15 +9,12 @@ import {
   Dimensions,
   Text,
   View,
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   MapView
 } from 'expo'
-import {
-  StatusBar,
-  Platform
-} from 'react-native'
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -42,7 +39,7 @@ export default class SearchMap extends Component {
           }}
         />
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

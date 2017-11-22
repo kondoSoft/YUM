@@ -16,12 +16,9 @@ import {
   TextGray
 } from '../../components/QualificationServiceComponents'
 import {
+  Dimensions,
   StatusBar,
   Platform
-} from 'react-native'
-import {
-  Dimensions,
-  StatusBar
 } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -57,7 +54,7 @@ class QualificationService extends Component {
     return (
       <MainContainer height={height}>
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

@@ -28,9 +28,6 @@ import {
   TotalContainer,
   ButtonContainer
 } from '../../components/bagComponents'
-import {
-  StatusBar
-} from 'react-native'
 
 class Bag extends Component {
   render () {
@@ -44,7 +41,7 @@ class Bag extends Component {
         />
         <MainContainer padding={10}>
           <StatusBar
-            hidden = {Platform === 'ios' ? false : true }
+            hidden={Platform !== 'ios'}
             backgroundColor='#ff5722'
             barStyle='light-content'
             setTranslucent
@@ -53,7 +50,7 @@ class Bag extends Component {
             <TopContainerUp>
               <Title>Pedido</Title>
             </TopContainerUp>
-            <ScrollContainer height = '100%'>
+            <ScrollContainer height='100%'>
               <TopContainerCenter>
                 <PreviewOrder />
                 <PreviewOrder />
@@ -63,9 +60,9 @@ class Bag extends Component {
                 <PreviewOrder />
               </TopContainerCenter>
             </ScrollContainer>
-          <TopContainerDown>
-            <Add />
-          </TopContainerDown>
+            <TopContainerDown>
+              <Add />
+            </TopContainerDown>
           </TopContainer>
           <BottomContainer>
             <Operations>

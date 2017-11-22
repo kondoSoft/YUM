@@ -12,7 +12,6 @@ import {
   StatusBar,
   Platform
 } from 'react-native'
-
 class Historial extends Component {
   render () {
     return (

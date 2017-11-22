@@ -16,7 +16,6 @@ import {
   StatusBar,
   Platform
 } from 'react-native'
-
 class Register extends Component {
   render () {
     return (

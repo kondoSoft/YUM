@@ -27,8 +27,8 @@ import {
   Platform
 } from 'react-native'
 
-class RestaurantView extends Component {
-  render () {
+class RestaurantView extends Component{
+  render(){
     return (
       <MainContainer>
         <StatusBar

@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
+  StatusBar,
+  Platform
+} from 'react-native'
+import {
   MainContainer,
   Scroll,
   PreviewRestaurant
@@ -26,18 +30,18 @@ class Favorites extends Component {
     this.CheckEmpty = this.CheckEmpty.bind(this)
     this.CheckEmpty()
   }
-  render () {
-    return (
-      <Scroll>
+  render(){
+    return(
+    <Scroll>
+      <MainContainer>
         <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent
-        />
-        <MainContainer>
-          {this.state.Empty == true
-          ? <CenterContainer justify='center'>
-            <Img source={require('../../assets/img/status_button.png')} />
+          setTranslucent/>
+        {this.state.Empty == true ?
+          <CenterContainer justify='center'>
+            <Img source = {require ('../../assets/img/status_button.png')}/>
             <TextGray>Aun no tienes restaurantes favoritos</TextGray>
           </CenterContainer>
           : <CenterContainer>

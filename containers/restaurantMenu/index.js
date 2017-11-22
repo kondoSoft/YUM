@@ -16,7 +16,8 @@ import {
   ScrollContent
 } from '../../components/restaurantMenuComponents'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 
 class Menu extends Component {
@@ -25,6 +26,7 @@ class Menu extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

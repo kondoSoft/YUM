@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-
+import React from 'react'
 const TopContainer = styled.View`
   flex: 1;
   border-style: solid;
@@ -15,17 +15,23 @@ const TopContainerUp = styled.View`
   justify-content: flex-start;
   align-items: center;
   border-style: solid;
-  border-bottom-color: rgba(131,131,131,0.25);
+  border-bottom-color: rgb(255,87,34);
   border-bottom-width: 2px;
 `
-const TopContainerDown = styled.View`
+const TopContainerCenter = styled.View`
   display: flex;
   justify-content: flex-end;
   height: 85%;
+  flex-grow: 1;
+  padding: 0 5px 0 5px;
+`
+const TopContainerDown = styled.View`
+  padding: 0 5px 0 5px;
 `
 const ScrollContainer = styled.ScrollView`
   flex: 1;
   width: 100%;
+  height: ${(props) => props.height && props.height};
 `
 const Title = styled.Text`
   font-size: 25px;
@@ -33,7 +39,7 @@ const Title = styled.Text`
   margin: 5px 0 10px 0;
 `
 const Operations = styled.View`
-  flex: 1;
+  flex: 2;
   border-style: solid;
   border-bottom-color: rgb(255,87,34);
   border-bottom-width: 2px;
@@ -82,6 +88,7 @@ const ButtonContainer = styled.View`
 export {  TopContainer,
   BottomContainer,
   TopContainerUp,
+  TopContainerCenter,
   TopContainerDown,
   ScrollContainer,
   Title,

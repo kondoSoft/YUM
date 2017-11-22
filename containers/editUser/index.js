@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import {
+  StatusBar,
+  Platform
+} from 'react-native'
+import {
   Text,
   Dimensions,
   StatusBar
@@ -41,10 +45,10 @@ export default class EditUser extends Component {
     return (
       <ScreenContainer height={height} width={width}>
         <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent
-        />
+          setTranslucent/>
         <EditUserInfo>
           <EditForm>
             <EditLabel>Nombre</EditLabel>

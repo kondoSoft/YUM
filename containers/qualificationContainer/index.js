@@ -15,7 +15,10 @@ import {
   InputContainer,
   TextGray
 } from '../../components/QualificationServiceComponents'
-
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
 import {
   Dimensions,
   StatusBar
@@ -54,6 +57,7 @@ class QualificationService extends Component {
     return (
       <MainContainer height={height}>
         <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

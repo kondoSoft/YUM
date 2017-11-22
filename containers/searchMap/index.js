@@ -14,6 +14,10 @@ import {
 import {
   MapView
 } from 'expo'
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -36,6 +40,12 @@ export default class SearchMap extends Component {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421
           }}
+        />
+        <StatusBar
+          hidden = {Platform === 'ios' ? false : true }
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
         />
         <SearchInput style={{marginTop: 30, zIndex: 4}} placeholder='Elige tu dirección' />
         <Button style={{marginBottom: 30, zIndex: 4}} text='Continuar' onPress={() => navigate('Restaurants')} />

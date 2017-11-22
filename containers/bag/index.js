@@ -85,7 +85,7 @@ class Bag extends Component {
             </ButtonContainer>
           </BottomContainer>
         </MainContainer>
-      // </ScrollContainer>
+      </ScrollContainer>
     )
   }
 }

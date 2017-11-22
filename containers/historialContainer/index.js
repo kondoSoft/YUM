@@ -17,10 +17,10 @@ class Historial extends Component {
     return (
       <MainContainer>
         <StatusBar
-          hidden = {Platform === 'ios' ? false : true }
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent/>
+          setTranslucent />
         <TextContainer>
           <RawText>Recientes</RawText>
         </TextContainer>

@@ -16,9 +16,9 @@ import {
   TextGray
 } from '../../components/QualificationServiceComponents'
 import {
-  Dimensions,
   StatusBar,
-  Platform
+  Platform,
+  Dimensions
 } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'

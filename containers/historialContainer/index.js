@@ -9,7 +9,8 @@ import {
   RawText
 } from '../../components/headerTitle'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 
 class Historial extends Component {
@@ -17,10 +18,10 @@ class Historial extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent
-        />
+          setTranslucent />
         <TextContainer>
           <RawText>Recientes</RawText>
         </TextContainer>

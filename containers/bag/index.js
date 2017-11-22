@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import styled from 'styled-components/native'
 import {
+  StatusBar,
+  Platform
+} from 'react-native'
+import {
   Add,
   PreviewOrder,
   Button,
@@ -11,6 +15,7 @@ import {
   TopContainer,
   BottomContainer,
   TopContainerUp,
+  TopContainerCenter,
   TopContainerDown,
   ScrollContainer,
   Title,
@@ -23,27 +28,34 @@ import {
   TotalContainer,
   ButtonContainer
 } from '../../components/bagComponents'
-import {
-  StatusBar
-} from 'react-native'
 
 class Bag extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      <ScrollContainer>
-        <StatusBar
-          backgroundColor='#ff5722'
-          barStyle='light-content'
-          setTranslucent
-        />
+      <ScrollContainer height='100%'>
         <MainContainer padding={10}>
+          <StatusBar
+            hidden={Platform !== 'ios'}
+            backgroundColor='#ff5722'
+            barStyle='light-content'
+            setTranslucent
+          />
           <TopContainer>
-            <TopContainerDown>
+            <TopContainerUp>
               <Title>Pedido</Title>
-              <PreviewOrder />
-              <PreviewOrder />
-              <PreviewOrder />
+            </TopContainerUp>
+            <ScrollContainer height='100%'>
+              <TopContainerCenter>
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+                <PreviewOrder />
+              </TopContainerCenter>
+            </ScrollContainer>
+            <TopContainerDown>
               <Add />
             </TopContainerDown>
           </TopContainer>

@@ -23,7 +23,8 @@ import {
   StickContainer
 } from '../../components/restaurantViewComponents'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 
 class RestaurantView extends Component {
@@ -31,6 +32,7 @@ class RestaurantView extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

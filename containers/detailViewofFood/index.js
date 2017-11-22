@@ -7,7 +7,10 @@ import {
   Options,
   MainContainer
 } from '../../components'
-
+import {
+  StatusBar,
+  Platform
+} from 'react-native'
 import {
   TopContainer,
   TopContainerUp,
@@ -21,9 +24,6 @@ import {
   Price,
   FoodDetail
 } from '../../components/detailViewofFoodComponents'
-import {
-  StatusBar
-} from 'react-native'
 
 class DetailFood extends Component {
   constructor () {
@@ -45,6 +45,7 @@ class DetailFood extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

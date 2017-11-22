@@ -13,7 +13,8 @@ import {
     Logo
 } from '../../components/registerComponents'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 
 class Register extends Component {
@@ -21,6 +22,7 @@ class Register extends Component {
     return (
       <MainContainer>
         <StatusBar
+          hidden={Platform !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

@@ -6,7 +6,8 @@ import {
     Text,
     TouchableOpacity,
     Picker,
-    StatusBar
+    StatusBar,
+    Platform
 } from 'react-native'
 import {
   ScreenContainer,
@@ -20,7 +21,9 @@ import {
   CardDetails,
   Detail,
   PayButton,
-  PaymentButton
+  PaymentButton,
+  Pick,
+  PickContainer
 } from '../../components'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
@@ -66,6 +69,12 @@ class ModalPayment extends Component {
     return (
       <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: '#D3D3D3', height: 300, width: '100%', zIndex: 3}}>
         <View>
+          <StatusBar
+            hidden={Platform !== 'ios'}
+            backgroundColor='#ff5722'
+            barStyle='light-content'
+            setTranslucent
+          />
           <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
             <TouchableOpacity style={{backgroundColor: 'red', padding: 10}} onPress={this.closePicker}>
               <Text style={{fontSize: 16, color: '#FFF'}}>Cancelar</Text>
@@ -92,7 +101,8 @@ export default class Pay extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      typePayment: 'Tarjeta de Crédito/Débito'
+      typePayment: 'Tarjeta de Crédito/Débito',
+      value: ''
     }
     this.changeTypePayment = this.changeTypePayment.bind(this)
   }
@@ -111,10 +121,20 @@ export default class Pay extends Component {
         </Total>
         <OptionPayment>
           <Label>Opciones de pago</Label>
-          <PaymentButton onPress={this.changeTypePayment}>
+          {Platform === 'ios'
+          ? <PaymentButton onPress={this.changeTypePayment}>
             <TotalText size={14} fontWeight>{this.state.typePayment}</TotalText>
             <Icon name='caret-down' color={'rgb(255,155,37)'} size={20} />
           </PaymentButton>
+          : <PickContainer>
+            <Pick
+              selectedValue={this.state.language}
+              onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+              <Picker.Item label='Tarjeta de credito/Debito' value='java' />
+              <Picker.Item label='Paypal' value='js' />
+            </Pick>
+          </PickContainer>
+        }
         </OptionPayment>
         <CardNumberContainer>
           <Label size={12}>Número de tarjeta</Label>

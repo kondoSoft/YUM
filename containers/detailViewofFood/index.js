@@ -24,6 +24,9 @@ import {
   Price,
   FoodDetail
 } from '../../components/detailViewofFoodComponents'
+import {
+  StatusBar
+} from 'react-native'
 
 class DetailFood extends Component {
   constructor () {

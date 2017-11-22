@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {
   Text,
-  Dimensions
+  Dimensions,
+  StatusBar
 } from 'react-native'
 import {
   ScreenContainer,
@@ -24,6 +25,11 @@ export default class UserDetails extends Component {
   render () {
     return (
       <ScreenContainer height={height} width={width}>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <AvatarName>
           <Icon name='torsos-all' color={'#FB9234'} size={60} />
           <Text style={{fontSize: 20}}>Luis Manuel Juarez Flores</Text>

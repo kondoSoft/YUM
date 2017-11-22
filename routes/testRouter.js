@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {
   TouchableOpacity,
@@ -10,7 +11,8 @@ import {
   HeaderRightRestaurant,
   HeaderLeftStatus,
   HeaderMiddleStatus,
-  HeaderRightStatus
+  HeaderRightStatus,
+  ModalExample
 } from '../components'
 import {
   Home,
@@ -31,10 +33,10 @@ import {
   SearchMap,
   Favorites
 } from '../containers'
-import { StackNavigator } from 'react-navigation'
+import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-export const StackApp = StackNavigator({
+const AuthStack = StackNavigator({
   Home: {
     screen: Home,
     navigationOptions: { header: null }
@@ -54,11 +56,23 @@ export const StackApp = StackNavigator({
         <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>)
     })
-  },
+  }
+}, {
+  headerMode: (Platform.OS === 'ios') ? 'float' : 'screen',
+  mode: (Platform.OS === 'ios') ? 'modal' : 'card',
+  navigationOptions: {
+    gesturesEnabled: false,
+    headerStyle: {
+      backgroundColor: '#FF5722'
+    }
+  }
+})
+
+const MainStack = StackNavigator({
   Restaurants: {
     screen: RestaurantList,
     navigationOptions: ({navigation}) => ({
-      headerLeft: (<TouchableOpacity style={{width: 50}}>
+      headerLeft: (<TouchableOpacity style={{width: 50}} onPress={() => navigation.navigate('DrawerToggle')}>
         <Icon name='bars' size={30} color={'#FFF'} style={{marginLeft: 20}} />
       </TouchableOpacity>),
       headerRight: (<HeaderRightButtons />)
@@ -147,15 +161,23 @@ export const StackApp = StackNavigator({
       headerRight: (<HeaderRightStatus />)
     })
   }
+}, {
+  initialRoutName: 'Map',
+  headerMode: (Platform.OS === 'ios') ? 'float' : 'screen',
+  mode: (Platform.OS === 'ios') ? 'modal' : 'card',
+  navigationOptions: {
+    gesturesEnabled: false,
+    headerStyle: {
+      backgroundColor: '#FF5722'
+    }
+  }
+})
+
+export const StackApp = DrawerNavigator({
+  Auth: { screen: AuthStack },
+  App: { screen: MainStack }
 },
   {
-    headerMode: (Platform.OS === 'ios') ? 'float' : 'screen',
-    mode: (Platform.OS === 'ios') ? 'modal' : 'card',
-    navigationOptions: {
-      gesturesEnabled: false,
-      headerStyle: {
-        backgroundColor: '#FF5722'
-      }
-    }
+    headerMode: 'none'
   }
 )

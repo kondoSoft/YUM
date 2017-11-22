@@ -5,7 +5,8 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Picker
+    Picker,
+    StatusBar
 } from 'react-native'
 import {
   ScreenContainer,
@@ -109,6 +110,11 @@ export default class Pay extends Component {
     const {navigate} = this.props.navigation
     return (
       <ScreenContainer height={height} width={width}>
+        <StatusBar
+          backgroundColor='#ff5722'
+          barStyle='light-content'
+          setTranslucent
+        />
         <Total>
           <TotalText>TOTAL</TotalText>
           <TotalText>$255.00</TotalText>

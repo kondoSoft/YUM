@@ -13,14 +13,15 @@ import {
   Logo,
   Text,
   InputContainer,
-  TextGray,
+  TextGray
 } from '../../components/QualificationServiceComponents'
 import {
   StatusBar,
   Platform
 } from 'react-native'
 import {
-  Dimensions
+  Dimensions,
+  StatusBar
 } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -48,7 +49,7 @@ class QualificationService extends Component {
   constructor () {
     super()
     this.state = {
-      currentQualification: 0,
+      currentQualification: 0
     }
     this.ChangeStars = this.ChangeStars.bind(this)
   }

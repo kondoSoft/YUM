@@ -5,7 +5,8 @@ import {
 } from 'react-native'
 import {
   Text,
-  Dimensions
+  Dimensions,
+  StatusBar
 } from 'react-native'
 import {
     ScreenContainer,

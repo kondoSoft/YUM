@@ -21,6 +21,7 @@ import TouchableStars from './touchableStars'
 import MainContainer from './mainContainer'
 import ViewHistorial from './historialView'
 import Scroll from './scroll'
+import ModalView from './modal'
 import {HeaderRightButtons, HeaderRigthBag, HeaderRightRestaurant, HeaderLeftStatus, HeaderMiddleStatus, HeaderRightStatus} from './headerBar'
 import {
   EditUserInfo,
@@ -139,5 +140,6 @@ export {
   HeaderMiddleStatus,
   HeaderRightStatus,
   Pick,
-  PickContainer
+  PickContainer,
+  ModalView,
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   Button,

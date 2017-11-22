@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {
   Text,
   Dimensions,
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   ScreenContainer,
@@ -26,6 +27,7 @@ export default class UserDetails extends Component {
     return (
       <ScreenContainer height={height} width={width}>
         <StatusBar
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

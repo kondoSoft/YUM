@@ -33,10 +33,9 @@ class Bag extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      <ScrollContainer height='100%'>
         <MainContainer padding={10}>
           <StatusBar
-            hidden={Platform !== 'ios'}
+            hidden={Platform.OS !== 'ios'}
             backgroundColor='#ff5722'
             barStyle='light-content'
             setTranslucent
@@ -85,7 +84,6 @@ class Bag extends Component {
             </ButtonContainer>
           </BottomContainer>
         </MainContainer>
-      </ScrollContainer>
     )
   }
 }

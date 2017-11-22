@@ -25,6 +25,7 @@ export default class SearchMap extends Component {
     return (
       <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
         <StatusBar
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

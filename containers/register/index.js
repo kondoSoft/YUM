@@ -21,7 +21,7 @@ class Register extends Component {
     return (
       <MainContainer>
         <StatusBar
-          hidden={Platform !== 'ios'}
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

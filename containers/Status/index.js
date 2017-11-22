@@ -3,7 +3,8 @@ import {
     Dimenions,
     Text,
     View,
-    StatusBar
+    StatusBar,
+    Platform
 } from 'react-native'
 import {
     ScreenContainer,
@@ -33,6 +34,7 @@ export default class StatusScreen extends Component {
     return (
       <ScreenContainer>
         <StatusBar
+          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

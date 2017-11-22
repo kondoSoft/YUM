@@ -70,7 +70,7 @@ class ModalPayment extends Component {
       <Animated.View style={{position: 'absolute', bottom: this.state.animated, backgroundColor: '#D3D3D3', height: 300, width: '100%', zIndex: 3}}>
         <View>
           <StatusBar
-            hidden={Platform !== 'ios'}
+            hidden={Platform.OS !== 'ios'}
             backgroundColor='#ff5722'
             barStyle='light-content'
             setTranslucent
@@ -121,7 +121,7 @@ export default class Pay extends Component {
         </Total>
         <OptionPayment>
           <Label>Opciones de pago</Label>
-          {Platform === 'ios'
+          {Platform.OS === 'ios'
           ? <PaymentButton onPress={this.changeTypePayment}>
             <TotalText size={14} fontWeight>{this.state.typePayment}</TotalText>
             <Icon name='caret-down' color={'rgb(255,155,37)'} size={20} />

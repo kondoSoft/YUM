@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   Button,
@@ -34,7 +35,6 @@ class Home extends Component {
     return (
       <HomeContainer>
         <StatusBar
-          hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
           setTranslucent

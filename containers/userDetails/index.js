@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {
   Text,
   Dimensions,
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native'
 import {
   ScreenContainer,

@@ -3,7 +3,8 @@ import {
     Dimenions,
     Text,
     View,
-    StatusBar
+    StatusBar,
+    Platform
 } from 'react-native'
 import {
     ScreenContainer,

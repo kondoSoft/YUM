@@ -29,7 +29,7 @@ class Login extends Component {
           hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
           barStyle='light-content'
-          setTranslucent/>
+          setTranslucent />
         <UpContainer>
           <Img source={require('../../assets/img/login_backg.png')} />
         </UpContainer>
@@ -48,7 +48,7 @@ class Login extends Component {
           </InputContainer>
         </CenterContainer>
         <DownContainer>
-          <Button text='ACEPTAR' onPress={() => navigate('Map', {username: 'Manuel Juarez'})} />
+          <Button text='ACEPTAR' onPress={() => navigate('Map')} />
         </DownContainer>
       </MainContainer>
     )

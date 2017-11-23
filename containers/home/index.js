@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {
   StatusBar,
-  Platform
+  Platform,
+  Text
 } from 'react-native'
 import {
   Button,
@@ -29,6 +30,18 @@ class Home extends Component {
       preventLoginFb: 0
     }
     this.goToRegister = this.goToRegister.bind(this)
+  }
+  componentDidMount () {
+    // setTimeout(() => {
+    //   this.button.measure((x, y, width, height, pageX, pageY) => console.log(`x: ${x}, y: ${y}, width: ${width}, height: ${height}, pageX: ${pageX}, pageY: ${pageY}`))
+    // }, 1000)
+    // this.button.setNativeProps({
+    //   style: {
+    //     position: 'absolute',
+    //     top: 0,
+    //     left: 0
+    //   }
+    // })
   }
   render () {
     const {navigate} = this.props.navigation
@@ -58,6 +71,7 @@ class Home extends Component {
             </RightContainer>
           </DownSubContainerDown>
         </DownContainer>
+        {/* <Text ref={ref => this.button = ref} >Hello world</Text> */}
       </HomeContainer>
     )
   }

@@ -23,7 +23,7 @@ export default class SearchMap extends Component {
   render () {
     const {navigate} = this.props.navigation
     return (
-      <ScreenContainer width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
+      <ScreenContainer ref={ref => this.scrollContainer = ref} width={width} height='100%' style={{alignItems: 'center', justifyContent: 'space-between'}}>
         <StatusBar
           hidden={Platform.OS !== 'ios'}
           backgroundColor='#ff5722'
@@ -38,12 +38,6 @@ export default class SearchMap extends Component {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421
           }}
-        />
-        <StatusBar
-          hidden={Platform !== 'ios'}
-          backgroundColor='#ff5722'
-          barStyle='light-content'
-          setTranslucent
         />
         <SearchInput style={{marginTop: 30, zIndex: 4}} placeholder='Elige tu dirección' />
         <Button style={{marginBottom: 30, zIndex: 4}} text='Continuar' onPress={() => navigate('Restaurants')} />

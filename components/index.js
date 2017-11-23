@@ -22,7 +22,8 @@ import MainContainer from './mainContainer'
 import ViewHistorial from './historialView'
 import Scroll from './scroll'
 import ModalView from './modal'
-import {HeaderRightButtons, HeaderRigthBag, HeaderRightRestaurant, HeaderLeftStatus, HeaderMiddleStatus, HeaderRightStatus} from './headerBar'
+import Drawer from './drawer'
+import {HeaderRightButtons, HeaderRigthBag, HeaderRightRestaurant, HeaderLeftStatus, HeaderMiddleStatus, HeaderRightStatus, HeaderRightUser} from './headerBar'
 import {
   EditUserInfo,
   EditForm,
@@ -142,4 +143,6 @@ export {
   Pick,
   PickContainer,
   ModalView,
+  Drawer,
+  HeaderRightUser
 }

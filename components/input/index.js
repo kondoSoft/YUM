@@ -18,6 +18,8 @@ const StyledInput = (props) => (
       placeholder = {props.label}
       onChangeText = {(text) => props.change ? props.change(text): ''}
       withOutMargin = {props.withOutMargin}
+      selectionColor = {'#ff5722'}
+      // onSubmitEditing = {console.log("hola mundo")}
     />
 )
 export default StyledInput

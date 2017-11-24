@@ -20,11 +20,13 @@ import {
   LineContainer,
   SocialsContainer,
   TextContainer,
-  StickContainer
+  StickContainer,
+  Touch,
 } from '../../components/restaurantViewComponents'
 import {
   StatusBar,
-  Platform
+  Platform,
+  Linking
 } from 'react-native'
 
 class RestaurantView extends Component{
@@ -108,22 +110,30 @@ class RestaurantView extends Component{
               </StickContainer>
             </LineContainer>
             <SocialsContainer>
-              <IconEdit
-                name='whatsapp'
-                size={25}
-              />
-              <IconEdit
-                name='facebook'
-                size={25}
-              />
-              <IconEdit
-                name='twitter'
-                size={25}
-              />
-              <IconEdit
-                name='instagram'
-                size={25}
-              />
+              <Touch>
+                <IconEdit
+                  name='whatsapp'
+                  size={25}
+                />
+              </Touch>
+              <Touch onPress = {()=>Linking.openURL('https://www.facebook.com/')}>
+                <IconEdit
+                  name='facebook'
+                  size={25}
+                />
+              </Touch>
+              <Touch onPress = {()=>Linking.openURL('https://twitter.com/')}>
+                <IconEdit
+                  name='twitter'
+                  size={25}
+                />
+              </Touch>
+              <Touch onPress = {()=>Linking.openURL('https://instagram.com/')}>
+                <IconEdit
+                  name='instagram'
+                  size={25}
+                />
+              </Touch>
             </SocialsContainer>
           </BottomContainerDown>
         </BottomContainer>

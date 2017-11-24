@@ -79,7 +79,7 @@ const MainStack = StackNavigator({
     })
   },
   Menu: {
-    screen: Menu,
+    screen: RestaurantView,
     navigationOptions: ({navigation}) => ({
       headerLeft: (<TouchableOpacity onPress={() => navigation.goBack()} style={{width: 50}}>
         <Icon name={(Platform.OS === 'ios') ? 'angle-left' : 'arrow-left'} size={30} color={'#FFF'} style={{marginLeft: 20}} />

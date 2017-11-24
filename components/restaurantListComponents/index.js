@@ -36,6 +36,45 @@ const TopContainerDown =  styled.View`
   border-bottom-width: 2px;
   margin: 0 10px 0 10px;
 `
+const ModalView = styled.View`
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  margin-top: 40px;
+  width: 100%;
+  height: 40%;
+  border-radius: 20px;
+`
+const ModalTouch = styled.TouchableOpacity`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+
+`
+const ViewOpacity = styled.View`
+  z-index: 2;
+  background-color: rgba(0,0,0,0.45);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+`
+const ModalText = styled.Text`
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+`
+const ModalContent = styled.View`
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  background-color: #FFF;
+  border-radius: 15px;
+  height: 80%;
+`
 export{
   TopContainer,
   BottomContainer,
@@ -44,4 +83,9 @@ export{
   TopContainerUpLeft,
   TopContainerUpRight,
   TopContainerDown,
+  ViewOpacity,
+  ModalView,
+  ModalTouch,
+  ModalText,
+  ModalContent
 }

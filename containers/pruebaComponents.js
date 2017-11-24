@@ -10,6 +10,12 @@ import { Alert,Modal, Text, TouchableHighlight, View } from 'react-native';
    margin-top: 30px;
    display: flex;
    background-color: #fff;
+
+ `
+ const Button = styled.TouchableOpacity`
+   width: 100%;
+   flex: 1;
+   align-items: center;
  `
 
  class Prueba extends Component {
@@ -38,12 +44,12 @@ import { Alert,Modal, Text, TouchableHighlight, View } from 'react-native';
           animationType="fade"
           transparent={true}
           visible={this.state.modalVisible}
-          onRequestClose={() => {alert("Modal has been closed.")}}
+          onRequestClose={() => {Alert.alert("Modal has been closed.")}}
           style={{width:'50%', borderColor:'black',borderWidth:1,}}
           >
          <View style={{width:'50%', borderColor:'black',borderWidth:1,backgroundColor:'#fff'}}>
           <View style={{zIndex:3,}}>
-            {Alert.alert(
+            {/* {Alert.alert(
               'Alert Title',
               'My Alert Msg',
               [
@@ -54,7 +60,7 @@ import { Alert,Modal, Text, TouchableHighlight, View } from 'react-native';
               ],
               {cancelable: false}
           )
-          }
+          } */}
             <TouchableHighlight onPress={() => {
               this.setModalVisible(!this.state.modalVisible)
             }}>

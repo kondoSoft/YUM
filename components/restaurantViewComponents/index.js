@@ -77,6 +77,12 @@ const StickContainer = styled.View`
   flex-direction: row;
   align-items: center;
 `
+const Touch = styled.TouchableOpacity`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+`
 export {
   TopContainer,
   BottomContainer,
@@ -94,4 +100,5 @@ export {
   LineContainer,
   SocialsContainer,
   StickContainer,
+  Touch
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const ArrowDown = styled.View`
+export const ArrowDown = styled.TouchableOpacity`
     align-items: center;
     width: 100%;
 `
@@ -53,4 +53,17 @@ export const Check = styled.View`
 `
 export const TextStatus = styled.View`
     flex: 3;
+`
+export const BottomView = styled.View`
+  border: 1px solid black;
+  align-items: center;
+  background-color: #FFF;
+  ${props => {
+    if (props.height) {
+      console.log(props.height)
+      return `
+            height: ${props.height};
+          `
+    }
+  }}
 `

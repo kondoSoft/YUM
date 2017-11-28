@@ -17,6 +17,16 @@ const HeaderLeftOrder = styled.Text`
   color: #FFF;
 `
 
+export const HeaderRightUser = (props) => {
+  return (
+    <HeaderLeft style={{marginRight: 20}}>
+      <CancelButton onPress={() => props.navigate('EditUser')}>
+        <CancelText>EDITAR</CancelText>
+      </CancelButton>
+    </HeaderLeft>
+  )
+}
+
 export const HeaderRightButtons = (props) => {
   return (
     <HeaderRight>

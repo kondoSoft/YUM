@@ -38,7 +38,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 const AuthStack = StackNavigator({
   Home: {
-    screen: StatusScreen,
+    screen: Home,
     navigationOptions: { header: null }
   },
   Login: {

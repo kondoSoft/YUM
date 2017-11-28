@@ -6,7 +6,9 @@ import {
     StatusBar,
     Platform,
     LayoutAnimation,
-    NativeModules
+    NativeModules,
+    Animated,
+    Easing
 } from 'react-native'
 import {
     ScreenContainer,
@@ -39,12 +41,13 @@ export default class StatusScreen extends Component {
   constructor(){
     super()
     this.state = {
-      hidden:false,
-      h: '75%',
-      orderStatus: '',
-      mapHeight:'25%',
+        hidden:false,
+        h: '75%',
+        orderStatus: '',
+        mapHeight:'25%'
       }
 
+      this.animatedValue = new Animated.Value(1)
     this._onPress = this._onPress.bind(this)
   }
   _onPress = () => {
@@ -66,13 +69,45 @@ export default class StatusScreen extends Component {
     }
   // Animate the update
   LayoutAnimation.configureNext(CustomLayoutSpring)
+  this.animate()
   // LayoutAnimation.spring()
   this.state.hidden == false ?
   this.setState({ h: '20%', mapHeight: '80%',hidden: true})
   :
   this.setState({ h: '75%', mapHeight: '25%',hidden: false})
 }
-  render () {
+animate () {
+  if (this.animatedValue._value === 1) {
+    this.animatedValue.setValue(0)
+    Animated.timing(
+      this.animatedValue,
+      {
+        toValue: 0,
+        duration: 2000,
+        easing: Easing.linear
+      }
+    ).start()
+  }else {
+    this.animatedValue.setValue(1)
+    Animated.timing(
+      this.animatedValue,
+      {
+        toValue: 1,
+        duration: 2000,
+        easing: Easing.linear
+      }
+    ).start()
+  }
+}
+render () {
+    const opacity = this.animatedValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0, 1]
+    })
+    const marginBottom = this.animatedValue.interpolate({
+      inputRange: [0,1],
+      outputRange: [50, 0]
+    })
     return (
       <ScreenContainer>
         <StatusBar
@@ -91,10 +126,18 @@ export default class StatusScreen extends Component {
           }}
         />
        <BottomView height = {this.state.h} >
-        <ArrowDown flex={0.4} onPress = {this._onPress}>
-          <Icon name='caret-down' size={25} color={'#F9381F'} />
+        <ArrowDown flex={0.3} onPress = {this._onPress}>
+          <Icon  name={this.state.hidden ? 'caret-up' : 'caret-down'} size={25} color={'#F9381F'} />
         </ArrowDown>
-        <RestaurantInfo>
+        <Animated.View style={{
+          opacity,
+          width: '100%',
+          flexDirection: 'row',
+          flex: 1,
+          alignItems: 'center',
+          borderBottomWidth: 2,
+          borderColor: '#C7C7CC'
+        }}>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
           <RestaurantData>
             <Text>Los Danzantes</Text>
@@ -103,8 +146,16 @@ export default class StatusScreen extends Component {
             <Icon name='phone' size={25} color={'#F9381F'} />
             <Icon name='commenting' size={25} color={'#F9381F'} />
           </PhoneMessage>
-        </RestaurantInfo>
-        <MotorcycleInfo>
+        </Animated.View>
+        <Animated.View style={{
+          opacity,
+          width: '100%',
+          flexDirection: 'row',
+          flex: 1,
+          alignItems: 'center',
+          borderBottomWidth: 2,
+          borderColor: '#C7C7CC',
+        }}>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
           <MotorcycleData>
             <Text>Jorge Velásquez</Text>
@@ -114,35 +165,56 @@ export default class StatusScreen extends Component {
             <Icon name='phone' size={25} color={'#F9381F'} />
             <Icon name='commenting' size={25} color={'#F9381F'} />
           </PhoneMessage>
-        </MotorcycleInfo>
+        </Animated.View>
         <StatusContainer flex={3}>
-          <StatusCheck>
+          <Animated.View style={{
+            opacity,
+            flexDirection: 'row',
+            width: '100%',
+            alignItems: 'center'
+          }} >
             <Check>
               <Icon name='check-circle-o' size={30} color={'#F9381F'} />
             </Check>
             <TextStatus>
               <Text style={{fontSize: 18}}>Pedido Recibido</Text>
             </TextStatus>
-          </StatusCheck>
-          <StatusCheck>
+          </Animated.View>
+          <Animated.View style={{
+            opacity,
+            flexDirection: 'row',
+            width: '100%',
+            alignItems: 'center'
+          }} >
             <Check>
               <Icon name='check-circle-o' size={30} color={'#F9381F'} />
             </Check>
             <TextStatus>
               <Text style={{fontSize: 18}}>Comida Lista</Text>
             </TextStatus>
-          </StatusCheck>
-          <StatusCheck>
+          </Animated.View>
+          <Animated.View style={{
+            marginBottom,
+            flexDirection: 'row',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
             <Status />
-          </StatusCheck>
-          <StatusCheck>
+          </Animated.View>
+          <Animated.View style={{
+            opacity,
+            flexDirection: 'row',
+            width: '100%',
+            alignItems: 'center'
+          }} >
             <Check>
               <Icon name='check-circle-o' size={30} color={'#F9381F'} />
             </Check>
             <TextStatus>
               <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
             </TextStatus>
-          </StatusCheck>
+          </Animated.View>
         </StatusContainer>
        </BottomView>
       </ScreenContainer>

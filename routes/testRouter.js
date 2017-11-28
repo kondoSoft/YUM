@@ -58,8 +58,7 @@ const UserStack = StackNavigator({
 
 const AuthStack = StackNavigator({
   Home: {
-    screen: Home,
-    navigationOptions: { header: null }
+    screen: StatusScreen
   },
   Login: {
     screen: Login,

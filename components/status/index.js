@@ -4,6 +4,8 @@ export const ArrowDown = styled.TouchableOpacity`
     align-items: center;
     flex: ${props => props.flex ? props.flex : 1};
     width: 100%;
+    z-index: 2;
+    position: absolute;
 `
 export const RestaurantInfo = styled.View`
     width: 100%;
@@ -64,10 +66,9 @@ export const TextStatus = styled.View`
     flex: 3;
 `
 export const BottomView = styled.View`
-  border: 1px solid black;
-  align-items: center;
   background-color: #FFF;
-
+  width: 100%;
+  align-items: center;
   ${props => {
     if (props.height) {
       return `

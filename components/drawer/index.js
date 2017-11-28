@@ -41,7 +41,7 @@ const ButtonText = styled.Text`
   font-size: 25px;
   padding-left: 15px;
 `
-const AndroidButton = styled.TouchableNativeFeedback`
+const AndroidButton = styled.TouchableOpacity`
   padding: 20px;
   flex-direction: row;
   align-items: center;
@@ -71,7 +71,7 @@ class Drawer extends Component {
         <View>
           <BackgroundImage source={require('../../assets/img/drawer_backg.png')} />
         </View>
-        <Row flex={2} margin spaceAround>
+        <Row flex={2}  spaceAround>
           <DrawerButton onPress={() => this.props.navigation.navigate('Profile')}>
             <Icon name='user' size={25} color={'#FF5722'} />
             <ButtonText>Usuario</ButtonText>
@@ -89,7 +89,7 @@ class Drawer extends Component {
             <ButtonText>Factura</ButtonText>
           </DrawerButton>
         </Row>
-        <Row margin flexEnd>
+        <Row  flexEnd>
           <DrawerButton>
             <Icon name='sign-out' size={25} color={'#FF5722'} />
             <ButtonText>Cerrar Sesión</ButtonText>

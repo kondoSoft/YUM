@@ -2,17 +2,23 @@ import styled from 'styled-components/native'
 
 export const ArrowDown = styled.View`
     align-items: center;
+    flex: ${props => props.flex ? props.flex : 1};
     width: 100%;
 `
 export const RestaurantInfo = styled.View`
     width: 100%;
     flex-direction: row;
-    padding: 5px;
+    flex: ${props => props.flex ? props.flex : 1};
+    align-items: center;
+    border-bottom-width: 2px;
+    border-color: #C7C7CC;
 `
 export const MotorcycleInfo = styled.View`
     width: 100%;
     flex-direction: row;
-    padding: 5px;
+    flex: ${props => props.flex ? props.flex : 1};
+    border-bottom-width: 2px;
+    border-color: #FF5722;
 `
 export const Image = styled.Image`
     flex: 1;
@@ -41,15 +47,18 @@ export const Hr = styled.View`
 `
 export const StatusContainer = styled.View`
     width: 80%;
+    flex: ${props => props.flex ? props.flex : 1};
+    justify-content: space-around;
+    align-items: center;
 `
 export const StatusCheck = styled.View`
     flex-direction: row;
     width: 100%;
-    padding: 12px 5px;
     align-items: center;
 `
 export const Check = styled.View`
     flex: 1;
+    align-items: center;
 `
 export const TextStatus = styled.View`
     flex: 3;

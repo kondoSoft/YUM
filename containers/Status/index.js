@@ -40,7 +40,7 @@ export default class StatusScreen extends Component {
           setTranslucent
         />
         <MapView
-          style={{width: '100%', height: 200 }}
+          style={{ flex: 3, width: '100%' }}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -48,8 +48,8 @@ export default class StatusScreen extends Component {
             longitudeDelta: 0.0421
           }}
         />
-        <ArrowDown>
-          <Icon name='caret-down' size={30} color={'#F9381F'} />
+        <ArrowDown flex={0.4}>
+          <Icon name='caret-down' size={25} color={'#F9381F'} />
         </ArrowDown>
         <RestaurantInfo>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
@@ -61,7 +61,6 @@ export default class StatusScreen extends Component {
             <Icon name='commenting' size={25} color={'#F9381F'} />
           </PhoneMessage>
         </RestaurantInfo>
-        <Hr color={'#C7C7CC'} />
         <MotorcycleInfo>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
           <MotorcycleData>
@@ -73,8 +72,7 @@ export default class StatusScreen extends Component {
             <Icon name='commenting' size={25} color={'#F9381F'} />
           </PhoneMessage>
         </MotorcycleInfo>
-        <Hr />
-        <StatusContainer>
+        <StatusContainer flex={3}>
           <StatusCheck>
             <Check>
               <Icon name='check-circle-o' size={30} color={'#F9381F'} />

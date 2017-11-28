@@ -78,7 +78,7 @@ export default class StatusScreen extends Component {
           setTranslucent
         />
         <MapView
-          style={{width: '100%', height: this.state.mapHeight }}
+          style={{ flex: 3, width: '100%' }}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -86,63 +86,61 @@ export default class StatusScreen extends Component {
             longitudeDelta: 0.0421
           }}
         />
-        <BottomView height = {this.state.h} >
-          <ArrowDown onPress = {this._onPress}>
-            <Icon name='caret-down' size={30} color={'#F9381F'} />
-          </ArrowDown>
-          <RestaurantInfo>
-            <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
-            <RestaurantData>
-              <Text>Los Danzantes</Text>
-            </RestaurantData>
-            <PhoneMessage>
-              <Icon name='phone' size={25} color={'#F9381F'} />
-              <Icon name='commenting' size={25} color={'#F9381F'} />
-            </PhoneMessage>
-          </RestaurantInfo>
-          <Hr color={'#C7C7CC'} />
-          <MotorcycleInfo>
-            <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
-            <MotorcycleData>
-              <Text>Jorge Velásquez</Text>
-              <Motorcycle>Italika Blanca 2W45JV</Motorcycle>
-            </MotorcycleData>
-            <PhoneMessage>
-              <Icon name='phone' size={25} color={'#F9381F'} />
-              <Icon name='commenting' size={25} color={'#F9381F'} />
-            </PhoneMessage>
-          </MotorcycleInfo>
-          <Hr />
-          <StatusContainer>
-            <StatusCheck>
-              <Check>
-                <Icon name='check-circle-o' size={30} color={'#F9381F'} />
-              </Check>
-              <TextStatus>
-                <Text style={{fontSize: 18}}>Pedido Recibido</Text>
-              </TextStatus>
-            </StatusCheck>
-            <StatusCheck>
-              <Check>
-                <Icon name='check-circle-o' size={30} color={'#F9381F'} />
-              </Check>
-              <TextStatus>
-                <Text style={{fontSize: 18}}>Comida Lista</Text>
-              </TextStatus>
-            </StatusCheck>
-            <StatusCheck>
-              <Status />
-            </StatusCheck>
-            <StatusCheck>
-              <Check>
-                <Icon name='check-circle-o' size={30} color={'#F9381F'} />
-              </Check>
-              <TextStatus>
-                <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
-              </TextStatus>
-            </StatusCheck>
-          </StatusContainer>
-        </BottomView>
+       <BottomView height = {this.state.h} >
+        <ArrowDown flex={0.4} onPress = {this._onPress}>
+          <Icon name='caret-down' size={25} color={'#F9381F'} />
+        </ArrowDown>
+        <RestaurantInfo>
+          <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
+          <RestaurantData>
+            <Text>Los Danzantes</Text>
+          </RestaurantData>
+          <PhoneMessage>
+            <Icon name='phone' size={25} color={'#F9381F'} />
+            <Icon name='commenting' size={25} color={'#F9381F'} />
+          </PhoneMessage>
+        </RestaurantInfo>
+        <MotorcycleInfo>
+          <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
+          <MotorcycleData>
+            <Text>Jorge Velásquez</Text>
+            <Motorcycle>Italika Blanca 2W45JV</Motorcycle>
+          </MotorcycleData>
+          <PhoneMessage>
+            <Icon name='phone' size={25} color={'#F9381F'} />
+            <Icon name='commenting' size={25} color={'#F9381F'} />
+          </PhoneMessage>
+        </MotorcycleInfo>
+        <StatusContainer flex={3}>
+          <StatusCheck>
+            <Check>
+              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
+            </Check>
+            <TextStatus>
+              <Text style={{fontSize: 18}}>Pedido Recibido</Text>
+            </TextStatus>
+          </StatusCheck>
+          <StatusCheck>
+            <Check>
+              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
+            </Check>
+            <TextStatus>
+              <Text style={{fontSize: 18}}>Comida Lista</Text>
+            </TextStatus>
+          </StatusCheck>
+          <StatusCheck>
+            <Status />
+          </StatusCheck>
+          <StatusCheck>
+            <Check>
+              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
+            </Check>
+            <TextStatus>
+              <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
+            </TextStatus>
+          </StatusCheck>
+        </StatusContainer>
+       </BottomView>
       </ScreenContainer>
     )
   }

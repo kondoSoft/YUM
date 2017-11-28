@@ -10,7 +10,8 @@ export const ScreenContainer = styled.View`
       }
     }}
     align-items: center;
-    background-color: #FFF;
+    backgroundColor: #FFF;
+    flex: 1;
 `
 export const Total = styled.View`
   width: 90%;
@@ -54,7 +55,7 @@ export const Pick = styled.Picker`
 `
 export const PickContainer = styled.View`
   width: 100%;
-  ${'' /* border-radius: 10; */}
+  ${''}
   border-width: 2px;
   border-color: #FA5900;
   flex-direction: row;

@@ -4,7 +4,9 @@ import {
     Text,
     View,
     StatusBar,
-    Platform
+    Platform,
+    LayoutAnimation,
+    NativeModules
 } from 'react-native'
 import {
     ScreenContainer,
@@ -22,14 +24,50 @@ import {
     StatusCheck,
     Check,
     TextStatus,
-    Status
+    Status,
+    BottomView,
 } from '../../components'
 import {
   MapView
 } from 'expo'
 import Icon from 'react-native-vector-icons/FontAwesome'
+const { UIManager } = NativeModules;
+
+  UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 
 export default class StatusScreen extends Component {
+  constructor(){
+    super()
+    this.state = {
+      hidden:false,
+      h: '75%',
+      orderStatus: '',
+      mapHeight:'25%',
+      }
+
+    this._onPress = this._onPress.bind(this)
+  }
+  _onPress = () => {
+    const CustomLayoutSpring = {
+    duration: 1000,
+    create: {
+      type: LayoutAnimation.Types.spring,
+      property: LayoutAnimation.Properties.scaleXY,
+      springDamping: 0.7,
+    },
+    update: {
+      type: LayoutAnimation.Types.spring,
+      springDamping: 0.7,
+    },
+    }
+  // Animate the update
+  LayoutAnimation.configureNext(CustomLayoutSpring)
+  // LayoutAnimation.spring()
+  this.state.hidden == false ?
+  this.setState({ h: '20%', mapHeight: '80%',hidden: true})
+  :
+  this.setState({ h: '75%', mapHeight: '25%',hidden: false})
+}
   render () {
     return (
       <ScreenContainer>
@@ -48,7 +86,8 @@ export default class StatusScreen extends Component {
             longitudeDelta: 0.0421
           }}
         />
-        <ArrowDown flex={0.4}>
+       <BottomView height = {this.state.h} >
+        <ArrowDown flex={0.4} onPress = {this._onPress}>
           <Icon name='caret-down' size={25} color={'#F9381F'} />
         </ArrowDown>
         <RestaurantInfo>
@@ -101,6 +140,7 @@ export default class StatusScreen extends Component {
             </TextStatus>
           </StatusCheck>
         </StatusContainer>
+       </BottomView>
       </ScreenContainer>
     )
   }

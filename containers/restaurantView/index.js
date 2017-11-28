@@ -31,6 +31,7 @@ import {
 
 class RestaurantView extends Component{
   render(){
+    const urlToOpen = 'tel:5219931175435'
     return (
       <MainContainer>
         <StatusBar
@@ -99,18 +100,20 @@ class RestaurantView extends Component{
                   <TextGray>09:00 - 20:00</TextGray>
                 </TextContainer>
               </StickContainer>
+              <Touch onPress = {()=> Linking.openURL(urlToOpen)}>
               <StickContainer>
-                <IconEdit
-                  name='phone'
-                  size={20}
-                />
+                  <IconEdit
+                    name='phone'
+                    size={20}
+                  />
                 <TextContainer>
                   <TextGray>(993)263-74-17</TextGray>
                 </TextContainer>
               </StickContainer>
+            </Touch>
             </LineContainer>
             <SocialsContainer>
-              <Touch>
+              <Touch onPress = {()=> Linking.openURL('whatsapp://send?text=helloFromYUM-I-want-to-buy-some-Food&phone=5219931175435')}>
                 <IconEdit
                   name='whatsapp'
                   size={25}

@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 const TextBox = styled.TextInput`
-  border-bottom-width: 1px;
   background-color: #fff;
-  border-Color: ${props => props.colorB ? props.colorB :'rgb(131,131,131)'};
   padding-left: 5px;
   margin: ${(props) => props.withOutMargin ? '0' : '10px' };
   flex: 1;
@@ -19,6 +17,7 @@ const StyledInput = (props) => (
       onChangeText = {(text) => props.change ? props.change(text): ''}
       withOutMargin = {props.withOutMargin}
       selectionColor = {'#ff5722'}
+      underlineColorAndroid = {'#FF5722'}
       // onSubmitEditing = {console.log("hola mundo")}
     />
 )

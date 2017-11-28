@@ -34,7 +34,7 @@ const InputContainer = styled.View`
   flex: 1;
   width: 90%;
   max-height: 60px;
-  margin: 5px 0 5px 0;
+
 `
 const Logo = styled.Image`
   width: 100px;

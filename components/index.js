@@ -70,7 +70,8 @@ import {
   StatusContainer,
   StatusCheck,
   Check,
-  TextStatus
+  TextStatus,
+  BottomView,
 } from './status'
 export {
   Button,
@@ -143,6 +144,7 @@ export {
   Pick,
   PickContainer,
   ModalView,
+  BottomView,
   Drawer,
   HeaderRightUser
 }

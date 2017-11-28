@@ -39,7 +39,7 @@ export default class SearchMap extends Component {
             longitudeDelta: 0.0421
           }}
         />
-        <SearchInput style={{marginTop: 30, zIndex: 4}} placeholder='Elige tu dirección' />
+        <SearchInput style={{marginTop: 30, zIndex: 4}} placeholder='Elige tu dirección'  />
         <Button style={{marginBottom: 30, zIndex: 4}} text='Continuar' onPress={() => navigate('Restaurants')} />
       </ScreenContainer>
     )

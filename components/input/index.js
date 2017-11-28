@@ -1,11 +1,20 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import {Platform} from 'react-native'
 
 const TextBox = styled.TextInput`
   background-color: #fff;
   padding-left: 5px;
   margin: ${(props) => props.withOutMargin ? '0' : '10px' };
   flex: 1;
+  ${(props)=> {if (Platform.OS == 'ios') {
+    return `
+      border-bottom-width: 1px;
+      border-color: #FF5722;
+    `
+      }
+    }
+  }
 `
 const StyledInput = (props) => (
     <TextBox

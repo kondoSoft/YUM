@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import {Platform} from 'react-native'
 
 export const ScreenContainer = styled.View`
     ${props => {
@@ -80,9 +81,15 @@ export const Detail = styled.View`
 export const Input = styled.TextInput`
   margin-top: 10px;
   width: 100%;
-  border-bottom-width: 2px;
-  border-color: #CACBCA;
   padding: 10px 15px 5px 15px;
+  ${()=> {if (Platform.OS == 'ios') {
+    return `
+      border-bottom-width: 1px;
+      border-color: #FF5722;
+    `
+      }
+    }
+  }
 `
 export const PayButton = styled.View`
   width: 100%;

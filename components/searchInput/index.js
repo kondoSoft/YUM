@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import {Platform} from 'react-native'
+
 
 const Container = styled.View`
   width: 95%;
@@ -24,6 +26,14 @@ const SearchText = styled.TextInput`
   color: rgb(131,131,131);
   flex: 5;
   padding-left: 4px;
+  ${()=> {if (Platform.OS == 'ios') {
+    return `
+      border-bottom-width: 1px;
+      border-bottom-color: #F5722;
+    `
+      }
+    }
+  }
 `
 const SearchInput = (props) => (
   <Container style={props.style}>
@@ -31,6 +41,7 @@ const SearchInput = (props) => (
       value={props.text}
       onChangeText={(text) => props.change(text)}
       placeholder={props.placeholder}
+      underlineColorAndroid = {'transparent'}
     />
     <Iconcontainer>
       <Icon

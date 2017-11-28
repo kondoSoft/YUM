@@ -53,11 +53,15 @@ export default class StatusScreen extends Component {
     create: {
       type: LayoutAnimation.Types.spring,
       property: LayoutAnimation.Properties.scaleXY,
-      springDamping: 0.7,
+      springDamping: 0.5,
+      friction: 8,
+      tension: 1,
     },
     update: {
       type: LayoutAnimation.Types.spring,
-      springDamping: 0.7,
+      springDamping: 0.5,
+      friction: 8,
+      tension: 1,
     },
     }
   // Animate the update

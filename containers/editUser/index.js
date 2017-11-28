@@ -49,15 +49,15 @@ export default class EditUser extends Component {
         <EditUserInfo>
           <EditForm>
             <EditLabel>Nombre</EditLabel>
-            <EditInput />
+            <EditInput underlineColorAndroid = {'#FF5722'}  />
           </EditForm>
           <EditForm>
             <EditLabel>Correo electronico</EditLabel>
-            <EditInput />
+            <EditInput underlineColorAndroid = {'#FF5722'}  />
           </EditForm>
           <EditForm>
             <EditLabel>Contraseña</EditLabel>
-            <EditInput />
+            <EditInput underlineColorAndroid = {'#FF5722'} />
           </EditForm>
         </EditUserInfo>
         <PayMethod style={{marginTop: 0, justifyContent: 'space-between'}}>
@@ -75,16 +75,16 @@ export default class EditUser extends Component {
           </OptionPayment>
           <CardNumberContainer style={{width: '100%'}}>
             <Label size={12}>Número de tarjeta</Label>
-            <Input secureTextEntry placeholder='**** **** **** ****' />
+            <Input secureTextEntry placeholder='**** **** **** ****' underlineColorAndroid = {'#FF5722'} />
           </CardNumberContainer>
           <CardDetails style={{width: '100%'}}>
             <Detail>
               <Label size={12}>Fecha de vencimiento</Label>
-              <Input />
+              <Input underlineColorAndroid = {'#FF5722'} />
             </Detail>
             <Detail>
               <Label size={12}>Código de seguridad <Icon name='credit-card' color={'#CACBCA'} size={20} /></Label>
-              <Input />
+              <Input underlineColorAndroid = {'#FF5722'} />
             </Detail>
           </CardDetails>
           <SaveButton>

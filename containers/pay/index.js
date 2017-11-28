@@ -138,16 +138,16 @@ export default class Pay extends Component {
         </OptionPayment>
         <CardNumberContainer>
           <Label size={12}>Número de tarjeta</Label>
-          <Input secureTextEntry placeholder='**** **** **** ****' />
+          <Input secureTextEntry placeholder='**** **** **** ****' underlineColorAndroid = {'#FF5722'} />
         </CardNumberContainer>
         <CardDetails>
           <Detail>
             <Label size={12}>Fecha de vencimiento</Label>
-            <Input />
+            <Input underlineColorAndroid = {'#FF5722'} />
           </Detail>
           <Detail>
             <Label size={12}>Código de seguridad <Icon name='credit-card' color={'#CACBCA'} size={20} /></Label>
-            <Input />
+            <Input underlineColorAndroid = {'#FF5722'} />
           </Detail>
         </CardDetails>
         <PayButton>

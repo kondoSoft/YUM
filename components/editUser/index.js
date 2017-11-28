@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import {Platform} from 'react-native'
 
 export const EditUserInfo = styled.View`
     width: 90%;
@@ -14,9 +15,15 @@ export const EditLabel = styled.Text`
 `
 export const EditInput = styled.TextInput`
     width: 100%;
-    border-bottom-width: 2px;
-    border-color: #FF5722;
     padding: 5px 0px;
+    ${()=> {if (Platform.OS == 'ios') {
+      return `
+        border-bottom-width: 1px;
+        border-bottom-color: #F5722;
+      `
+        }
+      }
+    }
 `
 export const SaveButton = styled.View`
     width: 100%;

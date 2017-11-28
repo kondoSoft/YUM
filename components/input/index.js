@@ -7,10 +7,10 @@ const TextBox = styled.TextInput`
   padding-left: 5px;
   margin: ${(props) => props.withOutMargin ? '0' : '10px' };
   flex: 1;
-  ${()=> {if (Platform.OS == 'ios') {
+  ${(props)=> {if (Platform.OS == 'ios') {
     return `
       border-bottom-width: 1px;
-      border-bottom-color: #F5722;
+      border-color: #FF5722;
     `
       }
     }

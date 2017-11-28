@@ -29,7 +29,7 @@ const SearchText = styled.TextInput`
   ${()=> {if (Platform.OS == 'ios') {
     return `
       border-bottom-width: 1px;
-      border-bottom-color: #F5722;
+      border-color: #FF5722;
     `
       }
     }

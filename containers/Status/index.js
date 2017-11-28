@@ -40,9 +40,10 @@ export default class StatusScreen extends Component {
     super()
     this.state = {
       hidden:false,
-      h: '100%',
+      h: '75%',
       orderStatus: '',
-    }
+      mapHeight:'25%',
+      }
 
     this._onPress = this._onPress.bind(this)
   }
@@ -62,7 +63,10 @@ export default class StatusScreen extends Component {
   // Animate the update
   LayoutAnimation.configureNext(CustomLayoutSpring)
   // LayoutAnimation.spring()
-  this.setState({ h: '20%'})
+  this.state.hidden == false ?
+  this.setState({ h: '20%', mapHeight: '80%',hidden: true})
+  :
+  this.setState({ h: '75%', mapHeight: '25%',hidden: false})
 }
   render () {
     return (
@@ -74,7 +78,7 @@ export default class StatusScreen extends Component {
           setTranslucent
         />
         <MapView
-          style={{width: '100%', height: 200 }}
+          style={{width: '100%', height: this.state.mapHeight }}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -82,7 +86,7 @@ export default class StatusScreen extends Component {
             longitudeDelta: 0.0421
           }}
         />
-        <BottomView height = {this.state.h}>
+        <BottomView height = {this.state.h} >
           <ArrowDown onPress = {this._onPress}>
             <Icon name='caret-down' size={30} color={'#F9381F'} />
           </ArrowDown>

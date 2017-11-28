@@ -58,9 +58,9 @@ export const BottomView = styled.View`
   border: 1px solid black;
   align-items: center;
   background-color: #FFF;
+
   ${props => {
     if (props.height) {
-      console.log(props.height)
       return `
             height: ${props.height};
           `

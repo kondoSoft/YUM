@@ -13,6 +13,7 @@ const Container = styled.View`
   border-color: rgb(255,87,34);
   align-items: center;
   flex-direction: row;
+  height: 100%;
 `
 const Img = styled.Image`
   border-radius: 60;
@@ -25,10 +26,10 @@ const Teext = styled.Text`
   font-size: 23px;
   padding-left: 10px;
 `
-const Status = () => (
-  <Container>
+const Status = (props) => (
+  <Container flex={props.flex}>
     <Img source={require('../../assets/img/status_button.png')} />
-    <Teext>Pedido en camino </Teext>
+    <Teext>{props.text}</Teext>
   </Container>
 )
 

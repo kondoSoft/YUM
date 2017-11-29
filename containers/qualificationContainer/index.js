@@ -18,8 +18,10 @@ import {
 import {
   StatusBar,
   Platform,
-  Dimensions
+  Dimensions,
 } from 'react-native'
+import {NavigationActions} from 'react-navigation'
+
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -49,8 +51,10 @@ class QualificationService extends Component {
       currentQualification: 0
     }
     this.ChangeStars = this.ChangeStars.bind(this)
+    this.Reset = this.Reset.bind(this)
   }
   render () {
+    const {navigate} = this.props.navigation
     return (
       <MainContainer height={height}>
         <StatusBar
@@ -73,7 +77,7 @@ class QualificationService extends Component {
               </TextGray>
               <StyledInput />
             </InputContainer>
-            <Button onPress={this.props.counterIncrement} IconSide='check' />
+            <Button onPress={this.Reset} IconSide='check'  />
           </BottomContainer>
         </CenterContainer>
       </MainContainer>
@@ -84,6 +88,17 @@ class QualificationService extends Component {
     state.currentQualification = indice
     this.setState(state)
   }
+  Reset(){
+  const resetAction = NavigationActions.reset({
+    index: 0,
+    actions: [
+      NavigationActions.navigate({ routeName: 'Restaurants' })
+      ]
+    })
+      this.props.navigation.dispatch(resetAction)
+
+  }
+
 }
 
 const mapStateToProps = state => ({

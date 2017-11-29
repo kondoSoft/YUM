@@ -45,7 +45,8 @@ export default class StatusScreen extends Component {
         h: '75%',
         orderStatus: '',
         mapHeight:'25%',
-        food: ''
+        food: '',
+        check: 0,
       }
 
       this.animatedValue = new Animated.Value(1)
@@ -101,21 +102,30 @@ animate () {
   }
 }
 componentDidMount () {
+  const {navigate} = this.props.navigation
   setTimeout(() => {
     this.setState({
-      food: 'Pedido Recibido'
+      food: 'Pedido Recibido',check: 1
     })
   }, 2000)
   setTimeout(() => {
     this.setState({
-      food: 'Tu Pedido Ha Llegado'
+      food: 'Comida Lista',check: 2
     })
   }, 4000)
   setTimeout(() => {
     this.setState({
-      food: 'Comida Lista'
+      food: 'Pedido en camino',check: 3
     })
   }, 6000)
+  setTimeout(() => {
+    this.setState({
+      food: 'Tu pedido a llegado',check: 4
+    })
+  }, 8000)
+  setTimeout(() => {
+    navigate('QualificationService')
+  }, 8500)
 }
 render () {
     const opacity = this.animatedValue.interpolate({
@@ -149,12 +159,13 @@ render () {
         </ArrowDown>
         <Animated.View style={{
           opacity,
-          width: '100%',
+          width: '90%',
           flexDirection: 'row',
           flex: 1,
-          alignItems: 'center'
+          alignItems: 'center',
+          justifyContent: 'space-around',
         }}>
-          <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
+          <CircleImage size={40} source={require('../../assets/img/status_button.png')} />
           <RestaurantData>
             <Text>Los Danzantes</Text>
           </RestaurantData>
@@ -171,12 +182,12 @@ render () {
         }}/>
         <Animated.View style={{
           opacity,
-          width: '100%',
+          width: '90%',
           flexDirection: 'row',
           flex: 1,
-          alignItems: 'center'
+          alignItems: 'center',
         }}>
-          <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
+          <CircleImage size={40} source={require('../../assets/img/status_button.png')} />
           <MotorcycleData>
             <Text>Jorge Velásquez</Text>
             <Motorcycle>Italika Blanca 2W45JV</Motorcycle>
@@ -197,22 +208,25 @@ render () {
             this.state.food === 'Pedido Recibido' ?
             <Animated.View style={{
               marginBottom,
+              marginTop: this.state.check == 1 && 15,
               flexDirection: 'row',
               width: '100%',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <Status />
+              <Status text={this.state.food}/>
             </Animated.View>
             : <Animated.View style={{
+                opacity,
                 marginBottom,
                 flexDirection: 'row',
                 width: '100%',
                 alignItems: 'center',
                 justifyContent: 'center'
-              }}>
+              }}
+              >
                 <Check>
-                  <Icon name={this.state.food === 'Tu Pedido Ha Llegado' ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                  <Icon name={this.state.check >= 1 ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
                 </Check>
                 <TextStatus>
                   <Text style={{fontSize: 18}}>Pedido Recibido</Text>
@@ -220,7 +234,7 @@ render () {
               </Animated.View>
           }
           {
-            this.state.food === 'Tu Pedido Ha Llegado' ?
+            this.state.food === 'Comida Lista' ?
             <Animated.View style={{
               marginBottom,
               flexDirection: 'row',
@@ -228,9 +242,10 @@ render () {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <Status />
+            <Status text={this.state.food}/>
             </Animated.View>
             : <Animated.View style={{
+                opacity,
                 marginBottom,
                 flexDirection: 'row',
                 width: '100%',
@@ -238,52 +253,69 @@ render () {
                 justifyContent: 'center'
               }}>
                 <Check>
-                  <Icon name={this.state.food === 'Comida Lista' ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                  <Icon name={this.state.check >=2 ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
                 </Check>
                 <TextStatus>
-                  <Text style={{fontSize: 18}}>Pedido Recibido</Text>
+                  <Text style={{fontSize: 18}}>Comida Lista</Text>
                 </TextStatus>
               </Animated.View>
           }
-          {/* <Animated.View style={{
-                      opacity,
-                      flexDirection: 'row',
-                      width: '100%',
-                      alignItems: 'center'
-                    }} >
-                      <Check>
-                        <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
-                      </Check>
-                      <TextStatus>
-                        <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
-                      </TextStatus>
-                    </Animated.View> */}
-          <Animated.View style={{
-            opacity,
-            flexDirection: 'row',
-            width: '100%',
-            alignItems: 'center'
-          }} >
-            <Check>
-              <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
-            </Check>
-            <TextStatus>
-              <Text style={{fontSize: 18}}>Comida Lista</Text>
-            </TextStatus>
-          </Animated.View>
-          <Animated.View style={{
-            opacity,
-            flexDirection: 'row',
-            width: '100%',
-            alignItems: 'center'
-          }} >
-            <Check>
-              <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
-            </Check>
-            <TextStatus>
-              <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
-            </TextStatus>
-          </Animated.View>
+          {
+            this.state.food === 'Pedido en camino' ?
+            <Animated.View style={{
+              marginBottom,
+              paddingBottom: this.state.check == 3 && 20,
+              flexDirection: 'row',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+            <Status text={this.state.food}/>
+            </Animated.View>
+            : <Animated.View style={{
+                opacity,
+                marginBottom,
+                flexDirection: 'row',
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Check>
+                  <Icon name={this.state.check >= 3 ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                </Check>
+                <TextStatus>
+                  <Text style={{fontSize: 18}}>Pedido en camino</Text>
+                </TextStatus>
+              </Animated.View>
+          }
+          {
+            this.state.food === 'Tu pedido ha llegado' ?
+            <Animated.View style={{
+              marginBottom,
+              flexDirection: 'row',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+            <Status text={this.state.food}/>
+            </Animated.View>
+            : <Animated.View style={{
+                opacity,
+                marginBottom,
+                flexDirection: 'row',
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Check>
+                  <Icon name={this.state.check >=4 ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                </Check>
+                <TextStatus>
+                  <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
+                </TextStatus>
+              </Animated.View>
+          }
+
         </StatusContainer>
        </BottomView>
       </ScreenContainer>

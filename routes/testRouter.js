@@ -58,7 +58,10 @@ const UserStack = StackNavigator({
 
 const AuthStack = StackNavigator({
   Home: {
-    screen: StatusScreen
+    screen: Home,
+    navigationOptions:{
+      header: null,
+    },
   },
   Login: {
     screen: Login,
@@ -163,6 +166,12 @@ const MainStack = StackNavigator({
       },
       headerRight: (<HeaderRightStatus />)
     })
+  },
+  QualificationService: {
+    screen: QualificationService,
+    navigationOptions :{
+      header: null,
+    },
   },
   Profile: { screen: UserStack },
   Favorites: {

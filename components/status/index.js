@@ -23,10 +23,13 @@ export const Image = styled.Image`
 `
 export const RestaurantData = styled.Text`
     flex: 2;
+    padding-left: 5px;
 `
 export const MotorcycleData = styled.View`
     flex: 2;
     justify-content: space-around;
+    padding-left: 5px;
+
 `
 export const PhoneMessage = styled.View`
     flex:1;

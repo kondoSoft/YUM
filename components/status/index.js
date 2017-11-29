@@ -12,15 +12,11 @@ export const RestaurantInfo = styled.View`
     flex-direction: row;
     flex: ${props => props.flex ? props.flex : 1};
     align-items: center;
-    border-bottom-width: 2px;
-    border-color: #C7C7CC;
 `
 export const MotorcycleInfo = styled.View`
     width: 100%;
     flex-direction: row;
     flex: ${props => props.flex ? props.flex : 1};
-    border-bottom-width: 2px;
-    border-color: #FF5722;
 `
 export const Image = styled.Image`
     flex: 1;
@@ -60,6 +56,7 @@ export const StatusCheck = styled.View`
 `
 export const Check = styled.View`
     flex: 1;
+    overflow: hidden;
     align-items: center;
 `
 export const TextStatus = styled.View`

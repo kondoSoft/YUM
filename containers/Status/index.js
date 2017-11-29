@@ -32,7 +32,7 @@ import {
 import {
   MapView
 } from 'expo'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Ionicons'
 const { UIManager } = NativeModules;
 
   UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -44,7 +44,8 @@ export default class StatusScreen extends Component {
         hidden:false,
         h: '75%',
         orderStatus: '',
-        mapHeight:'25%'
+        mapHeight:'25%',
+        food: ''
       }
 
       this.animatedValue = new Animated.Value(1)
@@ -56,15 +57,15 @@ export default class StatusScreen extends Component {
     create: {
       type: LayoutAnimation.Types.spring,
       property: LayoutAnimation.Properties.scaleXY,
-      springDamping: 0.5,
+      springDamping: 1.5,
       friction: 8,
       tension: 1,
     },
     update: {
       type: LayoutAnimation.Types.spring,
-      springDamping: 0.5,
+      springDamping: 1.5,
       friction: 8,
-      tension: 1,
+      tension: 20,
     },
     }
   // Animate the update
@@ -99,14 +100,31 @@ animate () {
     ).start()
   }
 }
+componentDidMount () {
+  setTimeout(() => {
+    this.setState({
+      food: 'Pedido Recibido'
+    })
+  }, 2000)
+  setTimeout(() => {
+    this.setState({
+      food: 'Tu Pedido Ha Llegado'
+    })
+  }, 4000)
+  setTimeout(() => {
+    this.setState({
+      food: 'Comida Lista'
+    })
+  }, 6000)
+}
 render () {
     const opacity = this.animatedValue.interpolate({
       inputRange: [0, 1],
       outputRange: [0, 1]
     })
     const marginBottom = this.animatedValue.interpolate({
-      inputRange: [0,1],
-      outputRange: [50, 0]
+      inputRange: [0, 1],
+      outputRange: [40, 0]
     })
     return (
       <ScreenContainer>
@@ -117,7 +135,7 @@ render () {
           setTranslucent
         />
         <MapView
-          style={{ flex: 3, width: '100%' }}
+          style={{ flex: 4, width: '100%' }}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -126,35 +144,37 @@ render () {
           }}
         />
        <BottomView height = {this.state.h} >
-        <ArrowDown flex={0.3} onPress = {this._onPress}>
-          <Icon  name={this.state.hidden ? 'caret-up' : 'caret-down'} size={25} color={'#F9381F'} />
+        <ArrowDown flex={0.4} onPress = {this._onPress}>
+          <Icon  name={this.state.hidden ? 'ios-arrow-up' : 'ios-arrow-down'} size={25} color={'#F9381F'} />
         </ArrowDown>
         <Animated.View style={{
           opacity,
           width: '100%',
           flexDirection: 'row',
           flex: 1,
-          alignItems: 'center',
-          borderBottomWidth: 2,
-          borderColor: '#C7C7CC'
+          alignItems: 'center'
         }}>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
           <RestaurantData>
             <Text>Los Danzantes</Text>
           </RestaurantData>
           <PhoneMessage>
-            <Icon name='phone' size={25} color={'#F9381F'} />
-            <Icon name='commenting' size={25} color={'#F9381F'} />
+            <Icon name='ios-call' size={25} color={'#F9381F'} />
+            <Icon name='ios-chatbubbles' size={25} color={'#F9381F'} />
           </PhoneMessage>
         </Animated.View>
+        <Animated.View style={{
+          opacity,
+          width: '90%',
+          height: 2,
+          backgroundColor: '#C7C7CC'
+        }}/>
         <Animated.View style={{
           opacity,
           width: '100%',
           flexDirection: 'row',
           flex: 1,
-          alignItems: 'center',
-          borderBottomWidth: 2,
-          borderColor: '#C7C7CC',
+          alignItems: 'center'
         }}>
           <CircleImage size={60} source={require('../../assets/img/status_button.png')} />
           <MotorcycleData>
@@ -162,11 +182,82 @@ render () {
             <Motorcycle>Italika Blanca 2W45JV</Motorcycle>
           </MotorcycleData>
           <PhoneMessage>
-            <Icon name='phone' size={25} color={'#F9381F'} />
-            <Icon name='commenting' size={25} color={'#F9381F'} />
+            <Icon name='ios-call' size={25} color={'#F9381F'} />
+            <Icon name='ios-chatbubbles' size={25} color={'#F9381F'} />
           </PhoneMessage>
         </Animated.View>
+        <Animated.View style={{
+          opacity,
+          width: '90%',
+          height: 2,
+          backgroundColor: '#FF5722'
+        }}/>
         <StatusContainer flex={3}>
+          {
+            this.state.food === 'Pedido Recibido' ?
+            <Animated.View style={{
+              marginBottom,
+              flexDirection: 'row',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <Status />
+            </Animated.View>
+            : <Animated.View style={{
+                marginBottom,
+                flexDirection: 'row',
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Check>
+                  <Icon name={this.state.food === 'Tu Pedido Ha Llegado' ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                </Check>
+                <TextStatus>
+                  <Text style={{fontSize: 18}}>Pedido Recibido</Text>
+                </TextStatus>
+              </Animated.View>
+          }
+          {
+            this.state.food === 'Tu Pedido Ha Llegado' ?
+            <Animated.View style={{
+              marginBottom,
+              flexDirection: 'row',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <Status />
+            </Animated.View>
+            : <Animated.View style={{
+                marginBottom,
+                flexDirection: 'row',
+                width: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Check>
+                  <Icon name={this.state.food === 'Comida Lista' ? 'ios-checkmark-circle-outline' : 'ios-radio-button-off'} size={35} color={'#F9381F'} />
+                </Check>
+                <TextStatus>
+                  <Text style={{fontSize: 18}}>Pedido Recibido</Text>
+                </TextStatus>
+              </Animated.View>
+          }
+          {/* <Animated.View style={{
+                      opacity,
+                      flexDirection: 'row',
+                      width: '100%',
+                      alignItems: 'center'
+                    }} >
+                      <Check>
+                        <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
+                      </Check>
+                      <TextStatus>
+                        <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
+                      </TextStatus>
+                    </Animated.View> */}
           <Animated.View style={{
             opacity,
             flexDirection: 'row',
@@ -174,42 +265,20 @@ render () {
             alignItems: 'center'
           }} >
             <Check>
-              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
-            </Check>
-            <TextStatus>
-              <Text style={{fontSize: 18}}>Pedido Recibido</Text>
-            </TextStatus>
-          </Animated.View>
-          <Animated.View style={{
-            opacity,
-            flexDirection: 'row',
-            width: '100%',
-            alignItems: 'center'
-          }} >
-            <Check>
-              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
+              <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
             </Check>
             <TextStatus>
               <Text style={{fontSize: 18}}>Comida Lista</Text>
             </TextStatus>
           </Animated.View>
           <Animated.View style={{
-            marginBottom,
-            flexDirection: 'row',
-            width: '100%',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <Status />
-          </Animated.View>
-          <Animated.View style={{
             opacity,
             flexDirection: 'row',
             width: '100%',
             alignItems: 'center'
           }} >
             <Check>
-              <Icon name='check-circle-o' size={30} color={'#F9381F'} />
+              <Icon name='ios-radio-button-off' size={35} color={'#F9381F'} />
             </Check>
             <TextStatus>
               <Text style={{fontSize: 18}}>Tu pedido ha llegado</Text>
@@ -221,3 +290,4 @@ render () {
     )
   }
 }
+// ios-checkmark-circle-outline
